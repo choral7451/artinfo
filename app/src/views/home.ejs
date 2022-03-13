@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 이모티콘  CDN -->
+    <script src="https://kit.fontawesome.com/6dca3e9c71.js" crossorigin="anonymous"></script>
+
+    <!-- 폰트 설정 CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
+
+    <!-- CSS import -->
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+    <!-- JS import -->
+    <script type="text/javascript" src="/js/home.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Insert title here</title>
+</head>
+<body onload="outputScreen()">
+
+<header id="header">
+</header>
+
+<section class="section" id="section">
+    <article class="article" id="article">
+        <div class="line1" id="line1">
+            <div class="line2" id="line2">
+                <i class="fa-solid fa-angle-left" onclick="clickLeft()"></i>
+                <div class="posterBack">
+                    <ul>
+                        <li><a href=""><img src="/img/poster/p3.gif" alt=""></a></li>
+                        <li><a href=""><img src="/img/poster/p5.gif" alt=""></a></li>
+                        <li><a href=""><img src="/img/poster/p1.gif" alt=""></a></li>
+                        <li><a href=""><img src="/img/poster/p3.gif" alt=""></a></li>
+                        <li><a href=""><img src="/img/poster/p2.gif" alt=""></a></li>
+                        <li><a href=""><img src="/img/poster/p4.gif" alt=""></a></li>
+                        <li><a href=""><img src="/img/poster/p5.gif" alt=""></a></li>
+                    </ul>
+                </div>
+                <i class="fa-solid fa-angle-right" onclick="clickRight()"></i>
+            </div>
+        </div>
+    </article>
+</section>
+
+<footer id="footer">
+    <div>문의 : chorales@naver.com</div>
+</footer>
+
+</body>
+</html>
