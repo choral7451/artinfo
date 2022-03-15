@@ -45,7 +45,7 @@ const desktopHeader =
             </div>
             <nav>
                 <li><a href="/about">소개</a></li>
-                <li><a href="/recruit_art">채용정보</a></li>
+                <li><a href="/recruit_art/all">채용정보</a></li>
             </nav>
             <div class="login">
                 <a href="/login">로그인</a>

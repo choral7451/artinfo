@@ -50,16 +50,16 @@
   }
   
   .section .article .top ul li {
-    margin: 0 1%;
+    margin: 0 0.8%;
   }
-  .section .article .top ul li button {
+  .section .article .top ul li form button {
     width: 80px;
     font-size: 18px;
     background-color: white;
     border: none;
   }
 
-  .section .article .top ul li button:hover {
+  .section .article .top ul li form button:hover {
     font-weight: bold;
     cursor: pointer;
   }
@@ -146,16 +146,20 @@
   .section .article .board table td:first-child {
     width: 10%;
   }
-  
+
   .section .article .board table td:nth-child(2) {
+    display: none;
+  }
+
+  .section .article .board table td:nth-child(3) {
     width: 20%;
   }
   
-  .section .article .board table td:nth-child(3) {
+  .section .article .board table td:nth-child(4) {
     width: 50%;
   }
   
-  .section .article .board table td:nth-child(4) {
+  .section .article .board table td:nth-child(5) {
     width: 20%;
   }
   

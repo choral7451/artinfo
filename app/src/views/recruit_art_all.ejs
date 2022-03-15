@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 이모티콘  CDN -->
+    <script src="https://kit.fontawesome.com/6dca3e9c71.js" crossorigin="anonymous"></script>
+
+    <!-- 폰트 설정 CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
+
+    <!-- CSS import -->
+    <link rel="stylesheet" href="/css/recruit_art.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    
+    <!-- JS import -->
+    <script type="text/javascript" src="/js/recruit_art_all.js"></script>
+
+    <title>A-Supporter</title>
+</head>
+<body onload="outputScreen()">
+    <header id="header">
+    </header>
+
+    <section class="section" id="section">
+        <div class="title">
+            <a href="/recruit_art" class="art" id="art">예술단체</a>
+            <!-- <a href="/recruit_religion" class="religion" id="religion">종교</a> -->
+        </div>
+        <article class="article">
+            <div class="top">
+                <ul>
+                    <li>
+                        <form action="/recruit_art/all">
+                            <button id="typeAll" class="type" id="ALL">전체</button>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="/recruit_art/orchestra">
+                            <button id="tpyeOrchestra" class="type" id="ORCHESTRA">교향악단</button>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="/recruit_art/choir">
+                            <button id="typeChoir" class="type" id="CHOIR">합창</button>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="/recruit_art/administration">
+                            <button id="typeAdministration" class="type" id="ADMINISTRATION">행정</button>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="/recruit_art/etc">
+                            <button id="typeEtc" class="type" id="ETC">기타</button>
+                        </form>
+                    </li>
+                </ul>
+                <form action="/recruit" class="search" method="get">
+                    <div class="bottom_line">
+                        <input type="text" name="search" placeholder="검색어를 입력해주세요."/>
+                        <button class="fa-solid fa-magnifying-glass"></button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="board" id="board">
+                <table> 
+                    <thead>
+                        <tr>
+                            <td>번호</td>
+                            <td>단체명</td>
+                            <td>게시일</td>
+                            <td>제목</td>
+                            <td>게시일</td>
+                        </tr>
+                    </thead> 
+                    <tbody>
+                        <% for( const list of arrayData.data ) { %>
+                            <tr>
+                                <td><%= list.ID %></td>
+                                <td><%= list.CNAME %></td>
+                                <td><%= list.DATE %></td>
+                                <td><%= list.TITLE %></td>
+                                <td><%= list.DATE %></td>
+                            </tr>                            
+                        <% } %>    
+                    </tbody>
+                </table>    
+            </div>
+            <div class="paging">
+                <div class="ctrlBack">
+                    <a href="/recruit_art/all" id="leftStart" class="leftStart">
+                        <i class="arrow fa-solid fa-angles-left"></i>
+                    </a>
+
+                    <a href="" id="left" class="right">
+                        <i class="arrow fa-solid fa-angle-left"></i>
+                    </a>
+                
+                    <div class="pageNum" id="pageNum">
+                        <% for( let i = arrayData.viewStartNumber ; i <= arrayData.viewEndNumber ; i++ ) { %>
+                            <form action="" id=<%= arrayData.endNum %>>
+                                <input type="hidden" name="id" value=<%= i %>>
+                                <button id="pageButton<%= i%>" class="pageButton"><%= i %></button>
+                            </form>                            
+                        <% } %>
+                    </div>
+
+                    <a href="" id="right" class="right">
+                        <i class="arrow fa-solid fa-angle-right"></i>
+                    </a>
+                             
+                    <a href="/recruit_art/all?id=<%= arrayData.endNum %>"  id="rightEnd" class="rightEnd" >
+                        <i class="arrow fa-solid fa-angles-right"></i>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <footer id="footer">
+        <div>문의 : chorales@naver.com</div>
+    </footer>
+    <script>
+        
+    </script>
+</body>
+</html>

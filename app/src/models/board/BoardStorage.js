@@ -1,18 +1,26 @@
 const db = require('../../config/db');
 
 class BoardStorage {
-    static getList(type) {
+    static getList(id) {
         return new Promise((resolve, reject) => {
-            let query
-         
-            if ( type == "ORCHESTRA" || type == "CHOIR" || type == "ADMINISTRATION" || type == "ETC") {
-                query = `SELECT * FROM BOARD WHERE TYPE = "${type}"  ORDER BY ID DESC LIMIT 10`;
-            } else if ( type == undefined || type == "ALL"){
-                query = "SELECT * FROM BOARD ORDER BY ID DESC LIMIT 10;";
+            const count = id*10-10
+            let query;
+            if(id) {
+                query = `SELECT * FROM BOARD ORDER BY ID DESC LIMIT ${count}, 10;`;
+            } else {
+                query = `SELECT * FROM BOARD ORDER BY ID DESC LIMIT 10;`;
             }
- 
 
-            
+            db.query(query, (err, data) => {
+                if(err) reject(`${err}`)
+                else resolve(data)
+            });
+        })
+    }
+
+    static listCount() {
+        return new Promise((resolve, reject) => {
+            const query = `SELECT COUNT(*) AS CNT FROM BOARD;`;
             db.query(query, (err, data) => {
                 if(err) reject(`${err}`)
                 else resolve(data)

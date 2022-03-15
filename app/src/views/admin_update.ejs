@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <!-- 이모티콘  CDN -->
+    <script src="https://kit.fontawesome.com/6dca3e9c71.js" crossorigin="anonymous"></script>
+   
+    <!-- 폰트 설정 CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
+    
+    <!-- CSS import -->
+    <link rel="stylesheet" href="/css/admin_update.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/footer.css">
+   
+    <!-- JS import -->
+    <script type="text/javascript" src="/js/admin_update.js"></script>
+
+    <title>A-Supporter</title>
+</head>
+<body onload="outputScreen()">
+    
+    <header id="header">
+    </header>
+    <section class="section" id="section">
+        <div class="title">관리자 수정</div>
+        <article class="article">
+            <form action="/admin/update_save" class="contentBack" method="post">
+                <input type="hidden" name="id" value=<%= data[0].ID %>>
+                <div class="top">
+                    <div class="typeBack">
+                        <p>분류</p>
+                        <select name="type">
+                            <option>분류</option>
+                            <option value="합창단">합창단</option>
+                            <option value="교향악단">교향악단</option>
+                            <option value="행정">행정</option>
+                            <option value="기타">기타</option>
+                        </select>
+                    </div>
+                    <div class="cnameBack">
+                        <p>단체명</p>
+                        <input type="text" name="cname" value=<%= data[0].CNAME %> />
+                    </div>
+                    <div class="dateBack">
+                        <p>게시일</p>
+                        <input type="text" name="date" value=<%= data[0].DATE %> />
+                    </div>
+                </div>
+                <div class="center">
+                    <div class="titleBack">
+                        <p>제목</p>
+                        <input type="text" name="title"  value="<%= data[0].TITLE %>" />
+                    </div>
+                    <div class="urlBack">
+                        <p>URL</p>
+                        <textarea name="url"><%= data[0].URL %></textarea>
+                    </div>
+                </div>
+                <div class="saveBack">
+                    <button>저장</button>
+                </div>
+            </form>
+            <form action="/admin" class="cancelBack"><button>취소</button></form>
+        </article>
+    </section>
+    
+    <footer id="footer">
+        <div>문의 : chorales@naver.com</div>
+    </footer>
+</body>
+</html>
