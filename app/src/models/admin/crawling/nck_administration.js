@@ -11,11 +11,10 @@ module.exports = {
           const tbody = $('tbody#notice_new_board_body')
           const today = new Date();  
           const year = today.getFullYear(); // 년도
-          const month = "02"
-          // const month = ('0' + (today.getMonth() + 1)).slice(-2);
-          const date = ('0' + today.getDate()).slice(-2)-7;
+          const month = ('0' + (today.getMonth() + 1)).slice(-2);
+          const date = ('0' + today.getDate()).slice(-2);
           const currentDate = (year + '-' + month + '-' + date);
-
+          console.log("오늘 날짜 : "+currentDate)
           for(let i = 1; i <= 5 ; i++) {
             const getData = tbody.find(`tr:nth-child(${i})`)
             const getDate = getData.find('td:nth-child(4)').text()

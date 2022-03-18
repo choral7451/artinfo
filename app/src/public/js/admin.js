@@ -10,6 +10,7 @@ const inputScreen = () => {
 }
 
 
+
 const saveButton = () => {
     const dataCount = document.getElementById('tbody').childElementCount
     document.getElementById('save').addEventListener('click', () => {
@@ -33,22 +34,22 @@ const saveButton = () => {
             let content = [];
             let count = 1;
             for(let i = 1 ; i <= dataCount*2-1 ; i+=2) {
-                for(let j = 1 ; j <= 11 ; j+=2) {
-                    if( j == 11 ) {
-                        content.push(
-                            document.getElementById('tbody')
-                            .childNodes[i]
-                            .childNodes[j]
-                            .childNodes[1]
-                            .getAttribute('href')
-                        )
-                    } else if ( j == 7){             
+                
+                for(let j = 1 ; j <= 11 ; j+=2) {                   
+                    if ( j == 7){       
                         content.push(
                             document.getElementById('tbody')
                             .childNodes[i]
                             .childNodes[j]
                             .childNodes[1].innerHTML
                         )
+                        const href = document.getElementById('tbody')
+                        .childNodes[i]
+                        .childNodes[j]
+                        .childNodes[1]
+                        .getAttribute('href')
+
+                        content.push(href)
                     } else {
                         content.push(
                             document.getElementById('tbody')

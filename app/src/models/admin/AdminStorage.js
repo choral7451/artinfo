@@ -15,12 +15,22 @@ class AdminStorage {
         return new Promise((resolve, reject) => {
             let query
             for(let i = 0 ; i < data.length ; i++) {
-                query = `INSERT INTO BOARD (TYPE, CNAME, TITLE, DATE, URL) VALUES ("${data[i][1]}", "${data[i][2]}", "${data[i][3]}", "${data[i][4]}", "${data[i][5]}");`;
+                query = `INSERT INTO BOARD (TYPE, CNAME, TITLE, DATE, URL) VALUES ("${data[i][1]}", "${data[i][2]}", "${data[i][3]}", "${data[i][5]}", "${data[i][4]}");`;
                 db.query(query, (err) => {
                     if(err) reject(`${err}`)
                     else resolve({ success : true});
                 });  
             }    
+        })
+    }
+
+    static adminInit() {
+        return new Promise((resolve, reject) => {
+            const query = `TRUNCATE TABLE CRAWLING`;
+            db.query(query, (err) => {
+                if(err) reject(`${err}`)
+                else resolve({ success : true});
+            }); 
         })
     }
 
@@ -36,16 +46,6 @@ class AdminStorage {
                     });  
                 }                
             }    
-        })
-    }
-
-    static adminInit() {
-        return new Promise((resolve, reject) => {
-            const query = `TRUNCATE TABLE CRAWLING`;
-            db.query(query, (err) => {
-                if(err) reject(`${err}`)
-                else resolve({ success : true});
-            }); 
         })
     }
 

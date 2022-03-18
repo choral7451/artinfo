@@ -9,6 +9,8 @@ const { Daegu } = require('./crawling/daegu')
 const { Wonju } = require('./crawling/wonju')
 const { Suwon } = require('./crawling/suwon')
 const { Seongnam } = require('./crawling/seongnam')
+const { Ansan } = require('./crawling/ansan')
+const { Anyang } = require('./crawling/anyang')
 
 module.exports = {
     Crawler : async () => {
@@ -23,6 +25,8 @@ module.exports = {
         // const wonju = await Wonju();
         // const suwon = await Suwon();
         // const seongnam = await Seongnam();
+        // const ansan = await Ansan();
+        const anyang = await Anyang();
         
         if(nck_artist[0] != undefined) {
             data.push(nck_artist);
@@ -63,6 +67,13 @@ module.exports = {
         // if(seongnam[0] != undefined) {
         //     data.push(seongnam)
         // }
+
+        // if(ansan[0] != undefined) {
+        //     data.push(ansan)
+        // }
+
+        data.push(anyang)
+        
 
         return data;     
     }

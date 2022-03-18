@@ -65,6 +65,7 @@ const output = {
             viewStartNumber = id-4
             viewEndNumber = id
         }  
+
         const arrayData = {data, endNum, viewStartNumber, viewEndNumber}
 
         logger.info("GET /recruit_art/all 304 모집공고(예술단체) 화면으로 이동");

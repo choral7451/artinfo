@@ -73,7 +73,6 @@
                         <tr>
                             <td>번호</td>
                             <td>단체명</td>
-                            <td>게시일</td>
                             <td>제목</td>
                             <td>게시일</td>
                         </tr>
@@ -81,12 +80,11 @@
                     <tbody>
                         <% for( const list of arrayData.data ) { %>
                             <tr>
-                                <td><%= list.ID %></td>
-                                <td><%= list.CNAME %></td>
-                                <td><%= list.DATE %></td>
-                                <td><%= list.TITLE %></td>
-                                <td><%= list.DATE %></td>
-                            </tr>                            
+                                <td ><%= list.ID %></td>
+                                <td ><%= list.CNAME %></td>                                
+                                <td ><a href=<%= list.URL %>><%= list.TITLE %></a></td>
+                                <td ><%= list.DATE %></td>
+                            </tr>                                
                         <% } %>    
                     </tbody>
                 </table>    
