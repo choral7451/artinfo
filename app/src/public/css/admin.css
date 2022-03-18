@@ -84,9 +84,10 @@
     margin: 0 20px;
   }
   
-  .section .article .ctrl form button {
-    height: 100%;
-    width: 100%;
+  .section .article .ctrl button {
+    height: 30px;
+    width: 200px;
+    margin: 0 16px;
     cursor: pointer;
   }
   

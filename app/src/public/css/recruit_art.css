@@ -148,11 +148,11 @@
   }
 
   .section .article .board table td:nth-child(2) {
-    display: none;
+    width: 20%;
   }
 
   .section .article .board table td:nth-child(3) {
-    width: 20%;
+    display: none;
   }
   
   .section .article .board table td:nth-child(4) {

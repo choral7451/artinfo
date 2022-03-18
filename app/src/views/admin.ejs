@@ -15,14 +15,13 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/footer.css">
-   
+    
     <!-- JS import -->
-    <script type="text/javascript" src="/js/about.js"></script>
+    <script type="text/javascript" src="/js/admin.js"></script>
 
     <title>A-Supporter</title>
 </head>
 <body onload="outputScreen()">
-    
     <header id="header">
     </header>
     <section class="section" id="section">
@@ -41,23 +40,25 @@
                         </tr>
 
                     </thead>
-                    <tbody>
+                    <tbody id="tbody" class="tbody">
                         <% for(const list of data) {%>
                             <tr>
                                 <td><%= list.ID %></td>
                                 <td><%= list.TYPE %></td>
                                 <td><%= list.CNAME %></td>
-                                <td><a href=<%= list.URL %> target="_blank"><%= list.TITLE %><a></a></td>
+                                <td>
+                                    <a href=<%= list.URL %> class=titleURL<%= list.ID %>" id="titleURL<%= list.ID %>" target="_blank"><%= list.TITLE %></a>
+                                </td>
                                 <td><%= list.DATE %></td>
                                 <td>
                                     <form action="/admin/update">
                                         <input type="hidden" name="id" value=<%= list.ID %> />
                                         <button>수정</button>
                                     </form>
-                                    <form action="/admin/delete.do" method="get">
+                                    <form action="/admin/delete" id="deleteForm" onSubmit="return confirm('데이터를 삭제하시겠습니까?')">
                                         <input type="hidden" name="id" value=<%= list.ID %> />
-                                        <button>삭제</button>
-                                    </form>
+                                        <button id="delete<%= list.ID %>" class="delete">삭제</button>
+                                    </form> 
                                 </td>
                             </tr>
                         <% } %>
@@ -66,18 +67,14 @@
             </div>
 
             <div class="ctrl">
-                <form action="/admin/crawler.do" method="get">
-                    <button>크롤링 실행</button>
-                </form>
-                <form action="/admin/save.do" method="get">
-                    <button>저장</button>
-                </form>
+                <button id="crawling" class="crawling">크롤링 실행</button>
+                <button id="save" class="save">저장</button>
             </div>
         </article>
     </section>
     
     <footer id="footer">
         <div>문의 : chorales@naver.com</div>
-    </footer>
+    </footer>   
 </body>
 </html>

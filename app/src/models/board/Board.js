@@ -5,18 +5,18 @@ class Board {
         this.body = body;
     }
 
-    async list(id) {
+    async list(path, id) {
         try {
-            const list = await BoardStorage.getList(id);
+            const list = await BoardStorage.getList(path, id);
             return list;
         } catch (err) {
             return { success: false, err };
         }
     }
 
-    async listCount() {
+    async listCount(path) {
         try {
-            const list = await BoardStorage.listCount();
+            const list = await BoardStorage.listCount(path);
             return list;
         } catch (err) {
             return { success: false, err };
