@@ -33,6 +33,7 @@ class Admin {
     }
 
     async adminCrawling(data) {
+        console.log(" admin :"  + data)
         try {
             const list = await AdminStorage.adminCrawling(data);
             return list

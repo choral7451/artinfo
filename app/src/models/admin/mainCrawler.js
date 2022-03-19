@@ -26,6 +26,7 @@ module.exports = {
         // const suwon = await Suwon();
         // const seongnam = await Seongnam();
         // const ansan = await Ansan();
+        
         const anyang = await Anyang();
         
         if(nck_artist[0] != undefined) {
@@ -74,7 +75,7 @@ module.exports = {
 
         data.push(anyang)
         
-
+        console.log(" main :"  + data)
         return data;     
     }
 }

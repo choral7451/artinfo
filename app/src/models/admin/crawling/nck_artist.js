@@ -27,6 +27,7 @@ module.exports = {
               data.push(["국립합창단", getTitle, getDate, getUrl]);
             }
           }
+          console.log(" nck_artist :"  + data)
           return data;
       })
     } catch (error) {
