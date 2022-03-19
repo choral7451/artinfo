@@ -1,5 +1,5 @@
 const logger = require("../config/logger");
-const Board = require("../models/board/board");
+const Board = require("../models/board/Board");
 const Admin = require("../models/admin/Admin");
 const { Crawler } = require('../models/admin/mainCrawler');
 
