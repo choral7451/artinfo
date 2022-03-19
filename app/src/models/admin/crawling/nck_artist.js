@@ -14,7 +14,9 @@ module.exports = {
           const year = today.getFullYear(); // 년도
           const month = ('0' + (today.getMonth() + 1)).slice(-2);
           const date = ('0' + today.getDate()).slice(-2);
-          const currentDate = (year + '-' + month + '-' + date);
+          // const currentDate = (year + '-' + month + '-' + date);
+
+          const currentDate = "2022-03-18"
 
           for(let i = 1; i <= 5 ; i++) {
             const getData = tbody.find(`tr:nth-child(${i})`)
