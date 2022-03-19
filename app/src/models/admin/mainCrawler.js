@@ -17,15 +17,15 @@ module.exports = {
         let data = [];
         const nck_artist = await Nck_artist();
         const nck_administration = await Nck_administration();
-        // const busan = await Busan();
-        // const chuncheon = await Chuncheon();
-        // const bucheon = await Bucheon();
-        // const ulsan = await Ulsan();
-        // const daegu = await Daegu();
-        // const wonju = await Wonju();
-        // const suwon = await Suwon();
-        // const seongnam = await Seongnam();
-        // const ansan = await Ansan();
+        const busan = await Busan();
+        const chuncheon = await Chuncheon();
+        const bucheon = await Bucheon();
+        const ulsan = await Ulsan();
+        const daegu = await Daegu();
+        const wonju = await Wonju();
+        const suwon = await Suwon();
+        const seongnam = await Seongnam();
+        const ansan = await Ansan();
         
         const anyang = await Anyang();
         
@@ -37,41 +37,41 @@ module.exports = {
             data.push(nck_administration); 
         }   
         
-        // if(busan[0] != undefined) {
-        //     data.push(busan);
-        // } 
+        if(busan[0] != undefined) {
+            data.push(busan);
+        } 
         
-        // if(chuncheon[0] != undefined) {
-        //     data.push(chuncheon);
-        // }
+        if(chuncheon[0] != undefined) {
+            data.push(chuncheon);
+        }
 
-        // if(bucheon[0] != undefined) {
-        //     data.push(bucheon);
-        // }
+        if(bucheon[0] != undefined) {
+            data.push(bucheon);
+        }
 
-        // if(ulsan[0] != undefined) {
-        //     data.push(ulsan);
-        // }
+        if(ulsan[0] != undefined) {
+            data.push(ulsan);
+        }
 
-        // if(daegu[0] != undefined) {
-        //     data.push(daegu);
-        // }
+        if(daegu[0] != undefined) {
+            data.push(daegu);
+        }
 
-        // if(wonju[0] != undefined) {
-        //     data.push(wonju);
-        // }
+        if(wonju[0] != undefined) {
+            data.push(wonju);
+        }
 
-        // if(suwon[0] != undefined) {
-        //     data.push(suwon);
-        // }
+        if(suwon[0] != undefined) {
+            data.push(suwon);
+        }
 
-        // if(seongnam[0] != undefined) {
-        //     data.push(seongnam)
-        // }
+        if(seongnam[0] != undefined) {
+            data.push(seongnam)
+        }
 
-        // if(ansan[0] != undefined) {
-        //     data.push(ansan)
-        // }
+        if(ansan[0] != undefined) {
+            data.push(ansan)
+        }
 
         data.push(anyang)
         
