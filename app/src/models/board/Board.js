@@ -1,4 +1,4 @@
-const BoardStorage = require("./boardStorage");
+const BoardStorage = require("./BoardStorage");
 
 class Board {
     constructor(body) {
