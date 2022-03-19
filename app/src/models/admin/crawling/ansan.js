@@ -3,10 +3,10 @@ const cheerio = require('cheerio');
 
 module.exports = {
   Ansan : async () => { 
+    let data = [];
     try {
       return await axios.get('https://ansanarts.com/?page_id=3331')
       .then((html) => {
-        let data = [];
         const $ = cheerio.load(html.data);
         const tbody = $('tbody')
         const today = new Date();  

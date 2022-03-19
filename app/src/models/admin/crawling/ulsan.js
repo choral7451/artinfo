@@ -3,10 +3,11 @@ const cheerio = require('cheerio');
 
 module.exports = {
   Ulsan : async () => { 
+    let data = [];
     try {
       return await axios.get('https://ucac.ulsan.go.kr/spp/bbs/BBS_000000000000001/list/postList.do?searchCondition=0&searchKeyword=%EB%AA%A8%EC%A7%91&bbsId=BBS_000000000000001&bbsType=list&pageIndex=1')
       .then((html) => {
-          let data = [];
+          
           const $ = cheerio.load(html.data);
           const ul = $('ul.table_list')
           const today = new Date();  

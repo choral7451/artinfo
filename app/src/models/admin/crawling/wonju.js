@@ -3,10 +3,10 @@ const cheerio = require('cheerio');
 
 module.exports = {
   Wonju : async () => { 
+    let data = [];
     try {
       return await axios.get('https://www.wonju.go.kr/arts/pr/notice.html')
       .then((html) => {
-        let data = [];
         const $ = cheerio.load(html.data);
         const tbody = $('tbody')
         const today = new Date();  

@@ -3,10 +3,11 @@ const cheerio = require('cheerio');
 
 module.exports = {
   Chuncheon : async () => { 
+    let data = [];
     try {
       return await axios.get('https://www.cccf.or.kr/Art/S30000/S30400/boardList')
       .then((html) => {
-          let data = [];
+          
           const $ = cheerio.load(html.data);
           const tbody = $('tbody')
           const today = new Date();  

@@ -3,10 +3,11 @@ const cheerio = require('cheerio');
 
 module.exports = {
   Suwon : async () => { 
+    let data = [];
     try {
       return await axios.get('http://www.artsuwon.or.kr/?p=49')
       .then((html) => {
-        let data = [];
+        
         const $ = cheerio.load(html.data);
         const tbody = $('tbody')
         const today = new Date();  

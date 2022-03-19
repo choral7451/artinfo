@@ -3,10 +3,10 @@ const cheerio = require('cheerio');
 
 module.exports = {
   Anyang : async () => { 
+    let data = [];
     try {
       return await axios.get('https://www.anyang.go.kr/acc/selectBbsNttList.do?bbsNo=335&key=2166')
       .then((html) => {
-        let data = [];
         const $ = cheerio.load(html.data);
         const tbody = $('tbody')
         const today = new Date();  

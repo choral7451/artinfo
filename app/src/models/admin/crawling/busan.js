@@ -3,10 +3,11 @@ const cheerio = require('cheerio');
 
 module.exports = {
   Busan : async () => { 
+    let data = [];
     try {
       return await axios.get('https://www.bscc.or.kr/05_community/?mcode=0405010000&mode=1&hd=%EC%B1%84%EC%9A%A9%EA%B3%B5%EA%B3%A0')
       .then((html) => {
-        let data = [];
+        
         const $ = cheerio.load(html.data);
         const tbody = $('tbody')
         const today = new Date();  
