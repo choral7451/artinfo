@@ -290,15 +290,15 @@
     }
 
     .section .article .board table td:nth-child(2) {
-      width: 15%;
+      width: 20%;
     }
 
     .section .article .board table td:nth-child(3) {
-      display: 70%;
+      display: 60%;
     }
 
     .section .article .board table td:nth-child(4) {
-      width: 15%;
+      width: 20%;
     }
 
   }

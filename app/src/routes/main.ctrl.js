@@ -19,6 +19,12 @@ const output = {
         res.render('login');
     },
 
+    signup : (req, res) => {
+        logger.info("GET /signup 304 회원가입 화면으로 이동");
+        res.render('signup');
+    },
+
+
     admin : async (req, res) => {
         const admin = new Admin();
         const data = await admin.list();
@@ -40,6 +46,14 @@ const output = {
         const data = await admin.updateContentGet(id);
         logger.info("GET /admin 304 관리자 화면으로 이동");
         res.render('admin_update', {data});
+    },
+
+    admin_write : async (req, res) => {
+        // const id = req.query.id;
+        // const admin = new Admin();
+        // const data = await admin.updateContentGet(id);
+        // logger.info("GET /admin 304 관리자 화면으로 이동");
+        res.render('admin_write');
     },
 
     recruit_art_all : async (req, res) => {
@@ -251,6 +265,13 @@ const output = {
 }
 
 const process = { 
+    admin_write : (req, res) => {
+        const reqBody = req.body;
+        const admin = new Admin();
+        admin.adminWrite(reqBody);
+        res.redirect("/admin")
+    },
+
     admin_save : (req, res) => {
         const reqBody = req.body;
         const admin = new Admin();
@@ -271,6 +292,17 @@ const process = {
         const admin = new Admin();
         admin.updateContentSave(reqBody);
         res.redirect('/admin')
+    },
+
+    signup_do : (req, res) => {
+        const reqBody = req.body;
+        console.log(reqBody)
+        res.redirect('/')
+    },
+
+    login_check : (req, res) => {
+        const reqBody = req.body;
+        console.log(reqBody)
     },
 }
 

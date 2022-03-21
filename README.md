@@ -1,1 +1,1 @@
-예술 허브 A-Supporter Node Express 구현
+예술 허브 ARTINFO Node Express 구현

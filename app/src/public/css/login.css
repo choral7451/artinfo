@@ -1,193 +1,193 @@
 .section {
-    height: 76vh;
+  height: 76vh;
+}
+
+.article {
+  height: 68vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  animation: title 2s 1 forwards;
+}
+
+@keyframes title {
+  from {
+    margin-left: -100px;
+    opacity: 0;
   }
-  
+  to {
+    margin-left: 0px;
+    opacity: 1;
+  }
+}
+
+.inputBack {
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+  width: 300px;
+  animation: label 2s 1 forwards;
+}
+
+.buttonBack {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+  width: 300px;
+  animation: label 2s 1 forwards;
+}
+
+form {
+  display: flex;
+  background-color: white;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  width: 100%;
+  background-color: rgb(170, 169, 169);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+button:hover {
+  cursor: pointer;
+  border: 2px solid black;
+  background-color: white;
+}
+
+.buttonBack a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.4rem 0;
+  color: black;
+  background-color: rgb(170, 169, 169);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 16px;
+  width: 100%;
+  height: 40px;
+}
+
+.buttonBack a:hover {
+  cursor: pointer;
+  border: 2px solid black;
+  background-color: white;
+}
+
+form input {
+  height: 50px;
+  text-align: center;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 20px;
+  margin: 30px;
+}
+
+form input:focus {
+  outline: none;
+}
+
+form input:focus::placeholder {
+  color:transparent;
+}
+
+.loginBtn {
+  margin-top: -16px;
+  margin-bottom: 50px;
+}
+
+label {
+  margin-left: 30px;
+  font-size: 24px;
+}
+
+@keyframes label {
+  from {
+    margin-top: -50px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 1181px) {
   .article {
-    height: 68vh;
+    height: 76vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
   }
-  
-  .title {
-    height: 8vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
-    animation: title 2s 1 forwards;
-  }
-  
-  @keyframes title {
-    from {
-      margin-left: -100px;
-      opacity: 0;
-    }
-    to {
-      margin-left: 0px;
-      opacity: 1;
-    }
-  }
-  
-  .inputBack {
-    margin-right: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 400px;
-    width: 300px;
-    animation: label 2s 1 forwards;
-  }
-  
-  .buttonBack {
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 400px;
-    width: 300px;
-    animation: label 2s 1 forwards;
-  }
-  
+
   form {
     display: flex;
-    background-color: white;
+    flex-direction: column;
   }
-  
-  button {
-    border: none;
-    border-radius: 10px;
-    height: 40px;
+
+  .inputBack {
+    margin-top: 4vh;
+    height: 36vh;
     width: 100%;
-    background-color: rgb(170, 169, 169);
-    font-size: 20px;
-    font-weight: 800;
   }
-  
-  button:hover {
-    cursor: pointer;
-    border: 2px solid black;
-    background-color: white;
-  }
-  
-  .buttonBack a {
+
+  .buttonBack {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0.4rem 0;
-    color: black;
-    background-color: rgb(170, 169, 169);
-    border-radius: 10px;
-    text-align: center;
-    font-size: 16px;
+    margin-left: 0px;
+    height: 36vh;
     width: 100%;
-    height: 40px;
   }
-  
-  .buttonBack a:hover {
-    cursor: pointer;
-    border: 2px solid black;
-    background-color: white;
-  }
-  
-  form input {
-    height: 50px;
-    text-align: center;
-    border: none;
-    border-bottom: 2px solid black;
-    font-size: 20px;
-    margin: 30px;
-  }
-  
-  form input:focus {
-    outline: none;
-  }
-  
-  form input:focus::placeholder {
-    color:transparent;
-  }
-  
+
   .loginBtn {
-    margin-top: -16px;
-    margin-bottom: 50px;
+    margin: 0;
+    margin-bottom: 6px;
   }
-  
-  label {
-    margin-left: 30px;
-    font-size: 24px;
+
+  form input {
+    margin: 26px;
   }
-  
+
+  button {
+    margin-top: 6px;
+  }
+  .title {
+    display: none;
+  }
+
   @keyframes label {
     from {
-      margin-top: -50px;
-      opacity: 0;
+      margin-top: 0px;
     }
     to {
       margin-top: 0px;
     }
   }
-  
-  @media screen and (max-width: 1181px) {
-    .article {
-      height: 76vh;
-      display: flex;
-    }
-  
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .inputBack {
-      margin-top: 4vh;
-      height: 36vh;
-      width: 100%;
-    }
-  
-    .buttonBack {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-left: 0px;
-      height: 36vh;
-      width: 100%;
-    }
-  
-    .loginBtn {
-      margin: 0;
-      margin-bottom: 6px;
-    }
-  
-    form input {
-      margin: 26px;
-    }
-  
-    button {
-      margin-top: 6px;
-    }
-    .title {
-      display: none;
-    }
-  
-    @keyframes label {
-      from {
-        margin-top: 0px;
-      }
-      to {
-        margin-top: 0px;
-      }
-    }
+}
+
+@media screen and (max-width: 300px) {
+  button {
+    width: 90%;
   }
-  
-  @media screen and (max-width: 300px) {
-    button {
-      width: 90%;
-    }
-  
-    .buttonBack a {
-      width: 90%;
-    }
+
+  .buttonBack a {
+    width: 90%;
   }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <!-- 이모티콘  CDN -->
+    <script src="https://kit.fontawesome.com/6dca3e9c71.js" crossorigin="anonymous"></script>
+
+   
+    <!-- 폰트 설정 CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
+    
+    <!-- CSS import -->
+    <link rel="stylesheet" href="/css/signup.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Palette+Mosaic&display=swap" rel="stylesheet">
+   
+    <!-- JS import -->
+    <script type="text/javascript" src="/js/signup.js"></script>
+    <title>A-Supporter</title>
+</head>
+<body onload="outputScreen()">
+    
+    <header id="header">
+    </header>
+    
+    <section class="section" id="section">
+        <div class="title">회원가입</div>
+        <article class="article" id="article">
+            <form action="signup_do" method="post">
+                <div class="content">                
+                    <div class="contentTitle">아이디</div>
+                    <div class="inputBack">
+                        <input name="id" type="text">
+                        <p>중복확인</p>
+                    </div>                                        
+                </div>                
+                <div class="content">
+                    <div class="contentTitle">비밀번호</div>
+                    <div class="inputBack">
+                        <input name="pwd" type="text">
+                        <p>사용가능</p>
+                    </div>                    
+                </div>
+                <div class="content">
+                    <div class="contentTitle">비밀번호 재확인</div>
+                    <div class="inputBack">
+                        <input name="pwdCheck"type="text">
+                        <p>확인</p>
+                    </div>                    
+                </div>
+                <div class="content">
+                    <div class="contentTitle">이름</div>
+                    <div class="inputBack">
+                        <input name="name" type="text">
+                        <p>확인</p>
+                    </div>                    
+                </div>
+                <div class="content">
+                    <div class="contentTitle">생년월일</div>
+                    <div class="inputBack">
+                        <input name="birth" type="text">
+                        <p>확인</p>
+                    </div>                    
+                </div>
+                <div class="content">
+                    <div class="contentTitle">성별</div>
+                    <div class="inputBack">
+                        <select name="type">
+                            <option>성별</option>
+                            <option value="man">남자</option>
+                            <option value="woman">여자</option>
+                            <option value="undefined">선택안함</option>
+                        </select>
+                        <p>확인</p>
+                    </div>                    
+                </div>
+                <div class="content">
+                    <div class="contentTitle">이메일</div>
+                    <div class="inputBack">
+                        <input name="email"type="text">
+                        <p>확인</p>
+                    </div>                       
+                </div>                
+                <button>가입하기</button>
+            </form>
+        </article>   
+    </section>
+    
+    <footer id="footer">
+        <div>문의 : chorales@naver.com</div>
+    </footer>
+
+</body>
+</html>

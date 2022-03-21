@@ -21,7 +21,7 @@ module.exports = {
           const getData = tbody.find(`tr:nth-child(${i})`)
           const getDate = getData.find('td:nth-child(5)').find('time').text()
           const getTitle = getData.find('td:nth-child(2)').find('a').text()
-          const getUrl = getData.find('td:nth-child(2)').find('a').attr('href')
+          const getUrl = "https://www.anyang.go.kr/acc" + getData.find('td:nth-child(2)').find('a').attr('href')
           if(currentDate == getDate) {  
             data.push(["안양시립합창단", getTitle, getDate, getUrl]);
           }

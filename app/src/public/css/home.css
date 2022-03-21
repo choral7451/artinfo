@@ -1,174 +1,108 @@
 section {
-    width: 100vw;
-    height: 76vh;
-  }
+  width: 100vw;
+  height: 76vh;
+}
   
-  section .article {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-  
+section .article {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+section .article .line1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  width: 100%;
+  border-bottom: 3px solid black;
+  border-top: 3px solid black;
+}
+
+section .article .line1 .line2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  width: 90%;
+  border-bottom: 3px solid black;
+  border-top: 3px solid black;
+  transition: 0.25s linear;
+}
+
+section .article .line1 .line2 .fa-solid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  width: 5%;
+  cursor: pointer;
+}
+
+section .article .line1 .line2 .posterBack {
+  height: 80%;
+  width: 95%;
+  overflow: hidden;
+}
+
+section .article .line1 .line2 .posterBack ul {
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 140%;
+  left: -20%;
+  margin: 0;
+  padding: 0;
+}
+
+section .article .line1 .line2 .posterBack ul li {
+  margin: 0 0.5%;
+  height: 100%;
+  width: 25%;
+}
+
+section .article .line1 .line2 .posterBack ul li a {
+  height: 100%;
+  width: 100%;
+}
+
+section .article .line1 .line2 .posterBack ul li img {
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 1600px) {
   section .article .line1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70%;
-    width: 100%;
-    border-bottom: 3px solid black;
-    border-top: 3px solid black;
+    height: 80%;
   }
-  
-  section .article .line1 .line2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  section .article .line1 .line2 .posterBack {
     height: 90%;
-    width: 90%;
-    border-bottom: 3px solid black;
-    border-top: 3px solid black;
-    transition: 0.25s linear;
   }
-  
-  section .article .line1 .line2 .fa-solid {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    width: 5%;
-    cursor: pointer;
+
+  section .article .line1 .line2 .posterBack ul {
+    width: 233.5%;
+    left: -33.5%;
   }
-  
+}
+
+@media screen and (max-width: 800px) {
   section .article .line1 .line2 .posterBack {
     height: 80%;
     width: 95%;
     overflow: hidden;
   }
-  
+
   section .article .line1 .line2 .posterBack ul {
     display: flex;
     position: relative;
     height: 100%;
-    width: 140%;
-    left: -20%;
+    width: 700%;
+    left: -100%;
     margin: 0;
     padding: 0;
   }
-  
-  section .article .line1 .line2 .posterBack ul li {
-    margin: 0 0.5%;
-    height: 100%;
-    width: 25%;
-  }
-  
-  section .article .line1 .line2 .posterBack ul li a {
-    height: 100%;
-    width: 100%;
-  }
-  
-  section .article .line1 .line2 .posterBack ul li img {
-    height: 100%;
-    width: 100%;
-  }
-  
-  @media screen and (max-width: 1600px) {
-    section .article .line1 {
-      height: 80%;
-    }
-  
-    section .article .line1 .line2 .posterBack {
-      height: 90%;
-    }
-  
-    section .article .line1 .line2 .posterBack ul {
-      width: 233.5%;
-      left: -33.5%;
-    }
-  }
-  
-  @media screen and (max-width: 800px) {
-    section .article .line1 .line2 .posterBack {
-      height: 80%;
-      width: 95%;
-      overflow: hidden;
-    }
-  
-    section .article .line1 .line2 .posterBack ul {
-      display: flex;
-      position: relative;
-      height: 100%;
-      width: 700%;
-      left: -100%;
-      margin: 0;
-      padding: 0;
-    }
-  }header {
-  width: 100vw;
-  height: 12vh;
-}
-
-header .header1 {
-  display: flex;
-  align-items: center;
-  width: 100vw;
-  height: 100%;
-}
-
-header .header1 .logo {
-  height: 100%;
-  width: 16vw;
-}
-
-header .header1 .logo a {
-  height: 100%;
-  width: 100%;
-}
-
-header .header1 .logo a img {
-  height: 100%;
-  width: 100%;
-}
-
-header .header1 nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 68vw;
-}
-header .header1 nav li {
-  padding: 0 0.5rem;
-  margin: 0 5rem;
-}
-
-header .header1 nav li:hover {
-  border-bottom: 3px solid black;
-  transition: 0.1s linear;
-}
-
-header .header1 nav li a {
-  font-size: 1.5rem;
-  color: black;
-}
-
-header .header1 .login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 16vw;
-}
-
-header .header1 .login a {
-  font-size: 1.5rem;
-  padding: 0 0.5rem;
-  color: black;
-}
-
-header .header1 .login a:hover {
-  border-bottom: 3px solid black;
-  transition: 0.1s linear;
 }
 
 @media screen and (max-width: 1181px) {

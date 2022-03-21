@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/footer.css">
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Palette+Mosaic&display=swap" rel="stylesheet">
    
     <!-- JS import -->
     <script type="text/javascript" src="/js/login.js"></script>
@@ -29,16 +34,16 @@
     <section class="section" id="section">
         <div class="title">로그인</div>
         <article class="article" id="article">
-            <form action="/login.do" method="get">
+            <form action="/login_check" method="post">
                 <div class="inputBack">
                     <label>아이디</label>
-                    <input type="text" placeholder="ID">
+                    <input type="text" name="id" placeholder="ID">
                     <label>비밀번호</label>
-                    <input type="password" placeholder="Password">
+                    <input type="password" name="pwd" placeholder="Password">
                 </div>
                 <div class="buttonBack">
                     <button class="loginBtn">로그인</button>
-                    <a href="">회원가입</a>
+                    <a href="/signup">회원가입</a>
                     <a href="">아이디 찾기</a>
                     <a href="">비밀번호 찾기</a>
                 </div>

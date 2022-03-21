@@ -75,7 +75,6 @@ module.exports = {
 
         data.push(anyang)
         
-        console.log(" main :"  + data)
         return data;     
     }
 }

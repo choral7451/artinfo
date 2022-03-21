@@ -31,10 +31,9 @@
     <header id="header">
     </header>
     <section class="section" id="section">
-        <div class="title">관리자 수정</div>
+        <div class="title">데이터 추가</div>
         <article class="article">
-            <form action="/admin/update_save" class="contentBack" method="post">
-                <input type="hidden" name="id" value=<%= data[0].ID %>>
+            <form action="/admin_write" class="contentBack" method="post" onSubmit="return confirm('데이터를 저장하시겠습니까?')">
                 <div class="top">
                     <div class="typeBack">
                         <p>분류</p>
@@ -48,25 +47,25 @@
                     </div>
                     <div class="cnameBack">
                         <p>단체명</p>
-                        <input type="text" name="cname" value=<%= data[0].CNAME %> />
+                        <input type="text" name="cname"/>
                     </div>
                     <div class="dateBack">
                         <p>게시일</p>
-                        <input type="text" name="date" value=<%= data[0].DATE %> />
+                        <input type="text" name="date"/>
                     </div>
                 </div>
                 <div class="center">
                     <div class="titleBack">
                         <p>제목</p>
-                        <input type="text" name="title"  value="<%= data[0].TITLE %>" />
+                        <input type="text" name="title"/>
                     </div>
                     <div class="urlBack">
                         <p>URL</p>
-                        <textarea name="url"><%= data[0].URL %></textarea>
+                        <textarea name="url"></textarea>
                     </div>
                 </div>
                 <div class="saveBack">
-                    <button>저장</button>
+                    <button >저장</button>
                 </div>
             </form>
             <form action="/admin" class="cancelBack"><button>취소</button></form>

@@ -2,131 +2,143 @@
     height: 76vh;
   }
   
+.article {
+  display: flex;
+  height: 68vh;
+}
+
+.title {
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  animation: title 2s 1 forwards;
+}
+  
+@keyframes title {
+  from {
+    margin-left: -100px;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0px;
+    opacity: 1;
+  }
+}
+
+.logoBack {
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoBack .logo {
+  font-family: 'Fredoka One', cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+  font-size: 70px;
+  height: 400px;
+  width: 400px;
+}
+
+.aboutLogo {
+  border: 2px solid black;
+  width: 60%;
+  height: 80%;
+}
+
+.textBack {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.text1 {
+  animation: text 2s 1 forwards;
+}
+
+.text2 {
+  animation: text 2s 1 forwards;
+}
+
+.text3 {
+  animation: text 2s 1 forwards;
+}
+
+@keyframes text {
+  from {
+    margin-top: -100px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0px;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1181px) {
   .article {
+    height: 76vh;
     display: flex;
-    height: 68vh;
+    flex-direction: column;
   }
-  
-  .title {
-    height: 8vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
-    animation: title 2s 1 forwards;
-  }
-  
-  @keyframes title {
-    from {
-      margin-left: -100px;
-      opacity: 0;
-    }
-    to {
-      margin-left: 0px;
-      opacity: 1;
-    }
-  }
-  
+
   .logoBack {
-    width: 50vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 38vh;
   }
-  
+
   .aboutLogo {
-    border: 2px solid black;
-    width: 60%;
-    height: 80%;
+    width: 200px;
+    height: 200px;
   }
-  
+
   .textBack {
-    width: 50vw;
+    height: 38vh;
+    width: 100%;
+    font-size: 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
   }
-  
+
   .text1 {
-    animation: text 2s 1 forwards;
+    margin: 0;
+    animation: 0;
   }
-  
+
   .text2 {
-    animation: text 2s 1 forwards;
+    animation: 0;
   }
-  
   .text3 {
-    animation: text 2s 1 forwards;
+    margin: 0;
+    animation: 0;
   }
-  
-  @keyframes text {
-    from {
-      margin-top: -100px;
-      opacity: 0;
-    }
-    to {
-      margin-top: 0px;
-      opacity: 1;
-    }
+
+  .logo {
+    text-align: center;
+    width: 60vw;
+    height: 100%;
   }
-  
-  @media screen and (max-width: 1181px) {
-    .article {
-      height: 76vh;
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .logoBack {
-      width: 100%;
-      height: 38vh;
-    }
-  
-    .aboutLogo {
-      width: 200px;
-      height: 200px;
-    }
-  
-    .textBack {
-      height: 38vh;
-      width: 100%;
-      font-size: 16px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .text1 {
-      margin: 0;
-      animation: 0;
-    }
-  
-    .text2 {
-      animation: 0;
-    }
-    .text3 {
-      margin: 0;
-      animation: 0;
-    }
-  
-    .logo {
-      text-align: center;
-      width: 60vw;
-      height: 100%;
-    }
-  
-    .title {
-      display: none;
-    }
+
+  .title {
+    display: none;
   }
-  
-  @media screen and (max-width: 300px) {
-    .textBack {
-      font-size: 12px;
-    }
+}
+
+@media screen and (max-width: 300px) {
+  .textBack {
+    font-size: 12px;
   }
+}

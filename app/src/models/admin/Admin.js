@@ -23,6 +23,15 @@ class Admin {
         }
     }
 
+    async adminWrite(data) {
+        try {
+            const list = await AdminStorage.adminWrite(data);
+            return list
+        } catch (err) {
+            return { success: false, err };
+        }
+    }
+
     async adminInit() {
         try {
             const list = await AdminStorage.adminInit();
@@ -33,7 +42,6 @@ class Admin {
     }
 
     async adminCrawling(data) {
-        console.log(" admin :"  + data)
         try {
             const list = await AdminStorage.adminCrawling(data);
             return list

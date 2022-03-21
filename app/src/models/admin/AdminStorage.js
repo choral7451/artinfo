@@ -24,6 +24,19 @@ class AdminStorage {
         })
     }
 
+    static adminWrite(data) {
+        console.log(data)
+        return new Promise((resolve, reject) => {
+            const query = 
+            `INSERT INTO CRAWLING (CNAME, TITLE, DATE, TYPE, URL) 
+            VALUES ("${data.cname}", "${data.title}", "${data.date}", "${data.type}"," ${data.url}")`;
+            db.query(query, (err) => {
+                if(err) reject(`${err}`)
+                else resolve({ success : true});
+            });  
+        })
+    }
+
     static adminInit() {
         return new Promise((resolve, reject) => {
             const query = `TRUNCATE TABLE CRAWLING`;

@@ -91,6 +91,10 @@
     cursor: pointer;
   }
   
+  .section .article .ctrl button a {
+    color: black;
+  }
+  
   @keyframes title {
     from {
       margin-left: -100px;

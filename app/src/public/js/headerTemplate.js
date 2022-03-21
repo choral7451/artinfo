@@ -3,14 +3,25 @@ let path = ``;
 
 switch (getPath) {
     case '/' :
-        path = `<a href="/"><img src="/img/logo.png" alt=""></a>`;
+        path = `<a href="/">ARTINFO</a>`;
         break;
     case '/about' :
         path = `<h1>소개</h1>`;
         break;
-    case '/recruit_art' :
-        path = `<h1>채용정보</h1>`;
-        
+    case '/recruit_art/all':
+        path = `<h1>채용정보</h1>`;       
+        break;
+    case '/recruit_art/orchestra':
+        path = `<h1>채용정보</h1>`;       
+        break;
+    case '/recruit_art/choir':
+        path = `<h1>채용정보</h1>`;       
+        break;
+    case '/recruit_art/administration':
+        path = `<h1>채용정보</h1>`;       
+        break;
+    case '/recruit_art/etc':
+        path = `<h1>채용정보</h1>`;       
         break;
     case '/login' :
         path = `<h1>로그인</h1>`;
@@ -31,7 +42,7 @@ const mobileHeader =
         <div id="header2" class="header2"> 
             <li><a href="/">Home</a></li>
             <li><a href="/about">소개</a></li>
-            <li><a href="/recruit_art">채용정보</a></li>
+            <li><a href="/recruit_art/all">채용정보</a></li>
         </div>        
     ` 
 
@@ -41,7 +52,7 @@ const desktopHeader =
     `
         <div class="header1">
             <div class="logo">
-                <a href="/"><img src="/img/logo.png" alt=""></a>
+                <a href="/">ARTINFO</a>
             </div>
             <nav>
                 <li><a href="/about">소개</a></li>
