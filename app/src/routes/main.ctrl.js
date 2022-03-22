@@ -375,7 +375,6 @@ const process = {
     },
 
     signup_checkId : async (req, res) => {
-        console.log('왔다')
         const reqBody = req.body;
         const signup = new Signup();
         const data = await signup.checkId(reqBody);
@@ -386,36 +385,47 @@ const process = {
         }
     },
 
-    signup_do : (req, res) => {
+    signup_do : async (req, res) => {
         const reqBody = req.body;
-        console.log(reqBody)
-        res.redirect('/')
+        const signup = new Signup();
+        await signup.signup(reqBody);
+        res.write("<script>alert('Signup Success')</script>");
+        res.write("<script>window.location=\"../login\"</script>");
     },
 
     login_check : async (req, res) => {        
         const reqBody = req.body;
-        const login = new Login();
-        const data = await login.getMember(reqBody.id)
-        const user = {
-            id: data[0].ID,
-            password : data[0].PWD,
-            name : data[0].NAME,
-            email : data[0].EMAIL,
-            is_logined : true            
-        }
-        if(data[0] == null) {
-            res.write("<script>alert('There is no id')</script>");
+        if(reqBody.id == 0) {
+            res.write("<script>alert('a')</script>");
+            res.write("<script>window.location=\"../login\"</script>");
+        } else if(reqBody.pwd == 0) {
+            res.write("<script>alert('b')</script>");
             res.write("<script>window.location=\"../login\"</script>");
         } else {
-            if(reqBody.pwd == data[0].PWD) {
-                req.login(user, (err) => {
-                    return res.redirect('/');
-                })                
-            } else {
-                res.write("<script>alert('b')</script>");
-                res.write("<script>window.location=\"../login\"</script>");
+            const login = new Login();
+            const data = await login.getMember(reqBody.id)
+            
+            const user = {
+                id: data[0].ID,
+                password : data[0].PWD,
+                name : data[0].NAME,
+                email : data[0].EMAIL,
+                is_logined : true            
             }
-        } 
+            if(data[0] == null) {
+                res.write("<script>alert('There is no id')</script>");
+                res.write("<script>window.location=\"../login\"</script>");
+            } else {
+                if(reqBody.pwd == data[0].PWD) {
+                    req.login(user, (err) => {
+                        return res.redirect('/');
+                    })                
+                } else {
+                    res.write("<script>alert('b')</script>");
+                    res.write("<script>window.location=\"../login\"</script>");
+                }
+            } 
+        }
     }
 }
 

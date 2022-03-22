@@ -42,12 +42,10 @@ const outputScreen = () => {
 };
 
 const clickMenu = () => {
-    if(document.getElementById('header2').style.display == "flex") {
-        document.getElementById('header2').style.display="none";
+    if(document.getElementById('mobileMenu').style.display == "flex") {
+        document.getElementById('mobileMenu').style.display="none";
     } else {
-        document.getElementById('header2').style.display="flex";
-    }
-    
+        document.getElementById('mobileMenu').style.display="flex";
+    }    
 }
-
 

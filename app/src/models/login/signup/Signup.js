@@ -13,6 +13,15 @@ class Signup {
             return { success: false, err };
         }
     }
+
+    async signup(data) {
+        try {
+            const list = await SignupStorage.signup(data);
+            return list;
+        } catch (err) {
+            return { success: false, err };
+        }
+    }
 }
 
 module.exports = Signup;

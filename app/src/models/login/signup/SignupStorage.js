@@ -10,6 +10,17 @@ class SignupStorage {
             });
         })
     }
+
+    static signup(data) {
+        return new Promise((resolve, reject) => {
+            const query = `INSERT INTO MEMBER (ID, PWD, NAME, BIRTH, GENDER, EMAIL) VALUES("${data.id}", "${data.pwd}", "${data.name}", "${data.birth}", "${data.gender}", "${data.email}");`;
+            db.query(query, (err, data) => {
+                if(err) reject(`${err}`)
+                else resolve(data)
+            });
+        })
+    }
 }
+
 
 module.exports = SignupStorage;

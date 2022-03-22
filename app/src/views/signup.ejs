@@ -63,31 +63,36 @@
         <div class="title">회원가입</div>
         <article class="article" id="article">
             <form action="signup_do" method="post">
-                <div class="content">                
-                    <div class="contentTitle">아이디</div>
+                <div class="content">         
+                    <div class="contentTitleBack">
+                        <div class="contentTitle">아이디</div>
+                        <p class="birthEX">4자 ~ 16자로 입력해주세요.</p>
+                    </div>                              
                     <div class="inputBack">
-                        <input id="checkIdInput" name="checkId" type="text">
+                        <input id="checkIdInput" name="id" type="text">
                         <p id="checkId" class="checkId">중복 확인</p>
+                        <p id="checkIdText" class="checkIdText"></p>
                     </div>                                        
                 </div>                
                 <div class="content">
                     <div class="contentTitle">비밀번호</div>
                     <div class="inputBack">
-                        <input id="pwd" name="pwd" type="text">
+                        <input id="pwd" name="pwd" type="password">
+                        <p id="checkPassword"></p>
                     </div>                    
                 </div>
                 <div class="content">
                     <div class="contentTitle">비밀번호 재확인</div>
                     <div id="pwd2" class="inputBack">
-                        <input name="pwdCheck"type="text">
+                        <input type="password">
                         <p id="checkPwd"></p>
                     </div>                    
                 </div>
                 <div class="content">
                     <div class="contentTitle">이름</div>
                     <div class="inputBack">
-                        <input name="name" type="text">
-                        <p>확인</p>
+                        <input id="nameValue" name="name" type="text">
+                        <p id="checkName"></p>
                     </div>                    
                 </div>
                 <div class="content">
@@ -103,7 +108,7 @@
                 <div class="content">
                     <div class="contentTitle">성별</div>
                     <div class="inputBack">
-                        <select id="gender" name="type">
+                        <select id="gender" name="gender">
                             <option value="">성별</option>
                             <option value="man">남자</option>
                             <option value="woman">여자</option>
@@ -115,11 +120,11 @@
                 <div class="content">
                     <div class="contentTitle">이메일</div>
                     <div class="inputBack">
-                        <input name="email"type="text">
-                        <p>확인</p>
+                        <input id="emailValue" name="email"type="text">
+                        <p id="checkEmail"></p>
                     </div>                       
                 </div>                
-                <button>가입하기</button>
+                <input type="submit" class="signupButton" id="signupButton" disabled value="가입하기">
             </form>
         </article>   
     </section>
@@ -128,6 +133,7 @@
         <div>문의 : chorales@naver.com</div>
     </footer>
 
+    <script src="//code.jquery.com/jquery.min.js"></script>
     <!-- JS import -->
     <script type="text/javascript" src="/js/signup.js"></script>
 </body>

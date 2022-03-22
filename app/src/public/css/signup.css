@@ -1,137 +1,163 @@
-.section {
-    height: 76vh;
+.title {
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  animation: title 2s 1 forwards;
+}
+
+@keyframes title {
+  from {
+    margin-left: -100px;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0px;
+    opacity: 1;
+  }
+}
+
+.article {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.article form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 95%;
+  width: 30%;
+  background-color: white;
+}
+
+.article form .content {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.article form .content .contentTitle {
+  margin: 5px 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+  "Lucida Sans", Arial, sans-serif;
+  font-weight: 600;
+}
+
+.article form .content .contentTitleBack {
+  display: flex;
+  align-items: center;
+}
+
+.article form .content .contentTitleBack .birthEX {
+  margin-left: 20px;
+  font-size: 13px;
+  color: rgb(170, 169, 169);
+}
+
+.article form .content input {
+  box-sizing: border-box;
+  margin: 3px 0;
+  height: 30px;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+}
+
+.article form .content input:focus {
+  outline-color: rgb(170, 169, 169);
+}
+
+.article form .content select {
+  text-align: center;
+  box-sizing: border-box;
+  margin: 3px 0;
+  height: 30px;
+  width: 100%;    
+}
+
+.article form .content .inputBack {
+  background-color: rgb(201, 199, 199);
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+
+.article form .content .inputBack .checkIdInput {
+  width: 60%;
+}
+
+.article form .content .inputBack .checkId {
+  width: 20%;
+}
+
+.article form .content .inputBack .checkIdText {
+  width: 24%;
+}
+
+.article form .content .inputBack .checkId {
+  box-sizing: border-box;
+  height: 100%;
+  border: 2px solid black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.article form .content .inputBack p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  width: 20%;
+}
+
+.section .article form .signupButton {
+  background-color: rgb(170, 169, 169);
+  font-weight: bold;    
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  width: 100%;    
+  margin-top: 20px;
+  
+}
+
+.section .article form .signupButton:hover {
+  border: 2px solid black;
+  background-color: white;
+}
+
+@media screen and (max-width: 1181px) {
+  .title {
+    display: none;
   }
   
-  .title {
-    height: 8vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
-    animation: title 2s 1 forwards;
-  }
-
-  @keyframes title {
-    from {
-      margin-left: -100px;
-      opacity: 0;
-    }
-    to {
-      margin-left: 0px;
-      opacity: 1;
-    }
-  }
-
   .article {
-    height: 68vh;
+    height: 600px;
     display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .article form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 95%;
-    width: 30%;
-    background-color: white;
-  }
-  
-  .article form .content {
-    width: 70%;
-    margin: 5px 0;
+    width: 90%;
   }
 
-  .article form .content .contentTitle {
-    margin: 5px 0;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-    font-weight: 600;
-  }
-  
-  .article form .content .contentTitleBack {
-    display: flex;
-    align-items: center;
+  .article {
+    margin-top: -20px;
   }
 
-  .article form .content .contentTitleBack .birthEX {
-    margin-left: 20px;
-    font-size: 13px;
-    color: rgb(170, 169, 169);
-  }
-
-  .article form .content input {
-    box-sizing: border-box;
-    margin: 3px 0;
-    height: 30px;
-    width: 70%;
-    cursor: pointer;
-  }
-
-  .article form .content input:focus {
-    outline-color: rgb(170, 169, 169);
-  }
-
-  .article form .content select {
-    text-align: center;
-    box-sizing: border-box;
-    margin: 3px 0;
-    height: 30px;
-    width: 70%;    
-  }
-
-  .article form .content .inputBack {
-    background-color: rgb(201, 199, 199);
-    display: flex;
-    align-items: center;
-    height: 30px;
-  }
-  
   .article form .content .inputBack .checkId {
-    box-sizing: border-box;
-    height: 100%;
-    border: 2px solid black;
-    background-color: white;
-    cursor: pointer;
-  }
-
-  .article form .content .inputBack p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 13px;
     width: 30%;
   }
-
-  .article form button {
-    background-color: rgb(170, 169, 169);
-    font-weight: bold;    
-    border: none;
-    cursor: pointer;
-    height: 40px;
-    width: 70%;    
-    margin-top: 20px;
-    
-  }
-
-  .article form button:hover {
-    border: 2px solid black;
-    background-color: white;
-  }
-
-  @media screen and (max-width: 1181px) {
-    .article {
-      height: 76vh;
-      display: flex;
-    }
   
-    
+}
+
+@media screen and (max-width: 300px) {
+  .title {
+    display: none;
   }
-  
-  @media screen and (max-width: 300px) {
-   
-  }
+}
