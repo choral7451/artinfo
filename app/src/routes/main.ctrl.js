@@ -1,36 +1,79 @@
 const logger = require("../config/logger");
 const Board = require("../models/board/Board");
 const Admin = require("../models/admin/Admin");
+const Login = require("../models/login/Login");
+const Signup = require("../models/login/signup/Signup");
+
 const { Crawler } = require('../models/admin/mainCrawler');
 
 const output = {
     home : (req, res) => {
-        logger.info("GET /home 304 홈 화면으로 이동");
-        res.render('home');
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /home 304 홈 화면으로 이동");
+            res.render('home',{login: auth.user.id});
+        } else {
+            logger.info("GET /home 304 홈 화면으로 이동");
+            res.render('home', {login: null});    
+        }          
     },
 
     about : (req, res) => {
-        logger.info("GET /about 304 소개 화면으로 이동");
-        res.render('about');
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /about 304 소개 화면으로 이동");
+            res.render('about',{login: auth.user.id});
+        } else {
+            logger.info("GET /about 304 소개 화면으로 이동");
+            res.render('about', {login: null});    
+        }
     },
 
     login : (req, res) => {
-        logger.info("GET /login 304 로그인 화면으로 이동");
-        res.render('login');
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /login 304 로그인 화면으로 이동");
+            res.redirect('/');
+        } else {
+            logger.info("GET /login 304 로그인 화면으로 이동");
+            res.render('login', {login: null});    
+        }
+    },
+
+    logout : (req, res) => {   
+        const auth = req.session.passport
+        if(auth != undefined) {
+            req.session.destroy(function(){ 
+                req.session;
+                res.redirect('/');
+            });  
+        } else {
+            res.redirect('/login');
+        }          
     },
 
     signup : (req, res) => {
-        logger.info("GET /signup 304 회원가입 화면으로 이동");
-        res.render('signup');
+        const auth = req.session.passport
+        if(auth != undefined) {
+            res.render('/');
+        } else {
+            logger.info("GET /signup 304 회원가입 화면으로 이동");
+            res.render('signup');   
+        }
     },
 
-
-    admin : async (req, res) => {
-        const admin = new Admin();
-        const data = await admin.list();
-        
-        logger.info("GET /admin 304 관리자 화면으로 이동");
-        res.render('admin', {data});
+    admin : async function (req, res) { 
+        const auth =req.session.passport
+        if(auth) {
+            if(auth.user.id == "admin") {
+                const admin = new Admin();
+                const data = await admin.list(); 
+                logger.info("GET /admin 304 관리자 화면으로 이동");
+                res.render('admin', {login: auth.user.id, data});
+            }            
+        } else {
+            res.redirect('/');
+        }        
     },
 
     admin_delete : (req, res) => { 
@@ -44,16 +87,23 @@ const output = {
         const id = req.query.id;
         const admin = new Admin();
         const data = await admin.updateContentGet(id);
-        logger.info("GET /admin 304 관리자 화면으로 이동");
-        res.render('admin_update', {data});
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /admin/update 304 관리자 화면으로 이동");
+            res.render('admin_update', {login:auth.user.id, data});
+        } else {
+            res.redirect('/');    
+        }
     },
 
     admin_write : async (req, res) => {
-        // const id = req.query.id;
-        // const admin = new Admin();
-        // const data = await admin.updateContentGet(id);
-        // logger.info("GET /admin 304 관리자 화면으로 이동");
-        res.render('admin_write');
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /admin/write 304 관리자 화면으로 이동");
+            res.render('admin_write', {login:auth.user.id});
+        } else {
+            res.redirect('/');    
+        }
     },
 
     recruit_art_all : async (req, res) => {
@@ -82,8 +132,14 @@ const output = {
 
         const arrayData = {data, endNum, viewStartNumber, viewEndNumber}
 
-        logger.info("GET /recruit_art/all 304 모집공고(예술단체) 화면으로 이동");
-        res.render('recruit_art_all', {arrayData});
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /recruit_art/orchestra 304 모집공고(예술단체) 화면으로 이동");
+            res.render('recruit_art_all', {login: auth.user.id, arrayData});
+        } else {
+            logger.info("GET /recruit_art/orchestra 304 모집공고(예술단체) 화면으로 이동");
+            res.render('recruit_art_all', {login: null, arrayData});   
+        }
     },
 
     recruit_art_orchestra : async (req, res) => {
@@ -117,8 +173,14 @@ const output = {
         }  
         const arrayData = {data, endNum, viewStartNumber, viewEndNumber}
 
-        logger.info("GET /recruit_art/orchestra 304 모집공고(예술단체) 화면으로 이동");
-        res.render('recruit_art_orchestra', {arrayData});
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /recruit_art/orchestra 304 모집공고(예술단체) 화면으로 이동");
+            res.render('recruit_art_orchestra', {login: auth.user.id, arrayData});
+        } else {
+            logger.info("GET /recruit_art/orchestra 304 모집공고(예술단체) 화면으로 이동");
+            res.render('recruit_art_orchestra', {login: null, arrayData});   
+        }
     },
 
     recruit_art_choir : async (req, res) => {
@@ -151,8 +213,14 @@ const output = {
         }  
         const arrayData = {data, endNum, viewStartNumber, viewEndNumber}
 
-        logger.info("GET /recruit_art/choir 304 모집공고(예술단체) 화면으로 이동");
-        res.render('recruit_art_choir', {arrayData});
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /recruit_art/choir 304 모집공고(예술단체) 화면으로 이동");
+            res.render('recruit_art_choir', {login: auth.user.id, arrayData});
+        } else {
+            logger.info("GET /recruit_art/choir 304 모집공고(예술단체) 화면으로 이동");
+            res.render('recruit_art_choir', {login: null, arrayData});   
+        }
     },
 
     recruit_art_administration : async (req, res) => {
@@ -185,8 +253,14 @@ const output = {
         }  
         const arrayData = {data, endNum, viewStartNumber, viewEndNumber}
 
-        logger.info("GET /recruit_art/administration 304 모집공고(예술단체) 화면으로 이동");
-        res.render('recruit_art_administration', {arrayData});
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /recruit_art/administration 304 모집공고(예술단체) 화면으로 이동");
+            res.render('recruit_art_administration', {login: auth.user.id, arrayData});
+        } else {
+            logger.info("GET /recruit_art/administration 304 모집공고(예술단체) 화면으로 이동");
+            res.render('recruit_art_administration', {login: null, arrayData});   
+        }
     },
 
     recruit_art_etc : async (req, res) => {
@@ -219,8 +293,14 @@ const output = {
         }  
         const arrayData = {data, endNum, viewStartNumber, viewEndNumber}
 
-        logger.info("GET /recruit_art/etc 304 모집공고(예술단체) 화면으로 이동");
-        res.render('recruit_art_etc', {arrayData});
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /recruit_art/etc 304 모집공고(예술단체) 화면으로 이동");
+            res.render('recruit_art_etc', {login: auth.user.id, arrayData});
+        } else {
+            logger.info("GET /recruit_art/etc 304 모집공고(예술단체) 화면으로 이동");
+            res.render('recruit_art_etc', {login: null, arrayData});   
+        }
     },
 
     recruit_art_search : async (req, res) => {
@@ -294,16 +374,49 @@ const process = {
         res.redirect('/admin')
     },
 
+    signup_checkId : async (req, res) => {
+        console.log('왔다')
+        const reqBody = req.body;
+        const signup = new Signup();
+        const data = await signup.checkId(reqBody);
+        if(data[0] == null) {
+            res.send()
+        } else {
+            res.send("exist")
+        }
+    },
+
     signup_do : (req, res) => {
         const reqBody = req.body;
         console.log(reqBody)
         res.redirect('/')
     },
 
-    login_check : (req, res) => {
+    login_check : async (req, res) => {        
         const reqBody = req.body;
-        console.log(reqBody)
-    },
+        const login = new Login();
+        const data = await login.getMember(reqBody.id)
+        const user = {
+            id: data[0].ID,
+            password : data[0].PWD,
+            name : data[0].NAME,
+            email : data[0].EMAIL,
+            is_logined : true            
+        }
+        if(data[0] == null) {
+            res.write("<script>alert('There is no id')</script>");
+            res.write("<script>window.location=\"../login\"</script>");
+        } else {
+            if(reqBody.pwd == data[0].PWD) {
+                req.login(user, (err) => {
+                    return res.redirect('/');
+                })                
+            } else {
+                res.write("<script>alert('b')</script>");
+                res.write("<script>window.location=\"../login\"</script>");
+            }
+        } 
+    }
 }
 
 

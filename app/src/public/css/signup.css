@@ -53,6 +53,17 @@
     font-weight: 600;
   }
   
+  .article form .content .contentTitleBack {
+    display: flex;
+    align-items: center;
+  }
+
+  .article form .content .contentTitleBack .birthEX {
+    margin-left: 20px;
+    font-size: 13px;
+    color: rgb(170, 169, 169);
+  }
+
   .article form .content input {
     box-sizing: border-box;
     margin: 3px 0;
@@ -62,7 +73,7 @@
   }
 
   .article form .content input:focus {
-    outline-color: rgb(170, 169, 169);;
+    outline-color: rgb(170, 169, 169);
   }
 
   .article form .content select {
@@ -80,6 +91,14 @@
     height: 30px;
   }
   
+  .article form .content .inputBack .checkId {
+    box-sizing: border-box;
+    height: 100%;
+    border: 2px solid black;
+    background-color: white;
+    cursor: pointer;
+  }
+
   .article form .content .inputBack p {
     display: flex;
     justify-content: center;

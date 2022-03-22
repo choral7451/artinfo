@@ -1,13 +1,8 @@
 .section {
     height: 76vh;
   }
-  
-.article {
-  display: flex;
-  height: 68vh;
-}
 
-.title {
+.section .title {
   height: 8vh;
   display: flex;
   justify-content: center;
@@ -17,7 +12,7 @@
   border-bottom: 3px solid black;
   animation: title 2s 1 forwards;
 }
-  
+
 @keyframes title {
   from {
     margin-left: -100px;
@@ -29,14 +24,19 @@
   }
 }
 
-.logoBack {
+.section .article {
+  display: flex;
+  height: 68vh;
+}
+  
+.section .article .logoBack {
   width: 50vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.logoBack .logo {
+.section .article .logoBack .logo {
   font-family: 'Fredoka One', cursive;
   display: flex;
   flex-direction: column;
@@ -44,17 +44,11 @@
   align-items: center;
   border: 3px solid black;
   font-size: 70px;
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
 }
 
-.aboutLogo {
-  border: 2px solid black;
-  width: 60%;
-  height: 80%;
-}
-
-.textBack {
+.section .article .textBack {
   width: 50vw;
   display: flex;
   flex-direction: column;
@@ -63,15 +57,24 @@
   font-size: 30px;
 }
 
-.text1 {
+.section .article .textBack .text1 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 400;  
   animation: text 2s 1 forwards;
 }
 
-.text2 {
+.section .article .textBack .text2 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 400;
   animation: text 2s 1 forwards;
 }
 
-.text3 {
+.section .article .textBack .text3 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 400;
   animation: text 2s 1 forwards;
 }
 
@@ -87,23 +90,27 @@
 }
 
 @media screen and (max-width: 1181px) {
-  .article {
+  .section .title {
+    display: none;
+  }
+  
+  .section .article {
     height: 76vh;
     display: flex;
     flex-direction: column;
   }
 
-  .logoBack {
+  .section .article .logoBack {
     width: 100%;
     height: 38vh;
   }
 
-  .aboutLogo {
+  .section .article .logoBack .logo {
     width: 200px;
     height: 200px;
   }
 
-  .textBack {
+  .section .article .textBack {
     height: 38vh;
     width: 100%;
     font-size: 16px;
@@ -113,32 +120,22 @@
     align-items: center;
   }
 
-  .text1 {
+  .section .article .textBack .text1 {
     margin: 0;
     animation: 0;
   }
 
-  .text2 {
+  .section .article .textBack .text2 {
     animation: 0;
   }
-  .text3 {
+  .section .article .textBack .text3 {
     margin: 0;
     animation: 0;
-  }
-
-  .logo {
-    text-align: center;
-    width: 60vw;
-    height: 100%;
-  }
-
-  .title {
-    display: none;
-  }
+  } 
 }
 
 @media screen and (max-width: 300px) {
-  .textBack {
+  .section .article .textBack {
     font-size: 12px;
   }
 }

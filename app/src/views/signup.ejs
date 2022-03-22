@@ -21,14 +21,42 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Palette+Mosaic&display=swap" rel="stylesheet">
-   
-    <!-- JS import -->
-    <script type="text/javascript" src="/js/signup.js"></script>
-    <title>A-Supporter</title>
+    
+    <!-- favicon -->
+    <link rel="shortcut icon" href="#">
+    
+    <title>ARTINFO</title>
 </head>
-<body onload="outputScreen()">
+<body>
     
     <header id="header">
+        <div class="desktopHeader">
+            <div class="logo">
+                <a href="/">ARTINFO</a>
+            </div>
+            <nav>
+                <li><a href="/about">소개</a></li>
+                <li><a href="/recruit_art/all">채용정보</a></li>
+            </nav>
+            <div id="login" class="login">
+                <a href="/login">로그인</a>
+            </div>
+        </div>    
+    
+        <div class="mobileHeader">        
+            <nav>
+                <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
+            </nav>
+            <div class="logo">
+                <a href="/">ARTINFO</a>
+            </div>
+            <div class="login"><a href="/login"><i class="fa-regular fa-user"></i></a></div>
+        </div>
+        <div id="mobileMenu" class="mobileMenu"> 
+            <a href="/">Home</a>
+            <a href="/about">소개</a>
+            <a href="/recruit_art/all">채용정보</a>
+        </div>
     </header>
     
     <section class="section" id="section">
@@ -38,22 +66,21 @@
                 <div class="content">                
                     <div class="contentTitle">아이디</div>
                     <div class="inputBack">
-                        <input name="id" type="text">
-                        <p>중복확인</p>
+                        <input id="checkIdInput" name="checkId" type="text">
+                        <p id="checkId" class="checkId">중복 확인</p>
                     </div>                                        
                 </div>                
                 <div class="content">
                     <div class="contentTitle">비밀번호</div>
                     <div class="inputBack">
-                        <input name="pwd" type="text">
-                        <p>사용가능</p>
+                        <input id="pwd" name="pwd" type="text">
                     </div>                    
                 </div>
                 <div class="content">
                     <div class="contentTitle">비밀번호 재확인</div>
-                    <div class="inputBack">
+                    <div id="pwd2" class="inputBack">
                         <input name="pwdCheck"type="text">
-                        <p>확인</p>
+                        <p id="checkPwd"></p>
                     </div>                    
                 </div>
                 <div class="content">
@@ -64,22 +91,25 @@
                     </div>                    
                 </div>
                 <div class="content">
-                    <div class="contentTitle">생년월일</div>
+                    <div class="contentTitleBack">
+                        <div class="contentTitle">생년월일</div>
+                        <p class="birthEX">EX) 19910710(8자)</p>
+                    </div>                    
                     <div class="inputBack">
-                        <input name="birth" type="text">
-                        <p>확인</p>
+                        <input id="birth" name="birth" type="number" onfocus="this.value=``" onkeydown="javascript: return event.keyCode == 69 ? false : true">
+                        <p id="checkBirth"></p>
                     </div>                    
                 </div>
                 <div class="content">
                     <div class="contentTitle">성별</div>
                     <div class="inputBack">
-                        <select name="type">
-                            <option>성별</option>
+                        <select id="gender" name="type">
+                            <option value="">성별</option>
                             <option value="man">남자</option>
                             <option value="woman">여자</option>
                             <option value="undefined">선택안함</option>
                         </select>
-                        <p>확인</p>
+                        <p id="checkGender"></p>
                     </div>                    
                 </div>
                 <div class="content">
@@ -98,5 +128,7 @@
         <div>문의 : chorales@naver.com</div>
     </footer>
 
+    <!-- JS import -->
+    <script type="text/javascript" src="/js/signup.js"></script>
 </body>
 </html>

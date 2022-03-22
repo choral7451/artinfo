@@ -6,6 +6,7 @@ const ctrl = require('./main.ctrl');
 router.get('/' , ctrl.output.home);
 router.get('/about', ctrl.output.about);
 router.get('/login', ctrl.output.login);
+router.get('/logout', ctrl.output.logout);
 router.get('/signup', ctrl.output.signup);
 router.get('/admin', ctrl.output.admin);
 router.get('/admin/update', ctrl.output.admin_update);
@@ -21,6 +22,7 @@ router.get('/recruit_religion', ctrl.output.recruit_religion);
 
 router.post('/login_check', ctrl.process.login_check);
 router.post('/signup_do', ctrl.process.signup_do);
+router.post('/signup_checkId', ctrl.process.signup_checkId);
 router.post('/admin/update_save', ctrl.process.admin_update_save);
 router.post('/admin/save', ctrl.process.admin_save);
 router.post('/admin/crawling', ctrl.process.admin_crawling);

@@ -21,6 +21,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Palette+Mosaic&display=swap" rel="stylesheet">
     
+    <!-- favicon -->
+    <link rel="shortcut icon" href="#">
+    
     <!-- JS import -->
     <script type="text/javascript" src="/js/recruit_art_administration.js"></script>
 
@@ -28,6 +31,39 @@
 </head>
 <body onload="outputScreen()">
     <header id="header">
+        <div class="desktopHeader">
+            <div class="logo">
+                <a href="/">ARTINFO</a>
+            </div>
+            <nav>
+                <li><a href="/about">소개</a></li>
+                <li><a href="/recruit_art/all">채용정보</a></li>
+            </nav>
+            <div id="login" class="login">
+                <% if( login != null ) { %>
+                    <div class="name"><%= login %></div>
+                    <div class="bar">&nbsp&nbsp&nbsp | &nbsp&nbsp</div>
+                    <a href="/logout">logout</a>
+                <% } else { %>
+                    <a href="/login">로그인</a>
+                <% } %>
+            </div>
+        </div>    
+    
+        <div class="mobileHeader">        
+            <nav>
+                <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
+            </nav>
+            <div class="logo">
+                <a href="/">ARTINFO</a>
+            </div>
+            <div class="login"><a href="/login"><i class="fa-regular fa-user"></i></a></div>
+        </div>
+        <div id="mobileMenu" class="mobileMenu"> 
+            <a href="/">Home</a>
+            <a href="/about">소개</a>
+            <a href="/recruit_art/all">채용정보</a>
+        </div>
     </header>
 
     <section class="section" id="section">

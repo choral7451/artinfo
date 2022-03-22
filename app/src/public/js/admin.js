@@ -1,16 +1,3 @@
-document.write("<script type='text/javascript' src='/js/headerTemplate.js'><"+"/script>"); 
-
-const inputScreen = () => {
-    let innerWidth = window.innerWidth;
-    if( innerWidth < 1182 ) {
-        document.getElementById('header').innerHTML = mobileHeader;
-    } else {
-        document.getElementById('header').innerHTML = desktopHeader;
-    }
-}
-
-
-
 const saveButton = () => {
     const dataCount = document.getElementById('tbody').childElementCount
     document.getElementById('save').addEventListener('click', () => {
@@ -91,14 +78,10 @@ const crawlingButton = () => {
 }
 
 const outputScreen = () => {
-    inputScreen(); 
     saveButton();
     crawlingButton();
 };
 
-window.onresize = function() {   
-    inputScreen();
-}
 
 const clickMenu = () => {
     if(document.getElementById('header2').style.display == "flex") {
