@@ -10,7 +10,7 @@ const pageButton = () => {
             getQueryString = URLSearch.get('id')-1;
         }
 
-        document.getElementById('left').setAttribute('href', `http://localhost:3000/recruit_art/all?id=${getQueryString}`);
+        document.getElementById('left').setAttribute('href', `http://localhost:3000/recruit_religion/all?id=${getQueryString}`);
     });        
 
     document.getElementById('right').addEventListener('click', ()=> {
@@ -21,7 +21,7 @@ const pageButton = () => {
         } else {
             getQueryString = Number(URLSearch.get('id'))+1;
         }
-        document.getElementById('right').setAttribute('href', `http://localhost:3000/recruit_art/all?id=${getQueryString}`);
+        document.getElementById('right').setAttribute('href', `http://localhost:3000/recruit_religion/all?id=${getQueryString}`);
     })
 
     if(URLSearch.get('id') == null) {
@@ -41,7 +41,6 @@ const outputScreen = () => {
     pageButton();
 };
 
-
 const clickMenu = () => {
     if(document.getElementById('mobileMenu').style.display == "flex") {
         document.getElementById('mobileMenu').style.display="none";
@@ -49,5 +48,3 @@ const clickMenu = () => {
         document.getElementById('mobileMenu').style.display="flex";
     }    
 }
-
-

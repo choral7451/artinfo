@@ -1,0 +1,502 @@
+.section {
+    width: 100%;
+}
+
+.section 
+.title {
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    animation: title 2s 1 forwards;
+}
+
+@keyframes title {
+    from {
+        margin-left: -100px;
+        opacity: 0;
+    }
+    to {
+        margin-left: 0;
+        opacity: 1;
+    }
+}
+
+.section 
+.article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.section 
+.article 
+.contentBack {
+    width: 50%;
+    height: 820px;
+}
+
+.section 
+.article 
+.contentBack
+.titleBack {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+    border-bottom: 2px solid black;
+}
+
+.section 
+.article 
+.contentBack
+.titleBack
+p {
+    font-size: 20px;
+}
+
+.section 
+.article 
+.contentBack
+.titleBack
+input {
+    text-align: center;
+    height: 30px;
+    width: 70%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail {
+    display: flex;
+    padding-top: 20px;
+    border-bottom: 2px solid black;
+    height: 240px;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailLeft {
+    width: 30%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailLeft
+.expertBack {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailLeft
+.expertBack
+p {
+    text-align: center;
+    align-items: center;
+    font-size: 18px;
+    width: 30%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailLeft
+.expertBack
+.expert {
+    height: 30px;
+    width: 60%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailLeft
+.typeBack {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;    
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailLeft
+.typeBack
+p {
+    text-align: center;
+    align-items: center;
+    font-size: 18px;
+    width: 30%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailLeft
+.typeBack
+.type {
+    height: 30px;
+    width: 60%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailLeft
+.salary {
+    height: 40%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailLeft
+.salary
+.selectSalary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailLeft
+.salary
+.selectSalary
+p {
+    text-align: center;
+    font-size: 18px;
+    width: 30%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailLeft
+.salary
+.selectSalary
+select {
+    width: 60%;
+    height: 30px;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailLeft
+.salary
+.inputSalary {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailLeft
+.salary
+.inputSalary
+input {
+    text-align: center;
+    height: 20px;
+    width: 60%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailLeft
+.salary
+.inputSalary
+p {
+    text-align: center;
+    width: 10%;
+    font-size: 18px;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailRight {
+    width: 70%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailRight 
+.contentDetailRightUp {
+    height: 30%;
+    display: flex;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailRight 
+.contentDetailRightUp
+.name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailRight 
+.contentDetailRightUp
+.name
+p {
+    text-align: center;
+    width: 30%;
+    font-size: 18px;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailRight 
+.contentDetailRightUp
+.name
+input {
+    text-align: center;
+    height: 30px;
+    width: 60%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailRight 
+.contentDetailRightUp
+.phonenumber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailRight 
+.contentDetailRightUp
+.phonenumber
+p {
+    text-align: center;
+    width: 30%;
+    font-size: 18px;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailRight 
+.contentDetailRightUp
+.phonenumber
+input {
+    text-align: center;
+    height: 30px;
+    width: 60%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailRight 
+.contentDetailRightMiddle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailRight 
+.contentDetailRightMiddle
+p {
+    text-align: center;
+    font-size: 18px;
+    width: 15%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailRight 
+.contentDetailRightMiddle
+input {
+    height: 30px;
+    width: 80%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailRightBottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+} 
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailRightBottom
+p {
+    text-align: center;
+    font-size: 18px;
+    width: 15%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentDetail 
+.contentDetailRightBottom
+input {
+    height: 30px;
+    width: 80%;
+}
+
+.section 
+.article 
+.contentBack 
+.contentMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.section 
+.article 
+.contentBack 
+.contentMain
+p {
+    text-align: center;
+    font-size: 18px;
+}
+
+.section 
+.article 
+.contentBack 
+.contentMain
+textarea {
+    resize: none;
+    font-size: 18px;
+    width: 100%;
+    height: 200px;
+}
+
+.section 
+.article 
+.contentBack
+.saveBack {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section 
+.article 
+.contentBack
+.saveBack
+button {
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 10px;
+    height: 30px;
+    width: 200px;
+}
+
+.section 
+.article 
+.contentBack
+.saveBack
+button:hover {
+    border: 2px solid black;
+    background-color: white;
+}
+
+.section 
+.article 
+.cancelBack {
+    justify-content: center;
+}
+
+.section 
+.article 
+.cancelBack
+button {
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 30px;
+    width: 200px;
+}
+
+.section 
+.article 
+.cancelBack
+button:hover {
+    border: 2px solid black;
+    background-color: white;
+}

@@ -1,0 +1,326 @@
+.section {
+  width: 100%;
+}
+
+.section .title {
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  animation: title 2s 1 forwards;
+}
+
+.section .title .religion {
+  font-weight: bold;
+}
+
+.section .title a {
+  margin: 0 30px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+  "Lucida Sans", Arial, sans-serif;
+  color: black;
+  cursor: pointer;
+}
+
+.section .title a:hover {
+  border-bottom: 3px solid black;
+  font-weight: bold;
+}
+
+.section .article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.section .article .top {
+  display: flex;
+  align-items: end;
+  height: 100px;
+  width: 60%;
+}
+
+.section .article .top ul {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0;
+  margin-bottom: 20px;
+  width: 70%;
+}
+
+.section .article .top ul li {
+  margin: 0 0.8%;
+}
+.section .article .top ul li form button {
+  width: 80px;
+  font-size: 18px;
+  background-color: white;
+  border: none;
+}
+
+.section .article .top ul li form button:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.section .article .top .write {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-bottom: 20px;
+  width: 30%;
+}
+
+.section .article .top .write button {
+  border: 2px solid rgb(170, 169, 169);;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.section .article .top .write button:hover {
+  border: 2px solid black;
+  background-color: white;
+}
+
+.section .article .top .search input:focus {
+  outline: none;
+}
+
+.section .article .top .search input:focus::placeholder {
+  color:transparent;
+}
+
+.section .article .top .search button {
+  background-color: white;
+  border: none;
+  font-size: 1.7rem;
+  padding-bottom: 0.4rem;
+  cursor: pointer;
+}
+
+.section .article .board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 58%;
+  width: 60%;
+}
+
+.section .article .board table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.section .article .board table thead {
+  height: 4rem;
+}
+
+.section .article .board table thead tr td {
+  border-top: 2px solid black;
+}
+
+.section .article .board table tbody {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+  "Lucida Sans", Arial, sans-serif;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  font-size: 1rem;
+}
+
+.section .article .board table tbody tr {
+  height: 3rem;
+}
+
+.section .article .board table tbody tr td {
+  padding: 5px 0;
+}
+
+.section .article .board table tbody tr td a {
+  color: black;
+}
+
+.section .article .board table tbody tr td {
+  border-bottom: 2px solid rgb(170, 169, 169);
+}
+
+.section .article .board table td:nth-child(1) {
+  width: 5%;
+}
+
+.section .article .board table td:nth-child(2) {
+  width: 10%;
+}
+
+
+.section .article .board table td:nth-child(3) {
+  width: 10%;
+}
+
+
+.section .article .board table td:nth-child(4) {
+  width: 10%;
+}
+
+.section .article .board table td:nth-child(5) {
+  width: 35%;
+}
+
+.section .article .board table td:nth-child(6) {
+  width: 10%;
+}
+
+.section .article .board table td:nth-child(7) {
+  width: 10%;
+}
+
+.section .article .board table tbody tr:last-child td {
+  border-bottom: 2px solid black;
+}
+
+.section .article .paging {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 70px;
+}
+.section .article .paging .ctrlBack {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.section .article .paging .ctrlBack .pageNum {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+}
+
+.section .article .paging .ctrlBack .pageNum form button {
+  cursor: pointer;
+  border: none;
+  border-radius: 10%;
+  font-size: 18px;
+  width: 40px;
+  height: 30px;
+  background-color: white;
+}
+.section .article .paging .ctrlBack a i {
+  color: black;
+}
+
+@keyframes title {
+  from {
+    margin-left: -100px;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0;
+    opacity: 1;
+  }
+}
+
+
+@media screen and (max-width: 1919px) {
+  .section .article .top {
+    height: 80px;
+  }
+
+  .section .article .top ul {
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  .section .article .top .search {
+    margin-bottom: 10px;
+  }
+
+  .section .article .top .search i {
+    padding-bottom: 0.4rem;
+  }
+
+  .section .article .board table thead {
+    height: 3rem;
+  }
+
+  .section .article .board table tbody {
+    font-size: 0.8rem;
+  }
+
+  .section .article .board table tbody tr {
+    height: 2rem;
+  }
+}
+
+@media screen and (max-width: 1182px) {
+  .section .title {
+    display: none;
+  }
+
+  .section .article .top {
+    flex-direction: column-reverse;
+    height: 20%;
+    width: 90%;
+  }
+
+  .section .article .top ul {
+    justify-content: center;
+    height: 50%;
+    width: 100%;
+  }
+  
+  .section .article .top ul li form button {
+    width: 60px;
+    font-size: 12px;
+    background-color: white;
+    border: none;
+  }
+
+  .section .article .top .search {
+    height: 50%;
+    width: 100%;
+  }
+
+  .section .article .board {
+    width: 90%;
+  }
+
+  .section .article .paging {
+    width: 90%;
+  }
+
+  .section .article .paging .ctrlBack {
+    width: 100%;
+  }
+
+  .section .article .board table td:nth-child(1) {
+    display: none;
+  }
+
+  .section .article .board table td:nth-child(2) {
+    width: 20%;
+  }
+
+  .section .article .board table td:nth-child(3) {
+    width: 60%;
+  }
+
+
+  .section .article .board table td:nth-child(4) {
+    width: 20%;
+  }
+
+}

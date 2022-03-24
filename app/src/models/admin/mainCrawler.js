@@ -26,16 +26,21 @@ module.exports = {
         const suwon = await Suwon();
         const seongnam = await Seongnam();
         const ansan = await Ansan();
-        
         const anyang = await Anyang();
         
         if(nck_artist[0] != undefined) {
+            logger.info(`국립합창단(단원) 데이터 ${nck_artist.length} 건 받아옴`);
             data.push(nck_artist);
-        } 
+        } else {
+            logger.info("국립합창단(단원) 데이터 0 건 받아옴");
+        }
         
-        if(nck_administration[0] != undefined) {
+        if(nck_administration[0] != undefined) {            
+            logger.info(`국립합창단(행정) 데이터 ${nck_administration.length} 건 받아옴`);
             data.push(nck_administration); 
-        }   
+        } else {
+            logger.info("국립합창단(행정) 데이터 0 건 받아옴");
+        }  
         
         if(busan[0] != undefined) {
             data.push(busan);

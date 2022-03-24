@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <!-- 이모티콘  CDN -->
+    <script src="https://kit.fontawesome.com/6dca3e9c71.js" crossorigin="anonymous"></script>
+   
+    <!-- 폰트 설정 CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
+    
+    <!-- CSS import -->
+    <link rel="stylesheet" href="/css/recruit_religion_write.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Palette+Mosaic&display=swap" rel="stylesheet">
+    
+    <!-- favicon -->
+    <link rel="shortcut icon" href="#">
+
+    <title>ARTINFO</title>
+</head>
+<body>    
+    <header id="header">
+        <div class="desktopHeader">
+            <div class="logo">
+                <a href="/">ARTINFO</a>
+            </div>
+            <nav>
+                <li><a href="/about">소개</a></li>
+                <li><a href="/recruit_art/all">채용정보</a></li>
+            </nav>
+            <div id="login" class="login">
+                <% if( login != null ) { %>
+                    <div class="name"><%= login %></div>
+                    <div class="bar">&nbsp&nbsp&nbsp | &nbsp&nbsp</div>
+                    <a href="/logout">logout</a>
+                <% } else { %>
+                    <a href="/login">로그인</a>
+                <% } %>
+            </div>
+        </div>    
+    
+        <div class="mobileHeader">        
+            <nav>
+                <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
+            </nav>
+            <div class="logo">
+                <a href="/">ARTINFO</a>
+            </div>
+            <div class="login"><a href="/login"><i class="fa-regular fa-user"></i></a></div>
+        </div>
+        <div id="mobileMenu" class="mobileMenu"> 
+            <a href="/">Home</a>
+            <a href="/about">소개</a>
+            <a href="/recruit_art/all">채용정보</a>
+        </div> 
+    </header>
+    <section class="section" id="section">
+        <div class="title">글쓰기</div>
+        <article class="article">
+            <form action="/recruit_religion/write" class="contentBack" method="post" onSubmit="return confirm('공고를 등록하시겠습니까?')">
+                <div class="titleBack">
+                    <p>제 목</p>
+                    <input type="text" name="title"/>
+                </div>
+                <div class="contentDetail">
+                    <div class="contentDetailLeft">
+                        <div class="expertBack">
+                            <p>분야</p>
+                            <select class="expert" name="expert">
+                                <option>분야</option>
+                                <option value="지휘자">지휘자</option>
+                                <option value="소프라노">소프라노</option>
+                                <option value="알토">알토</option>
+                                <option value="테너">테너</option>
+                                <option value="베이스">베이스</option>
+                                <option value="반주자">반주자</option>                                
+                            </select>
+                        </div>
+                        <div class="typeBack">
+                            <p>분류</p>
+                            <select class="type" name="type">
+                                <option>분류</option>
+                                <option value="기독교">기독교</option>
+                                <option value="천주교">천주교</option>
+                                <option value="불교">불교</option>
+                                <option value="기타">기타</option>
+                            </select>
+                        </div>
+                        <div class="salary">
+                            <div class="selectSalary">
+                                <p>급여</p>
+                                <select id="salaryType" name="salaryType">
+                                    <option>선택</option>
+                                    <option value="협의 후 결정">협의 후 결정</option>
+                                    <option id="direct" value="won">직접 입력</option>
+                                </select>   
+                            </div>
+                            <div id="inputSalary" class="inputSalary">
+                                <input type="text" onKeyup="inputNumberAutoComma(this);" value="" >  
+                                <p>원</p>
+                            </div>                                                                              
+                        </div>
+                    </div>
+                    <div class="contentDetailRight">
+                        <div class="contentDetailRightUp">
+                            <div class="name">
+                                <p>단체명</p>
+                                <input type="text" name="name"/>
+                            </div>
+                            <div class="phonenumber">
+                                <p>연락처</p>
+                                <input type="number" maxlength="11" oninput="maxLengthCheck(this)" id="phonenumber" onfocus="this.placeholder = ''" onblur="this.placeholder = '숫자만 입력해주세요.'" name="phonenumber" onkeydown="javascript: return event.keyCode == 69 ? false : true" placeholder="숫자만 입력해주세요."/>
+                            </div>
+                        </div>
+                        <div class="contentDetailRightMiddle">
+                            <p>주소</p>
+                            <input type="text" name="address"/>
+                        </div>
+                        <div class="contentDetailRightBottom">
+                            <p>이메일</p>
+                            <input type="text" name="email"/>
+                        </div>                     
+                    </div>                    
+                </div>                
+                <div class="contentMain">
+                    <p>내 용</p>
+                    <textarea id="textarea" name="contentMain"></textarea>
+                </div>
+                <div class="saveBack">
+                    <button >저 장</button>
+                </div>
+            </form>
+            <form action="/recruit_religion/all" class="cancelBack">
+                <button>취 소</button>
+            </form>
+        </article>
+    </section>
+    
+    <footer id="footer">
+        <div>문의 : chorales@naver.com</div>
+    </footer>
+
+    <!-- JS import -->
+    <script type="text/javascript" src="/js/recruit_religion_write.js"></script>
+</body>
+</html>

@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
 
     <!-- CSS import -->
-    <link rel="stylesheet" href="/css/recruit_art.css">
+    <link rel="stylesheet" href="/css/recruit_religion.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/footer.css">
@@ -25,7 +25,7 @@
     <link rel="shortcut icon" href="#">
     
     <!-- JS import -->
-    <script type="text/javascript" src="/js/recruit_art_choir.js"></script>
+    <script type="text/javascript" src="/js/recruit_religion.js"></script>
 
     <title>ARTINFO</title>
 </head>
@@ -63,7 +63,7 @@
             <a href="/">Home</a>
             <a href="/about">소개</a>
             <a href="/recruit_art/all">채용정보</a>
-        </div>
+        </div> 
     </header>
 
     <section class="section" id="section">
@@ -75,64 +75,67 @@
             <div class="top">
                 <ul>
                     <li>
-                        <form action="/recruit_art/all">
+                        <form action="/recruit_religion/all">
                             <button id="typeAll" class="type">전체</button>
                         </form>
                     </li>
                     <li>
-                        <form action="/recruit_art/orchestra">
-                            <button id="typeOrchestra" class="type">교향악단</button>
+                        <form action="/recruit_religion/conductor">
+                            <button id="typeOrchestra" class="type">지휘자</button>
                         </form>
                     </li>
                     <li>
-                        <form action="/recruit_art/choir">
-                            <button id="typeChoir" class="type">합창</button>
+                        <form action="/recruit_religion/solist">
+                            <button id="typeChoir" class="type">솔리스트</button>
                         </form>
                     </li>
                     <li>
-                        <form action="/recruit_art/administration">
-                            <button id="typeAdministration" class="type">행정</button>
-                        </form>
-                    </li>
-                    <li>
-                        <form action="/recruit_art/etc">
-                            <button id="typeEtc" class="type">기타</button>
+                        <form action="/recruit_religion/accompanist">
+                            <button id="typeAdministration" class="type">반주자</button>
                         </form>
                     </li>
                 </ul>
-                <!-- <form action="/recruit_art/search" class="search" method="get">
-                    <div class="bottom_line">
-                        <input type="text" name="name" placeholder="검색어를 입력해주세요."/>
-                        <button class="fa-solid fa-magnifying-glass"></button>
-                    </div>
-                </form> -->
+                    <% if( login != null ) { %>
+                        <form action="/recruit_religion/write" class="write" method="get">
+                            <button class="writeButton">글쓰기</button>
+                        </form>
+                    <% } else { %>
+                        <form action="/login" class="write" method="get">
+                            <button class="writeButton">글쓰기</button>
+                        </form>
+                    <% } %>                
             </div>
-
             <div class="board" id="board">
                 <table> 
                     <thead>
                         <tr>
                             <td>번호</td>
+                            <td>분류</td>
                             <td>단체명</td>
+                            <td>분야</td>                            
                             <td>제목</td>
+                            <td>글쓴이</td>
                             <td>게시일</td>
                         </tr>
                     </thead> 
-                    <tbody>
+                    <tbody> 
                         <% for( const list of arrayData.data ) { %>
                             <tr>
                                 <td ><%= list.ID %></td>
-                                <td ><%= list.CNAME %></td>                                
-                                <td ><a href=<%= list.URL %>><%= list.TITLE %></a></td>
+                                <td ><%= list.TYPE %></td> 
+                                <td ><%= list.NAME %></td> 
+                                <td ><%= list.EXPERTTYPE %></td>                                
+                                <td ><a href="/recruit_religion/content?id=<%= list.ID %>"><%= list.TITLE %></a></td>
+                                <td ><%= list.WRITER %></td> 
                                 <td ><%= list.DATE %></td>
-                            </tr>                            
-                        <% } %>    
+                            </tr>                         
+                        <% } %>
                     </tbody>
                 </table>    
             </div>
             <div class="paging">
                 <div class="ctrlBack">
-                    <a href="/recruit_art/choir" id="leftStart" class="leftStart">
+                    <a href="/recruit_religion/all" id="leftStart" class="leftStart">
                         <i class="arrow fa-solid fa-angles-left"></i>
                     </a>
 
@@ -153,7 +156,7 @@
                         <i class="arrow fa-solid fa-angle-right"></i>
                     </a>
                              
-                    <a href="/recruit_art/choir?id=<%= arrayData.endNum %>"  id="rightEnd" class="rightEnd" >
+                    <a href="/recruit_religion/all?id=<%= arrayData.endNum %>"  id="rightEnd" class="rightEnd" >
                         <i class="arrow fa-solid fa-angles-right"></i>
                     </a>
                 </div>

@@ -63,14 +63,17 @@ const output = {
     },
 
     admin : async function (req, res) { 
-        const auth =req.session.passport
+        const auth = req.session.passport
+        console.log(auth.user.id)
         if(auth) {
             if(auth.user.id == "admin") {
                 const admin = new Admin();
                 const data = await admin.list(); 
                 logger.info("GET /admin 304 관리자 화면으로 이동");
                 res.render('admin', {login: auth.user.id, data});
-            }            
+            } else {
+                res.redirect('/');
+            }           
         } else {
             res.redirect('/');
         }        
@@ -107,7 +110,6 @@ const output = {
     },
 
     recruit_art_all : async (req, res) => {
-        
         const id = req.query.id;
         const path = "All";
         const board = new Board();
@@ -337,10 +339,65 @@ const output = {
         res.render('recruit_art_search', {arrayData});
     },
 
+    recruit_religion_content : async (req, res) => {
+        const query = req.query.id;
+        const board = new Board;
+        const data = await board.religionListContent(query);
+        
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /recruit_religion/content 304 모집공고(종교) 화면으로 이동");
+            res.render('recruit_religion_content', {login: auth.user.id, data });
+        } else {
+            logger.info("GET /recruit_religion/content 304 모집공고(종교) 화면으로 이동");
+            res.render('recruit_religion_content', {login: null, data });   
+        }
+    },
+ 
+    recruit_religion_all : async (req, res) => {
+        const id = req.query.id;
+        const path = "All";
+        const board = new Board();
+        const data = await board.religionList(path, id);
+        let viewEndNumber;
+        let viewStartNumber;
+    
+        const listCount = await board.religionListCount(path);
+        const endNum = Math.floor(listCount[0].CNT/10+1);
+        
+        if(id == undefined || id <= 5 ) {   
+            viewStartNumber = 1;
+            if(endNum < 6 ) {
+                viewEndNumber = endNum
+            } else {
+                viewEndNumber = 5;
+            }   
+        } else {
+            viewStartNumber = id-4
+            viewEndNumber = id
+        }  
 
-    recruit_religion : async (req, res) => {
-        logger.info("GET /recruit 304 모집공고(종교) 화면으로 이동");
-        res.render('recruit_religion');
+        const arrayData = {data, endNum, viewStartNumber, viewEndNumber}
+        
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /recruit_religion/all 304 모집공고(종교) 화면으로 이동");
+            res.render('recruit_religion_all', {login: auth.user.id, arrayData});
+        } else {
+            logger.info("GET /recruit_religion/all 304 모집공고(종교) 화면으로 이동");
+            res.render('recruit_religion_all', {login: null, arrayData});   
+        }
+    },
+
+    recruit_religion_write : async (req, res) => {
+        const auth = req.session.passport
+        if(auth) {
+            logger.info("GET /recruit_religion/write 304 모집공고(종교)/글쓰기 화면으로 이동");
+            res.render('recruit_religion_write', {login: auth.user.id});
+        } else {
+            logger.info("GET /recruit_religion/write 304 모집공고(종교)/글쓰기 화면으로 이동");
+            res.redirect('/recruit_religion/all')
+        }
     },
 }
 
@@ -426,9 +483,16 @@ const process = {
                 }
             } 
         }
-    }
-}
+    },
 
+    recruit_religion_write : async (req, res) => {
+        const reqBody = req.body;
+        const id = req.session.passport.user.id
+        const board = new Board
+        await board.religionWrite(reqBody, id);
+        res.redirect('/recruit_religion/all')
+    },
+}
 
 module.exports = {
     output,

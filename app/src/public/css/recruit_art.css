@@ -13,6 +13,10 @@
     animation: title 2s 1 forwards;
   }
 
+  .section .title .art {
+    font-weight: bold;
+  }
+
   .section .title a {
     margin: 0 30px;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -294,8 +298,9 @@
     }
 
     .section .article .board table td:nth-child(3) {
-      display: 60%;
+      width: 60%;
     }
+
 
     .section .article .board table td:nth-child(4) {
       width: 20%;
