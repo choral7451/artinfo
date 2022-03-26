@@ -12,7 +12,7 @@ class SignupStorage {
     }
 
     static signup(data) {
-        console.log(data.pwd)
+        console.log(data)
         return new Promise((resolve, reject) => {
             const query = `INSERT INTO MEMBER (ID, PWD, NAME, BIRTH, GENDER, EMAIL) VALUES(
                 "${data.id}", 
