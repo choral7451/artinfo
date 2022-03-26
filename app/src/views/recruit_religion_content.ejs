@@ -101,7 +101,10 @@
             </div>
             <div class="ctrlButton">
                 <% if( login == data[0].WRITER ) { %>
-                    <Button id="updateContent">수정</Button>
+                    <form action="/recruit_religion/update" onSubmit="return confirm('게시글을 수정하시겠습니까?')">
+                        <input type="hidden" name="id" value=<%= data[0].ID %>>
+                        <Button id="updateContent">수정</Button>
+                    </form>                    
                     <Button id="deleteContent">삭제</Button>
                     <Button id="getList">목록</Button>              
                 <% } else { %>

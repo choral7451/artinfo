@@ -166,6 +166,14 @@ textarea:focus {
 
 .section
 .article
+.ctrlButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section
+.article
 .ctrlButton
 button {
     margin: 20px 10px;

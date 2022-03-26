@@ -1,15 +1,3 @@
-document.getElementById('mainTitle').addEventListener('keyup', (e) => {
-    const value = e.target.value
-
-    const button = document.getElementById('save')
-    if(value != 0) {
-        button.removeAttribute('disabled');
-    }
-})
-
-
-        
-
 document.getElementById('salaryType').addEventListener('change', (e) => {
     const value = e.target.value
     if(value == 'won') {

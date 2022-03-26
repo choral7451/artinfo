@@ -58,6 +58,24 @@ class Board {
             return { success: false, err };
         }
     }
+
+    async religionDelete(id) {
+        try {
+            const list = await BoardStorage.religionDelete(id);
+            return list;
+        } catch (err) {
+            return { success: false, err };
+        }
+    }
+
+    async religionUpdate(id) {
+        try {
+            const list = await BoardStorage.religionUpdate(id);
+            return list;
+        } catch (err) {
+            return { success: false, err };
+        }
+    }
 }
 
 module.exports = Board;

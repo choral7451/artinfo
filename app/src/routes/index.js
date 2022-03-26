@@ -20,7 +20,11 @@ router.get('/recruit_art/etc', ctrl.output.recruit_art_etc);
 router.get('/recruit_art/search', ctrl.output.recruit_art_search);
 router.get('/recruit_religion/content', ctrl.output.recruit_religion_content);
 router.get('/recruit_religion/all', ctrl.output.recruit_religion_all);
+router.get('/recruit_religion/conductor', ctrl.output.recruit_religion_conductor);
+router.get('/recruit_religion/solists', ctrl.output.recruit_religion_solists);
+router.get('/recruit_religion/accompanist', ctrl.output.recruit_religion_accompanist);
 router.get('/recruit_religion/write', ctrl.output.recruit_religion_write);
+router.get('/recruit_religion/update', ctrl.output.recruit_religion_update);
 
 router.post('/login_check', ctrl.process.login_check);
 router.post('/signup_do', ctrl.process.signup_do);

@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
     
     <!-- CSS import -->
-    <link rel="stylesheet" href="/css/recruit_religion_write.css">
+    <link rel="stylesheet" href="/css/recruit_religion_update.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/footer.css">
@@ -65,28 +65,28 @@
     <section class="section" id="section">
         <div class="title">글쓰기</div>
         <article class="article">
-            <form action="/recruit_religion/write" class="contentBack" method="post" onSubmit="return confirm('공고를 등록하시겠습니까?')">
+            <form action="/recruit_religion/write" class="contentBack" method="post" onSubmit="return confirm('게시글 수정을 완료하시겠습니까?')">
                 <div class="titleBack">
                     <p>제 목</p>
-                    <input id="mainTitle" type="text" name="title"/>
+                    <input type="text" name="title" value=<%= data[0].TITLE %>/>
                 </div>
                 <div class="contentDetail">
                     <div class="contentDetailLeft">
                         <div class="expertBack">
                             <p>분야</p>
-                            <select class="expert" name="expert">
+                            <select class="expert" name="expert" >
                                 <option>분야</option>
                                 <option value="지휘자">지휘자</option>
-                                <option value="솔리스트">소프라노</option>
-                                <option value="솔리스트">알토</option>
-                                <option value="솔리스트">테너</option>
-                                <option value="솔리스트">베이스</option>
+                                <option value="소프라노">소프라노</option>
+                                <option value="알토">알토</option>
+                                <option value="테너">테너</option>
+                                <option value="베이스">베이스</option>
                                 <option value="반주자">반주자</option>                                
                             </select>
                         </div>
                         <div class="typeBack">
                             <p>분류</p>
-                            <select class="type" name="type">
+                            <select class="type" name="type" >
                                 <option>분류</option>
                                 <option value="기독교">기독교</option>
                                 <option value="천주교">천주교</option>
@@ -97,14 +97,14 @@
                         <div class="salary">
                             <div class="selectSalary">
                                 <p>급여</p>
-                                <select id="salaryType" name="salaryType">
+                                <select id="salaryType" name="salaryType" >
                                     <option>선택</option>
                                     <option value="협의 후 결정">협의 후 결정</option>
                                     <option id="direct" value="won">직접 입력</option>
                                 </select>   
                             </div>
                             <div id="inputSalary" class="inputSalary">
-                                <input type="text" name="direct" onKeyup="inputNumberAutoComma(this);" value="" >  
+                                <input type="text" onKeyup="inputNumberAutoComma(this);" value="" >  
                                 <p>원</p>
                             </div>                                                                              
                         </div>
@@ -113,29 +113,29 @@
                         <div class="contentDetailRightUp">
                             <div class="name">
                                 <p>단체명</p>
-                                <input type="text" name="name"/>
+                                <input type="text" name="name" value="<%= data[0].NAME %>" />
                             </div>
                             <div class="phonenumber">
                                 <p>연락처</p>
-                                <input type="number" maxlength="11" oninput="maxLengthCheck(this)" id="phonenumber" onfocus="this.placeholder = ''" onblur="this.placeholder = '숫자만 입력해주세요.'" name="phonenumber" onkeydown="javascript: return event.keyCode == 69 ? false : true" placeholder="숫자만 입력해주세요."/>
+                                <input type="number" value=<%= data[0].PNUMBER %> oninput="maxLengthCheck(this)" id="phonenumber" onfocus="this.placeholder = ''" onblur="this.placeholder = '숫자만 입력해주세요.'" name="phonenumber" onkeydown="javascript: return event.keyCode == 69 ? false : true" placeholder="숫자만 입력해주세요."/>
                             </div>
                         </div>
                         <div class="contentDetailRightMiddle">
                             <p>주소</p>
-                            <input type="text" name="address"/>
+                            <input type="text" name="address" value=<%= data[0].ADDRESS %> >
                         </div>
                         <div class="contentDetailRightBottom">
                             <p>이메일</p>
-                            <input type="text" name="email"/>
+                            <input type="text" name="email" value=<%= data[0].EMAIL %> >
                         </div>                     
                     </div>                    
                 </div>                
                 <div class="contentMain">
                     <p>내 용</p>
-                    <textarea spellcheck="false"  id="textarea" name="contentMain"></textarea>
+                    <textarea spellcheck="false"  id="textarea" name="contentMain" ><%= data[0].CONTENT %></textarea>
                 </div>
                 <div class="saveBack">
-                    <button id="save" disabled>저 장</button>
+                    <button >저 장</button>
                 </div>
             </form>
             <form action="/recruit_religion/all" class="cancelBack">
@@ -149,6 +149,6 @@
     </footer>
 
     <!-- JS import -->
-    <script type="text/javascript" src="/js/recruit_religion_write.js"></script>
+    <script type="text/javascript" src="/js/recruit_religion_update.js"></script>
 </body>
 </html>

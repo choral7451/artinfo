@@ -66,7 +66,6 @@ const output = {
 
     admin : async function (req, res) { 
         const auth = req.session.passport
-        console.log(auth.user.id)
         if(auth) {
             if(auth.user.id == "admin") {
                 const admin = new Admin();
@@ -393,6 +392,112 @@ const output = {
         }
     },
 
+    recruit_religion_conductor : async (req, res) => {
+        const id = req.query.id;
+        const path = "지휘자";
+        const board = new Board();
+        const data = await board.religionList(path, id);
+        let viewEndNumber;
+        let viewStartNumber;
+    
+        const listCount = await board.religionListCount(path);
+        const endNum = Math.ceil(listCount[0].CNT/10);
+        
+        if(id == undefined || id <= 5 ) {   
+            viewStartNumber = 1;
+            if(endNum < 6 ) {
+                viewEndNumber = endNum
+            } else {
+                viewEndNumber = 5;
+            }   
+        } else {
+            viewStartNumber = id-4
+            viewEndNumber = id
+        }  
+
+        const arrayData = {data, endNum, viewStartNumber, viewEndNumber}
+        
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /recruit_religion/conductor 304 모집공고(종교) 화면으로 이동");
+            res.render('recruit_religion_conductor', {login: auth.user.id, arrayData});
+        } else {
+            logger.info("GET /recruit_religion/all 304 모집공고(종교) 화면으로 이동");
+            res.render('recruit_religion_conductor', {login: null, arrayData});   
+        }
+    },
+
+    recruit_religion_solists : async (req, res) => {
+        const id = req.query.id;
+        const path = "솔리스트";
+        const board = new Board();
+        const data = await board.religionList(path, id);
+        let viewEndNumber;
+        let viewStartNumber;
+    
+        const listCount = await board.religionListCount(path);
+        const endNum = Math.ceil(listCount[0].CNT/10);
+        
+        if(id == undefined || id <= 5 ) {   
+            viewStartNumber = 1;
+            if(endNum < 6 ) {
+                viewEndNumber = endNum
+            } else {
+                viewEndNumber = 5;
+            }   
+        } else {
+            viewStartNumber = id-4
+            viewEndNumber = id
+        }  
+
+        const arrayData = {data, endNum, viewStartNumber, viewEndNumber}
+        
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /recruit_religion/solists 304 모집공고(종교) 화면으로 이동");
+            res.render('recruit_religion_solists', {login: auth.user.id, arrayData});
+        } else {
+            logger.info("GET /recruit_religion/solists 304 모집공고(종교) 화면으로 이동");
+            res.render('recruit_religion_solists', {login: null, arrayData});   
+        }
+    },
+
+    recruit_religion_accompanist : async (req, res) => {
+        const id = req.query.id;
+        const path = "반주자";
+        const board = new Board();
+        const data = await board.religionList(path, id);
+        let viewEndNumber;
+        let viewStartNumber;
+    
+        const listCount = await board.religionListCount(path);
+        const endNum = Math.ceil(listCount[0].CNT/10);
+        
+        if(id == undefined || id <= 5 ) {   
+            viewStartNumber = 1;
+            if(endNum < 6 ) {
+                viewEndNumber = endNum
+            } else {
+                viewEndNumber = 5;
+            }   
+        } else {
+            viewStartNumber = id-4
+            viewEndNumber = id
+        }  
+
+        const arrayData = {data, endNum, viewStartNumber, viewEndNumber}
+        
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /recruit_religion/accompanist 304 모집공고(종교) 화면으로 이동");
+            res.render('recruit_religion_accompanist', {login: auth.user.id, arrayData});
+        } else {
+            logger.info("GET /recruit_religion/accompanist 304 모집공고(종교) 화면으로 이동");
+            res.render('recruit_religion_accompanist', {login: null, arrayData});   
+        }
+    },
+
+
     recruit_religion_write : async (req, res) => {
         const auth = req.session.passport
         if(auth) {
@@ -401,6 +506,25 @@ const output = {
         } else {
             logger.info("GET /recruit_religion/write 304 모집공고(종교)/글쓰기 화면으로 이동");
             res.redirect('/recruit_religion/all')
+        }
+    },
+
+    recruit_religion_update : async (req, res) => {
+        const id = req.query.id;     
+        const board = new Board
+        const data = await board.religionUpdate(id);
+        const auth = req.session.passport
+        
+        if(auth != undefined) {
+            if(auth.user.id == data[0].WRITER) {
+                logger.info("GET /recruit_religion/update 304 모집공고(종교) 화면으로 이동");
+                res.render('recruit_religion_update', {login: auth.user.id, data});
+            } else {
+                res.redirect('/recruit_religion/all')
+            }
+        } else {
+            logger.info("GET /recruit_religion/update 304 모집공고(종교) 화면으로 이동");
+            res.redirect('/recruit_religion/all')  
         }
     },
 }
@@ -453,25 +577,28 @@ const process = {
             reqBody.pwd = hash
             signup.signup(reqBody);
         })
-      
-        res.write("<script>alert('Signup Success')</script>");
+        res.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'});
+        res.write("<script>alert('회원가입에 성공했습니다.')</script>");
         res.write("<script>window.location=\"../login\"</script>");
     },
 
     login_check : async (req, res) => {        
         const reqBody = req.body;
         if(reqBody.id == 0) {
+            res.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'});
             res.write("<script type='text/javascript' charset='utf-8'>alert('아이디를 입력해주세요.')</script>");
             res.write("<script >window.location=\"../login\"</script>");
         } else if(reqBody.pwd == 0) {
-            res.write("<script>alert('b')</script>");
+            res.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'});
+            res.write("<script>alert('비밀번호를 입력해주세요.')</script>");
             res.write("<script>window.location=\"../login\"</script>");
         } else {
             const login = new Login();
             const data = await login.getMember(reqBody.id)
             
             if(data[0] == null) {
-                res.write("<script>alert('There is no id')</script>");
+                res.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'});
+                res.write("<script>alert('해당 아이디가 존재하지 않습니다.')</script>");
                 res.write("<script>window.location=\"../login\"</script>");
             } else {
 
@@ -489,7 +616,8 @@ const process = {
                             return res.redirect('/');
                         })                
                     } else {
-                        res.write("<script>alert('b')</script>");
+                        res.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'});
+                        res.write("<script>alert('비밀번호를 확인해주세요.')</script>");
                         res.write("<script>window.location=\"../login\"</script>");
                     }
                 } )
@@ -511,10 +639,10 @@ const process = {
     },
 
     recruit_religion_delete : (req, res) => {
-        console.log('왔다');
-        const reqBody = req.body;        
-        console.log(reqBody)
-        res.redirect('/recruit_religion/all')
+        const reqBody = req.body;   
+        const board = new Board     
+        board.religionDelete(reqBody[0]);     
+        res.json()
     },
 }
 

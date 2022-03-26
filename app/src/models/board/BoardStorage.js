@@ -49,6 +49,7 @@ class BoardStorage {
     }
 
     static religionList(path, id) {
+        console.log(path)
         return new Promise((resolve, reject) => {
             const count = id*10-10
             let query;
@@ -67,9 +68,9 @@ class BoardStorage {
                 }    
             } else {                
                 if(id) {
-                    query = `SELECT * FROM BOARD_RELIGION WHERE TYPE = "${path}" ORDER BY ID DESC LIMIT ${count}, 10;`;
+                    query = `SELECT * FROM BOARD_RELIGION WHERE EXPERTTYPE = "${path}" ORDER BY ID DESC LIMIT ${count}, 10;`;
                 } else {
-                    query = `SELECT * FROM BOARD_RELIGION WHERE TYPE = "${path}" ORDER BY ID DESC LIMIT 10;`;
+                    query = `SELECT * FROM BOARD_RELIGION WHERE EXPERTTYPE = "${path}" ORDER BY ID DESC LIMIT 10;`;
                 }
             } 
 
@@ -86,7 +87,7 @@ class BoardStorage {
             if(path == "All") {
                 query = `SELECT COUNT(*) AS CNT FROM BOARD_RELIGION;`;
             } else {
-                query = `SELECT COUNT(*) AS CNT FROM BOARD_RELIGION WHERE TYPE = "${path}";`;
+                query = `SELECT COUNT(*) AS CNT FROM BOARD_RELIGION WHERE EXPERTTYPE = "${path}";`;
             }
             db.query(query, (err, data) => {
                 if(err) reject(`${err}`)
@@ -105,6 +106,26 @@ class BoardStorage {
         })
     }
 
+    static religionDelete(id) {
+        return new Promise((resolve, reject) => {
+            const query = `DELETE FROM BOARD_RELIGION WHERE ID = ${id};`;
+            db.query(query, (err, data) => {
+                if(err) reject(`${err}`)
+                else resolve(data)
+            });
+        })
+    }
+
+    static religionUpdate(id) {
+        return new Promise((resolve, reject) => {
+            const query = `SELECT * FROM BOARD_RELIGION WHERE ID = ${id};`;
+            db.query(query, (err, data) => {
+                if(err) reject(`${err}`)
+                else resolve(data)
+            });
+        })
+    }
+
     static religionWrite(data, id, content) {
         const today = new Date();  
         const year = today.getFullYear();
@@ -113,10 +134,15 @@ class BoardStorage {
         const currentDate = (year + '-' + month + '-' + date);
 
         let salary;
-        if(data.salaryType == '협의 후 결정' || data.salaryDirect == undefined) {
+        console.log(data)
+        if(data.salaryType == '협의 후 결정' ) {
             salary = '협의 후 결정';
-        } else {
-            salary = data.salaryDirect
+        } else if(data.salaryType == 'won'){
+            if(data.direct == 0) {
+                salary = '협의 후 결정';                
+            } else {
+                salary = data.direct + ' 원';
+            }
         }
         
         return new Promise((resolve, reject) => {

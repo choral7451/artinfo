@@ -33,7 +33,17 @@ const pageButton = () => {
 }
 
 const tpyeSelect = () => {
-    document.getElementById('typeAll').style.border = '2px solid black';
+    const url = window.location.pathname
+    if ( url == '/recruit_religion/all' ) {
+        document.getElementById('typeAll').style.border = '2px solid black';
+    } else if ( url == '/recruit_religion/conductor') {
+        document.getElementById('typeConductor').style.border = '2px solid black';
+    } else if ( url == '/recruit_religion/solists') {
+        document.getElementById('typeSolists').style.border = '2px solid black';
+    } else if ( url == '/recruit_religion/accompanist') {
+        document.getElementById('typeAccompanist').style.border = '2px solid black';
+    }
+    
 }
 
 const outputScreen = () => {
