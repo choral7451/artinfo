@@ -10,7 +10,7 @@ const pageButton = () => {
             getQueryString = URLSearch.get('id')-1;
         }
 
-        document.getElementById('left').setAttribute('href', `http://localhost:3000/recruit_art/etc?id=${getQueryString}`);
+        document.getElementById('left').setAttribute('href', `http://localhost:3000/recruit_art/all?id=${getQueryString}`);
     });        
 
     document.getElementById('right').addEventListener('click', ()=> {
@@ -21,7 +21,7 @@ const pageButton = () => {
         } else {
             getQueryString = Number(URLSearch.get('id'))+1;
         }
-        document.getElementById('right').setAttribute('href', `http://localhost:3000/recruit_art/etc?id=${getQueryString}`);
+        document.getElementById('right').setAttribute('href', `http://localhost:3000/recruit_art/all?id=${getQueryString}`);
     })
 
     if(URLSearch.get('id') == null) {
@@ -33,13 +33,26 @@ const pageButton = () => {
 }
 
 const tpyeSelect = () => {
-    document.getElementById('typeEtc').style.border = '2px solid black';
+    const url = window.location.pathname
+    if ( url == '/recruit_art/all' ) {
+        document.getElementById('typeAll').style.border = '2px solid black';
+    } else if ( url == '/recruit_art/orchestra') {
+        document.getElementById('typeOrchestra').style.border = '2px solid black';
+    } else if ( url == '/recruit_art/choir') {
+        document.getElementById('typeChoir').style.border = '2px solid black';
+    } else if ( url == '/recruit_art/administration') {
+        document.getElementById('typeAdministration').style.border = '2px solid black';
+    } else if ( url == '/recruit_art/etc') {
+        document.getElementById('typeEtc').style.border = '2px solid black';
+    }
+    
 }
 
 const outputScreen = () => {
-    pageButton();
     tpyeSelect();
+    pageButton();
 };
+
 
 const clickMenu = () => {
     if(document.getElementById('mobileMenu').style.display == "flex") {
