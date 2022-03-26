@@ -399,9 +399,16 @@ const output = {
         const data = await board.religionList(path, id);
         let viewEndNumber;
         let viewStartNumber;
-    
+        
         const listCount = await board.religionListCount(path);
-        const endNum = Math.ceil(listCount[0].CNT/10);
+        let endNum;
+        if(listCount[0].CNT == 0) {
+            endNum = 0
+        } else {
+            endNum = Math.ceil(listCount[0].CNT/10);
+        }
+       
+
         
         if(id == undefined || id <= 5 ) {   
             viewStartNumber = 1;

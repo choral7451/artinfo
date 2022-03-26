@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start ./bin/www.js"
+    "start": "nodemon ./bin/www.js"
   },
   "keywords": [],
   "author": "",

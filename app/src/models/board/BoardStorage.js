@@ -49,7 +49,6 @@ class BoardStorage {
     }
 
     static religionList(path, id) {
-        console.log(path)
         return new Promise((resolve, reject) => {
             const count = id*10-10
             let query;
@@ -134,7 +133,6 @@ class BoardStorage {
         const currentDate = (year + '-' + month + '-' + date);
 
         let salary;
-        console.log(data)
         if(data.salaryType == '협의 후 결정' ) {
             salary = '협의 후 결정';
         } else if(data.salaryType == 'won'){
