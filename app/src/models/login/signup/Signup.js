@@ -14,7 +14,7 @@ class Signup {
         }
     }
 
-    async signup(data) {
+    async signup(data) {        
         try {
             const list = await SignupStorage.signup(data);
             return list;

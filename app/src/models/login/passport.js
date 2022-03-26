@@ -6,21 +6,21 @@ passport.use(new LocalStrategy({
         passwordField: 'pwd'
     },
     (username, password, done) => {
-        console.log('localstorage')
+        // console.log('localstorage')
         return done()
     }
 )) 
 
 passport.serializeUser(function(user, done) {
-    console.log('serializeUser() 호출됨.');
-    console.log(user);
+    // console.log('serializeUser() 호출됨.');
+    // console.log(user);
 
     done(null, user);
 });
 
 passport.deserializeUser(function(user, done) {
-    console.log('deserializeUser() 호출됨.');
-    console.log(user);
+    // console.log('deserializeUser() 호출됨.');
+    // console.log(user);
 
     done(null, user);
 })

@@ -1,3 +1,5 @@
+const bcrypt = require('bcrypt');
+
 const logger = require("../config/logger");
 const Board = require("../models/board/Board");
 const Admin = require("../models/admin/Admin");
@@ -118,7 +120,7 @@ const output = {
         let viewStartNumber;
     
         const listCount = await board.listCount(path);
-        const endNum = Math.floor(listCount[0].CNT/10+1);
+        const endNum = Math.ceil(listCount[0].CNT/10);
         
         if(id == undefined || id <= 5 ) {   
             viewStartNumber = 1;
@@ -151,7 +153,6 @@ const output = {
         const data = await board.list(path ,id);
         let viewEndNumber;
         let viewStartNumber;
-        let endNum;
 
         const listCount = await board.listCount(path);
         
@@ -343,14 +344,17 @@ const output = {
         const query = req.query.id;
         const board = new Board;
         const data = await board.religionListContent(query);
-        
+ 
+        let content = data[0].CONTENT
+        content = content.replaceAll("<br/>", "\r\n");
+
         const auth = req.session.passport
         if(auth != undefined) {
             logger.info("GET /recruit_religion/content 304 모집공고(종교) 화면으로 이동");
-            res.render('recruit_religion_content', {login: auth.user.id, data });
+            res.render('recruit_religion_content', {login: auth.user.id, data, content });
         } else {
             logger.info("GET /recruit_religion/content 304 모집공고(종교) 화면으로 이동");
-            res.render('recruit_religion_content', {login: null, data });   
+            res.render('recruit_religion_content', {login: null, data, content });   
         }
     },
  
@@ -363,7 +367,7 @@ const output = {
         let viewStartNumber;
     
         const listCount = await board.religionListCount(path);
-        const endNum = Math.floor(listCount[0].CNT/10+1);
+        const endNum = Math.ceil(listCount[0].CNT/10);
         
         if(id == undefined || id <= 5 ) {   
             viewStartNumber = 1;
@@ -445,7 +449,11 @@ const process = {
     signup_do : async (req, res) => {
         const reqBody = req.body;
         const signup = new Signup();
-        await signup.signup(reqBody);
+        await bcrypt.hash(reqBody.pwd, 10, (err, hash) => {
+            reqBody.pwd = hash
+            signup.signup(reqBody);
+        })
+      
         res.write("<script>alert('Signup Success')</script>");
         res.write("<script>window.location=\"../login\"</script>");
     },
@@ -453,8 +461,8 @@ const process = {
     login_check : async (req, res) => {        
         const reqBody = req.body;
         if(reqBody.id == 0) {
-            res.write("<script>alert('a')</script>");
-            res.write("<script>window.location=\"../login\"</script>");
+            res.write("<script type='text/javascript' charset='utf-8'>alert('아이디를 입력해주세요.')</script>");
+            res.write("<script >window.location=\"../login\"</script>");
         } else if(reqBody.pwd == 0) {
             res.write("<script>alert('b')</script>");
             res.write("<script>window.location=\"../login\"</script>");
@@ -462,34 +470,50 @@ const process = {
             const login = new Login();
             const data = await login.getMember(reqBody.id)
             
-            const user = {
-                id: data[0].ID,
-                password : data[0].PWD,
-                name : data[0].NAME,
-                email : data[0].EMAIL,
-                is_logined : true            
-            }
             if(data[0] == null) {
                 res.write("<script>alert('There is no id')</script>");
                 res.write("<script>window.location=\"../login\"</script>");
             } else {
-                if(reqBody.pwd == data[0].PWD) {
-                    req.login(user, (err) => {
-                        return res.redirect('/');
-                    })                
-                } else {
-                    res.write("<script>alert('b')</script>");
-                    res.write("<script>window.location=\"../login\"</script>");
+
+                const user = {
+                    id: data[0].ID,
+                    password : data[0].PWD,
+                    name : data[0].NAME,
+                    email : data[0].EMAIL,
+                    is_logined : true            
                 }
+
+                bcrypt.compare(reqBody.pwd, data[0].PWD, (err, result) => {
+                    if(result) {
+                        req.login(user, (err) => {
+                            return res.redirect('/');
+                        })                
+                    } else {
+                        res.write("<script>alert('b')</script>");
+                        res.write("<script>window.location=\"../login\"</script>");
+                    }
+                } )
+                
             } 
         }
     },
 
     recruit_religion_write : async (req, res) => {
-        const reqBody = req.body;
+        const reqBody = req.body;        
         const id = req.session.passport.user.id
+
+        let content = reqBody.contentMain;
+        content = content.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+
         const board = new Board
-        await board.religionWrite(reqBody, id);
+        await board.religionWrite(reqBody, id, content);
+        res.redirect('/recruit_religion/all')
+    },
+
+    recruit_religion_delete : (req, res) => {
+        console.log('왔다');
+        const reqBody = req.body;        
+        console.log(reqBody)
         res.redirect('/recruit_religion/all')
     },
 }

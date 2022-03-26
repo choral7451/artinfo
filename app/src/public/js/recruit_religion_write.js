@@ -8,10 +8,6 @@ document.getElementById('salaryType').addEventListener('change', (e) => {
     
 })
 
-let str = document.getElementById("textarea").value;
-str = str.replace(/(?:\r\n|\r|\n)/g, '<br/>');
-document.getElementById("textarea").value = str;
-
 const maxLengthCheck = (object) => {
     if (object.value.length > object.maxLength){
         object.value = object.value.slice(0, object.maxLength);

@@ -105,7 +105,7 @@ class BoardStorage {
         })
     }
 
-    static religionWrite(data, id) {
+    static religionWrite(data, id, content) {
         const today = new Date();  
         const year = today.getFullYear();
         const month = ('0' + (today.getMonth() + 1)).slice(-2);
@@ -113,12 +113,12 @@ class BoardStorage {
         const currentDate = (year + '-' + month + '-' + date);
 
         let salary;
-        if(data.salaryType == '협의 후 결정') {
-            salary = data.salaryType;
+        if(data.salaryType == '협의 후 결정' || data.salaryDirect == undefined) {
+            salary = '협의 후 결정';
         } else {
             salary = data.salaryDirect
         }
-        console.log(data)
+        
         return new Promise((resolve, reject) => {
             const query = `INSERT INTO BOARD_RELIGION (WRITER, TITLE, EXPERTTYPE, TYPE, SALARY, NAME, PNUMBER, ADDRESS, EMAIL, CONTENT, DATE)
                 VALUES(
@@ -131,7 +131,7 @@ class BoardStorage {
                     "${data.phonenumber}",
                     "${data.address}",
                     "${data.email}",
-                    "${data.contentMain}",
+                    "${content}",
                     "${currentDate}"
                 )
             `;

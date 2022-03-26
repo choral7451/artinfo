@@ -101,6 +101,7 @@ document.getElementById('gender').addEventListener('focusout', ()=>{
 })
 
 document.getElementById('emailValue').addEventListener('keyup', (e)=>{
+    
     const email = e.target.value;
     if(email.indexOf('@') != -1 && email.indexOf('.') != -1) {
         document.getElementById('checkEmail').innerHTML = "확인"

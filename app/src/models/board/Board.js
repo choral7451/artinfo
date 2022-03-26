@@ -50,9 +50,9 @@ class Board {
         }
     }
 
-    async religionWrite(data, id) {
+    async religionWrite(data, id, content) {
         try {
-            const list = await BoardStorage.religionWrite(data, id);
+            const list = await BoardStorage.religionWrite(data, id, content);
             return list;
         } catch (err) {
             return { success: false, err };
