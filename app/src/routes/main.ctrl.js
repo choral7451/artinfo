@@ -586,7 +586,7 @@ const process = {
         })
         res.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'});
         res.write("<script>alert('회원가입에 성공했습니다.')</script>");
-        res.write("<script>window.location=\"../login\"</script>");
+        res.write("<script>window.location='/login'</script>");
     },
 
     login_check : async (req, res) => {        
@@ -594,11 +594,11 @@ const process = {
         if(reqBody.id == 0) {
             res.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'});
             res.write("<script type='text/javascript' charset='utf-8'>alert('아이디를 입력해주세요.')</script>");
-            res.write("<script >window.location=\"../login\"</script>");
+            res.write("<script >window.location='/login'</script>");
         } else if(reqBody.pwd == 0) {
             res.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'});
             res.write("<script>alert('비밀번호를 입력해주세요.')</script>");
-            res.write("<script>window.location=\"../login\"</script>");
+            res.write("<script>window.location='/login'</script>");
         } else {
             const login = new Login();
             const data = await login.getMember(reqBody.id)
@@ -606,7 +606,7 @@ const process = {
             if(data[0] == null) {
                 res.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'});
                 res.write("<script>alert('해당 아이디가 존재하지 않습니다.')</script>");
-                res.write("<script>window.location=\"../login\"</script>");
+                res.write("<script>window.location='/login'</script>");
             } else {
 
                 const user = {
@@ -625,7 +625,7 @@ const process = {
                     } else {
                         res.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'});
                         res.write("<script>alert('비밀번호를 확인해주세요.')</script>");
-                        res.write("<script>window.location=\"../login\"</script>");
+                        res.write("<script>window.location='/login'</script>");
                     }
                 } )
                 
