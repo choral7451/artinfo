@@ -592,11 +592,8 @@ const process = {
     login_check : async (req, res) => {        
         const reqBody = req.body;
         if(reqBody.id == 0) {
-            console.log('확인1')
-            res.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'});
-            console.log('확인2')
-            res.write("<script type='text/javascript' charset='utf-8'>alert('아이디를 입력해주세요.')</script>");
-            console.log('확인3')
+            res.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'})
+            res.write("<script type='text/javascript' charset='utf-8'>alert('아이디를 입력해주세요.')</script>")
             res.write(`<script>window.location='/login'</script>`);
         } else if(reqBody.pwd == 0) {
             res.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'});
