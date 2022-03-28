@@ -211,6 +211,8 @@
 }
 .section .article .paging .ctrlBack {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 60%;
   font-size: 1.2rem;
   margin: 0;
@@ -218,10 +220,16 @@
 }
 
 .section .article .paging .ctrlBack .pageNum {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 60%;
 }
 
 .section .article .paging .ctrlBack .pageNum form button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   border: none;
   border-radius: 10%;
@@ -229,9 +237,8 @@
   width: 40px;
   height: 30px;
   background-color: white;
-  color: black; 
+  color: black;
 }
-
 .section .article .paging .ctrlBack a i {
   color: black;
 }
