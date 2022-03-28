@@ -76,6 +76,7 @@
   height: 30px;
   cursor: pointer;
   font-weight: bold;
+  color:black
 }
 
 .section .article .top ul li form button:hover {
@@ -97,6 +98,7 @@
   height: 30px;
   cursor: pointer;
   font-weight: bold;
+  color:black
 }
 
 .section .article .top .write button:hover {
@@ -232,6 +234,8 @@
   width: 40px;
   height: 30px;
   background-color: white;
+  color: black;
+  text-align: center;
 }
 .section .article .paging .ctrlBack a i {
   color: black;
