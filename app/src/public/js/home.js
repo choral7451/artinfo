@@ -1,13 +1,3 @@
-const outputScreen = () => {
-    if (self.name != 'reload') {
-        self.name = 'reload';
-        self.location.reload(true);
-    }
-    else self.name = '';
-    rollingPoster()
-
-}
-
 window.onresize = function() {
     if (self.name != 'reload') {
         self.name = 'reload';
@@ -16,7 +6,7 @@ window.onresize = function() {
     else self.name = '';
 }
 
-let clickMenu = () => {
+const clickMenu = () => {
     if(document.getElementById('mobileMenu').style.display == "flex") {
         document.getElementById('mobileMenu').style.display="none";
     } else {
@@ -27,7 +17,7 @@ let clickMenu = () => {
 let leftNumber = "-20%";
 let leftNumberDouble = "-40%";
 
-let innerWidth = window.innerWidth;
+const innerWidth = window.innerWidth;
 if ( innerWidth < 801 ) {
     leftNumber = "-100%";
     leftNumberDouble = "-200%";
@@ -36,7 +26,7 @@ if ( innerWidth < 801 ) {
     leftNumberDouble = "-67%";
 }
 
-let rollingPoster = () => {
+const rollingPoster = () => {
     $(document).ready(function() {
 
         let $poster = $(".posterBack").find("ul");
@@ -61,9 +51,7 @@ let rollingPoster = () => {
     });
 }
 
-
-
-
+rollingPoster()
 
 const clickLeft = () => {
     $(document).ready(function() {
@@ -105,3 +93,4 @@ const clickRight = () => {
         rollingStart();
     }); 
 }
+

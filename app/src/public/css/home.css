@@ -88,6 +88,10 @@ section .article .line1 .line2 .posterBack ul li img {
 }
 
 @media screen and (max-width: 800px) {
+  section .article .line1 .line2 .fa-solid  {
+    font-size: 2rem
+  }
+
   section .article .line1 .line2 .posterBack {
     height: 80%;
     width: 95%;
@@ -106,6 +110,10 @@ section .article .line1 .line2 .posterBack ul li img {
 }
 
 @media screen and (max-width: 1181px) {
+  section .article .line1 .line2 .fa-solid  {
+    font-size: 1.5rem
+  }
+
   header .header1 nav {
     width: 20%;
   }

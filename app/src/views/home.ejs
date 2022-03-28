@@ -20,79 +20,77 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Palette+Mosaic&display=swap" rel="stylesheet">
-
-    <!-- JS import -->
-    <script type="text/javascript" src="/js/home.js"></script>
-
     <!-- favicon -->
     <link rel="shortcut icon" href="#">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
     <title>ARTINFO</title>
 </head>
-<body onload="outputScreen()">
+<body>
 
-<header id="header">
-    <div class="desktopHeader">
-        <div class="logo">
-            <a href="/">ARTINFO</a>
-        </div>
-        <nav>
-            <li><a href="/about">소개</a></li>
-            <li><a href="/recruit_art/all">채용정보</a></li>
-        </nav>
-        <div id="login" class="login">
-            <% if( login != null ) { %>
-                <div class="name"><%= login %></div>
-                <div class="bar">&nbsp&nbsp&nbsp | &nbsp&nbsp</div>
-                <a href="/logout">logout</a>
-            <% } else { %>
-                <a href="/login">로그인</a>
-            <% } %>
-        </div>
-    </div>    
-
-    <div class="mobileHeader">        
-        <nav>
-            <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
-        </nav>
-        <div class="logo">
-            <a href="/">ARTINFO</a>
-        </div>
-        <div class="login"><a href="/login"><i class="fa-regular fa-user"></i></a></div>
-    </div>
-    <div id="mobileMenu" class="mobileMenu"> 
-        <a href="/">Home</a>
-        <a href="/about">소개</a>
-        <a href="/recruit_art/all">채용정보</a>
-    </div> 
-</header>
-
-<section class="section" id="section">
-    <article class="article" id="article">
-        <div class="line1" id="line1">
-            <div class="line2" id="line2">
-                <i class="fa-solid fa-angle-left" onclick="clickLeft()"></i>
-                <div class="posterBack">
-                    <ul>
-                        <li><a href=""><img src="/img/poster/p1.gif" alt=""></a></li>
-                        <li><a href=""><img src="/img/poster/p2.gif" alt=""></a></li>
-                        <li><a href=""><img src="/img/poster/p3.gif" alt=""></a></li>
-                        <li><a href=""><img src="/img/poster/p4.gif" alt=""></a></li>
-                        <li><a href=""><img src="/img/poster/p5.gif" alt=""></a></li>
-                        <li><a href=""><img src="/img/poster/p6.gif" alt=""></a></li>
-                        <li><a href=""><img src="/img/poster/p7.gif" alt=""></a></li>
-                    </ul>
-                </div>
-                <i class="fa-solid fa-angle-right" onclick="clickRight()"></i>
+    <header id="header">
+        <div class="desktopHeader">
+            <div class="logo">
+                <a href="/">ARTINFO</a>
             </div>
+            <nav>
+                <li><a href="/about">소개</a></li>
+                <li><a href="/recruit_art/all">채용정보</a></li>
+            </nav>
+            <div id="login" class="login">
+                <% if( login != null ) { %>
+                    <div class="name"><%= login %></div>
+                    <div class="bar">&nbsp&nbsp&nbsp | &nbsp&nbsp</div>
+                    <a href="/logout">logout</a>
+                <% } else { %>
+                    <a href="/login">로그인</a>
+                <% } %>
+            </div>
+        </div>    
+
+        <div class="mobileHeader">        
+            <nav>
+                <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
+            </nav>
+            <div class="logo">
+                <a href="/">ARTINFO</a>
+            </div>
+            <div class="login"><a href="/login"><i class="fa-regular fa-user"></i></a></div>
         </div>
-    </article>
-</section>
+        <div id="mobileMenu" class="mobileMenu"> 
+            <a href="/">Home</a>
+            <a href="/about">소개</a>
+            <a href="/recruit_art/all">채용정보</a>
+        </div> 
+    </header>
 
-<footer id="footer">
-    <div>문의 : chorales@naver.com</div>
-</footer>
+    <section class="section" id="section">
+        <article class="article" id="article">
+            <div class="line1" id="line1">
+                <div class="line2" id="line2">
+                    <i class="fa-solid fa-angle-left" onclick="clickLeft()"></i>
+                    <div class="posterBack">
+                        <ul>
+                            <li><a href=""><img src="/img/poster/p1.gif" alt=""></a></li>
+                            <li><a href=""><img src="/img/poster/p2.gif" alt=""></a></li>
+                            <li><a href=""><img src="/img/poster/p3.gif" alt=""></a></li>
+                            <li><a href=""><img src="/img/poster/p4.gif" alt=""></a></li>
+                            <li><a href=""><img src="/img/poster/p5.gif" alt=""></a></li>
+                            <li><a href=""><img src="/img/poster/p6.gif" alt=""></a></li>
+                            <li><a href=""><img src="/img/poster/p7.gif" alt=""></a></li>
+                        </ul>
+                    </div>
+                    <i class="fa-solid fa-angle-right" onclick="clickRight()"></i>
+                </div>
+            </div>
+        </article>
+    </section>
 
+    <footer id="footer">
+        <div>문의 : chorales@naver.com</div>
+    </footer>
+    <!-- JS import -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/home.js"></script>
 </body>
 </html>
