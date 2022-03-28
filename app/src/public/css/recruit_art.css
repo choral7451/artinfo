@@ -195,6 +195,9 @@
   }
   
   .section .article .paging .ctrlBack .pageNum form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     border: none;
     color: black;
@@ -204,8 +207,8 @@
     height: 30px;
     background-color: white;
     color: black;
-    text-align: center;
   }
+  
   .section .article .paging .ctrlBack a i {
     color: black;
   }
