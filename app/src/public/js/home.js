@@ -1,9 +1,5 @@
 window.onresize = function() {
-    if (self.name != 'reload') {
-        self.name = 'reload';
-        self.location.reload(true);
-    }
-    else self.name = '';
+    window.location.reload(true)
 }
 
 const clickMenu = () => {

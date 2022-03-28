@@ -1,7 +1,7 @@
 const pageButton = () => {
     const URLSearch = new URLSearchParams(location.search);
     const pageNum = document.getElementById('pageNum').firstElementChild.getAttribute('id')
-    let getQueryString;
+    let getQueryString
 
     document.getElementById('left').addEventListener('click', ()=> {
         if(URLSearch == 0 || URLSearch.get('id') == 1) {
@@ -16,7 +16,7 @@ const pageButton = () => {
     document.getElementById('right').addEventListener('click', ()=> {
         if(URLSearch == 0) {
             getQueryString = "2";
-        } else if (Number(URLSearch.get('id')) >= pageNum) {    
+        } else if (Number(URLSearch.get('id')) >= pageNum) {
             getQueryString = pageNum
         } else {
             getQueryString = Number(URLSearch.get('id'))+1;
@@ -48,10 +48,8 @@ const tpyeSelect = () => {
     
 }
 
-const outputScreen = () => {
-    tpyeSelect();
-    pageButton();
-};
+tpyeSelect();
+pageButton();
 
 
 const clickMenu = () => {

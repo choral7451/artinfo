@@ -106,13 +106,11 @@ module.exports = {
         }
 
         if(anyang[0] != undefined) {
-            logger.info(`안산시립합창단 데이터 ${anyang.length} 건 받아옴`);
+            logger.info(`안양시립합창단 데이터 ${anyang.length} 건 받아옴`);
             data.push(anyang)
         } else {
-            logger.info(`안산시립합창단 데이터 0 건 받아옴`);
+            logger.info(`안양시립합창단 데이터 0 건 받아옴`);
         }
-
-        data.push(anyang)
         
         return data;     
     }
