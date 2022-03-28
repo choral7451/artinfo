@@ -56,11 +56,26 @@
 .section .article .top ul li {
   margin: 0 0.8%;
 }
-.section .article .top ul li form button {
+
+.section .article .top ul li form .type {
   width: 80px;
   font-size: 18px;
   background-color: white;
+  color: black;
   border: none;
+}
+
+.section .article .top ul li .mobileWrite {
+  width: 80px;
+  display: none;
+}
+
+.section .article .top ul li .mobileWrite .mobileWriteButton {
+  border: 2px solid rgb(170, 169, 169);;
+  width: 100%;
+  height: 30px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .section .article .top ul li form button:hover {
@@ -238,7 +253,7 @@
   .section .article .top {
     height: 80px;
   }
-
+  
   .section .article .top ul {
     margin-bottom: 10px;
     padding: 0;
@@ -277,12 +292,22 @@
     height: 50%;
     width: 100%;
   }
-  
-  .section .article .top ul li form button {
-    width: 80px;
+
+  .section .article .top ul li form .type {
+    width: 60px;
     font-size: 12px;
     background-color: white;
+    color: black;
     border: none;
+  }
+
+  .section .article .top ul li .mobileWrite {
+    width: 60px;
+    display: flex;
+  }
+
+  .section .article .top .write {
+    display: none;
   }
 
   .section .article .board {
@@ -297,12 +322,16 @@
     width: 100%;
   }
 
+  .section .article .board table tbody {
+    font-size: 0.5rem;
+  }
+
   .section .article .board table td:nth-child(1) {
     display: none;
   }
 
   .section .article .board table td:nth-child(3) {
-    width: 15%;
+    width: 20%;
   }
 
   .section .article .board table td:nth-child(3) {
@@ -319,11 +348,11 @@
   }
   
   .section .article .board table td:nth-child(6) {
-    width: 70%;
+    width: 60%;
   }
   
   .section .article .board table td:nth-child(7) {
-    width: 15%;
+    width: 20%;
   }
 
 }
