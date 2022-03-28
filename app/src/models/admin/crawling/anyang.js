@@ -13,9 +13,7 @@ module.exports = {
         const year = today.getFullYear();
         const month = ('0' + (today.getMonth() + 1)).slice(-2);
         const date = ('0' + today.getDate()).slice(-2);
-        // const currentDate = (year + '-' + month + '-' + date);
-
-        const currentDate = "2022-03-03"
+        const currentDate = (year + '-' + month + '-' + date);
           
         for(let i = 1; i <= 5 ; i++) {
           const getData = tbody.find(`tr:nth-child(${i})`)

@@ -20,7 +20,7 @@ module.exports = {
           const getData = tbody.find(`tr:nth-child(${i})`)
           const getDate = getData.find('td:nth-child(6)').text()
           const getTitle = getData.find('td:nth-child(2)').text()
-          const getUrl = getData.find('td:nth-child(2)').find('a').attr('href')
+          const getUrl = "https://www.bscc.or.kr/" + getData.find('td:nth-child(2)').find('a').attr('href')
           if(currentDate == getDate) {  
             data.push(["부산시립예술단", getTitle, getDate, getUrl]);
           }

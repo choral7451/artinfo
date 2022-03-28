@@ -43,39 +43,73 @@ module.exports = {
         }  
         
         if(busan[0] != undefined) {
+            logger.info(`부산시립예술단 데이터 ${busan.length} 건 받아옴`);
             data.push(busan);
-        } 
+        } else {
+            logger.info(`부산시립예술단 데이터 0 건 받아옴`);
+        }
         
         if(chuncheon[0] != undefined) {
+            logger.info(`춘천시립예술단 데이터 ${chuncheon.length} 건 받아옴`);
             data.push(chuncheon);
+        } else {
+            logger.info(`춘천시립예술단 데이터 0 건 받아옴`);
         }
 
         if(bucheon[0] != undefined) {
+            logger.info(`부천시립예술단 데이터 ${bucheon.length} 건 받아옴`);
             data.push(bucheon);
+        } else {
+            logger.info(`부천시립예술단 데이터 0 건 받아옴`);
         }
 
         if(ulsan[0] != undefined) {
+            logger.info(`울산시립예술단 데이터 ${ulsan.length} 건 받아옴`);
             data.push(ulsan);
+        } else {
+            logger.info(`울산시립예술단 데이터 0 건 받아옴`);
         }
 
         if(daegu[0] != undefined) {
+            logger.info(`대구시립예술단 데이터 ${daegu.length} 건 받아옴`);
             data.push(daegu);
+        } else {
+            logger.info(`대구시립예술단 데이터 0 건 받아옴`);
         }
 
         if(wonju[0] != undefined) {
+            logger.info(`원주시립예술단 데이터 ${wonju.length} 건 받아옴`);
             data.push(wonju);
+        } else {
+            logger.info(`원주시립예술단 데이터 0 건 받아옴`);
         }
 
         if(suwon[0] != undefined) {
+            logger.info(`수원시립예술단 데이터 ${suwon.length} 건 받아옴`);
             data.push(suwon);
+        } else {
+            logger.info(`수원시립예술단 데이터 0 건 받아옴`);
         }
 
         if(seongnam[0] != undefined) {
+            logger.info(`성남시립예술단 데이터 ${seongnam.length} 건 받아옴`);
             data.push(seongnam)
+        } else {
+            logger.info(`성남시립예술단 데이터 0 건 받아옴`);
         }
 
         if(ansan[0] != undefined) {
+            logger.info(`안산시립합창단 데이터 ${ansan.length} 건 받아옴`);
             data.push(ansan)
+        } else {
+            logger.info(`안산시립합창단 데이터 0 건 받아옴`);
+        }
+
+        if(anyang[0] != undefined) {
+            logger.info(`안산시립합창단 데이터 ${anyang.length} 건 받아옴`);
+            data.push(anyang)
+        } else {
+            logger.info(`안산시립합창단 데이터 0 건 받아옴`);
         }
 
         data.push(anyang)
