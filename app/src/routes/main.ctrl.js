@@ -35,6 +35,7 @@ const output = {
     login : (req, res) => {
         const query = Object.keys(req.query)
         const auth = req.session.passport
+        console.log(req.session)
         if(auth != undefined) {
             logger.info("GET /login 304 로그인 화면으로 이동");
             res.redirect('/');
@@ -586,9 +587,8 @@ const process = {
             reqBody.pwd = hash
             signup.signup(reqBody);
         })
-        res.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'});
-        res.write("<script>alert('회원가입에 성공했습니다.')</script>");
-        res.write("<script>window.location='/login'</script>");
+        const query = encodeURIComponent('signupSuccess')
+        res.redirect('/login?' + query);
     },
 
     login_check : async (req, res) => {        

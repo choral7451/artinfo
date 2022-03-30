@@ -14,7 +14,11 @@ switch(check) {
     case 'reCheckPwd' : 
         alert('비밀번호를 확인해주세요.');
         break        
+    case 'signupSuccess' : 
+        alert('회원가입에 성공하였습니다.');
+        break       
 }    
+
 
 
 const clickMenu = () => {

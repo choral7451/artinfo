@@ -32,6 +32,12 @@ document.getElementById('checkId').addEventListener('click', (e) => {
     
 })
 
+document.getElementById('checkIdInput').addEventListener('keyup', (e) => {
+    if(document.getElementById('checkIdText').innerText == "확인") {
+        document.getElementById('checkIdText').innerHTML = "";
+    }
+})
+
 let pwd;
 let pwd2;
 document.getElementById('pwd').addEventListener('keyup', (e)=>{
