@@ -7,6 +7,7 @@ const Login = require("../models/login/Login");
 const Signup = require("../models/login/signup/Signup");
 
 const { Crawler } = require('../models/admin/mainCrawler');
+const { checkId } = require('../models/login/signup/SignupStorage');
 
 const output = {
     home : (req, res) => {
@@ -32,13 +33,14 @@ const output = {
     },
 
     login : (req, res) => {
+        const query = Object.keys(req.query)
         const auth = req.session.passport
         if(auth != undefined) {
             logger.info("GET /login 304 로그인 화면으로 이동");
             res.redirect('/');
         } else {
             logger.info("GET /login 304 로그인 화면으로 이동");
-            res.render('login', {login: null});    
+            res.render('login', {login: null , check: query[0]});    
         }
     },
 
@@ -592,21 +594,18 @@ const process = {
     login_check : async (req, res) => {        
         const reqBody = req.body;
         if(reqBody.id == 0) {
-            res.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'})
-            res.write("<script type='text/javascript' charset='utf-8'>alert('아이디를 입력해주세요.')</script>")
-            res.write(`<script>window.location='/login'</script>`);
+            const query = encodeURIComponent('checkId')
+            res.redirect('/login?' + query);
         } else if(reqBody.pwd == 0) {
-            res.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'});
-            res.write("<script>alert('비밀번호를 입력해주세요.')</script>");
-            res.write(`<script>window.location='/login'`);
+            const query = encodeURIComponent('checkPwd')
+            res.redirect('/login?' + query);
         } else {
             const login = new Login();
             const data = await login.getMember(reqBody.id)
             
             if(data[0] == null) {
-                res.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'});
-                res.write("<script>alert('해당 아이디가 존재하지 않습니다.')</script>");
-                res.write("<script>window.location='/login'</script>");
+                const query = encodeURIComponent('nonexistentId')
+                res.redirect('/login?' + query);
             } else {
 
                 const user = {
@@ -623,9 +622,8 @@ const process = {
                             return res.redirect('/');
                         })                
                     } else {
-                        res.writeHead(200, {'Content-Type': 'text/html;charset=UTF-8'});
-                        res.write("<script>alert('비밀번호를 확인해주세요.')</script>");
-                        res.write("<script>window.location='/login'</script>");
+                        const query = encodeURIComponent('reCheckPwd')
+                        res.redirect('/login?' + query);
                     }
                 } )
                 

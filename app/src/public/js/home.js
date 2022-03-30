@@ -89,4 +89,3 @@ const clickRight = () => {
         rollingStart();
     }); 
 }
-
