@@ -348,7 +348,7 @@ const output = {
         const data = await board.religionListContent(query);
  
         let content = data[0].CONTENT
-        content = content.replaceAll("<br/>", "\r\n");
+        content = content.replace(/\<br\/>/g, "\r\n");
 
         const auth = req.session.passport
         if(auth != undefined) {
