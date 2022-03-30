@@ -1,6 +1,14 @@
 const textarea = document.getElementById('textarea')
 textarea.style.height = (textarea.scrollHeight + 12) + 'px';
 
+const clickMenu = () => {
+    if(document.getElementById('mobileMenu').style.display == "flex") {
+        document.getElementById('mobileMenu').style.display="none";
+    } else {
+        document.getElementById('mobileMenu').style.display="flex";
+    }    
+}
+
 document.getElementById('getList').addEventListener('click', () => {
     fetch("/recruit_religion/all")
             .then(function() {
@@ -26,10 +34,3 @@ document.getElementById('deleteContent').addEventListener('click', () => {
     } 
 })
 
-const clickMenu = () => {
-    if(document.getElementById('mobileMenu').style.display == "flex") {
-        document.getElementById('mobileMenu').style.display="none";
-    } else {
-        document.getElementById('mobileMenu').style.display="flex";
-    }    
-}

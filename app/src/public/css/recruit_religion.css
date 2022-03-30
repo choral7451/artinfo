@@ -350,11 +350,11 @@
   }
   
   .section .article .board table td:nth-child(5) {
-    display: none;
+    width: 60%;
   }
   
   .section .article .board table td:nth-child(6) {
-    width: 60%;
+    display: none;
   }
   
   .section .article .board table td:nth-child(7) {
