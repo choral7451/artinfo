@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const dotenv = require("dotenv");
-
 const session = require('express-session');
 const passport = require('./src/models/login/passport');
 const flash = require('connect-flash');

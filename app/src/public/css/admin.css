@@ -20,6 +20,13 @@
     flex-direction: column;
     width: 100%;
   }
+
+  .section 
+  .article 
+  .guestCountBack {
+    margin: 30px 0;
+    font-size: 30px;
+  }
   
   .section .article .board {
     display: flex;

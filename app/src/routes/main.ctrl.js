@@ -1,16 +1,19 @@
 const bcrypt = require('bcrypt');
+const requestIp = require('request-ip');
 
 const logger = require("../config/logger");
 const Board = require("../models/board/Board");
 const Admin = require("../models/admin/Admin");
 const Login = require("../models/login/Login");
 const Signup = require("../models/login/signup/Signup");
+const GuestCount = require("../models/guestCount/GuestCount");
 
 const { Crawler } = require('../models/admin/mainCrawler');
-const { checkId } = require('../models/login/signup/SignupStorage');
 
 const output = {
-    home : (req, res) => {
+    home : async (req, res) => {
+        const guestCount = new GuestCount;
+        await guestCount.setCount(requestIp.getClientIp(req));
         const auth = req.session.passport
         if(auth != undefined) {
             logger.info("GET /home 304 홈 화면으로 이동");
@@ -66,13 +69,16 @@ const output = {
     },
 
     admin : async function (req, res) { 
+        const guestCount = new GuestCount;
+        const countReq = await guestCount.getCount();
+        const countResult = countReq[0].CNT;
         const auth = req.session.passport
         if(auth) {
             if(auth.user.id == "admin") {
                 const admin = new Admin();
                 const data = await admin.list(); 
                 logger.info("GET /admin 304 관리자 화면으로 이동");
-                res.render('admin', {login: auth.user.id, data});
+                res.render('admin', {login: auth.user.id, data, countResult});
             } else {
                 res.redirect('/');
             }           
