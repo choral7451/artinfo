@@ -1,6 +1,6 @@
 document.getElementById('checkId').addEventListener('click', (e) => {
     const value = [document.getElementById('checkIdInput').value];    
-    if(value != 0) {
+    if(value != "") {
         if(value[0].length > 3 && value[0].length < 17 ) {
             fetch("/signup_checkId", {
                 method: "POST",
@@ -42,7 +42,7 @@ let pwd;
 let pwd2;
 document.getElementById('pwd').addEventListener('keyup', (e)=>{
     pwd = e.target.value
-    if(pwd != 0) {
+    if(pwd != "" ) {
         document.getElementById('checkPassword').innerHTML = "확인"
     } else {
         document.getElementById('checkPassword').innerHTML = "";

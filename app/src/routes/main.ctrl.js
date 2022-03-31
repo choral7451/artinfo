@@ -33,15 +33,13 @@ const output = {
     },
 
     login : (req, res) => {
-        const query = Object.keys(req.query)
         const auth = req.session.passport
-        console.log(req.session)
         if(auth != undefined) {
             logger.info("GET /login 304 로그인 화면으로 이동");
             res.redirect('/');
         } else {
             logger.info("GET /login 304 로그인 화면으로 이동");
-            res.render('login', {login: null , check: query[0]});    
+            res.render('login', {login: null });    
         }
     },
 
@@ -593,41 +591,28 @@ const process = {
 
     login_check : async (req, res) => {        
         const reqBody = req.body;
-        if(reqBody.id == 0) {
-            const query = encodeURIComponent('checkId')
-            res.redirect('/login?' + query);
-        } else if(reqBody.pwd == 0) {
-            const query = encodeURIComponent('checkPwd')
-            res.redirect('/login?' + query);
-        } else {
-            const login = new Login();
-            const data = await login.getMember(reqBody.id)
-            
-            if(data[0] == null) {
-                const query = encodeURIComponent('nonexistentId')
-                res.redirect('/login?' + query);
-            } else {
+        const login = new Login();
+        const data = await login.getMember(reqBody[0])
+        if(data != "") {
+            const user = {
+                id: data[0].ID,
+                password : data[0].PWD,
+                name : data[0].NAME,
+                email : data[0].EMAIL,
+                is_logined : true            
+            }
 
-                const user = {
-                    id: data[0].ID,
-                    password : data[0].PWD,
-                    name : data[0].NAME,
-                    email : data[0].EMAIL,
-                    is_logined : true            
+            bcrypt.compare(reqBody[1], data[0].PWD, (err, result) => {
+                if(result) {
+                    req.login(user, (err) => {
+                        return res.send('loginSuccess');
+                    })                     
+                } else {
+                    res.send('checkPwd')
                 }
-
-                bcrypt.compare(reqBody.pwd, data[0].PWD, (err, result) => {
-                    if(result) {
-                        req.login(user, (err) => {
-                            return res.redirect('/');
-                        })                
-                    } else {
-                        const query = encodeURIComponent('reCheckPwd')
-                        res.redirect('/login?' + query);
-                    }
-                } )
-                
-            } 
+            })
+        } else {
+            res.send('checkId')
         }
     },
 
