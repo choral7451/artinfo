@@ -29,12 +29,12 @@ document.getElementById('checkId').addEventListener('click', (e) => {
         alert('아이디를 입력해주세요.')
         document.getElementById('checkIdText').innerHTML = "";
     }
-    
 })
 
 document.getElementById('checkIdInput').addEventListener('keyup', (e) => {
     if(document.getElementById('checkIdText').innerText == "확인") {
         document.getElementById('checkIdText').innerHTML = "";
+        signupButton()
     }
 })
 
@@ -50,12 +50,18 @@ document.getElementById('pwd').addEventListener('keyup', (e)=>{
 
     if(pwd2 != null) {
         if( pwd == pwd2 ) {
-            document.getElementById('checkPwd').innerHTML = `일치`;
-            document.getElementById('checkPwd').style.color = 'black';
-            signupButton()
+            if( pwd === "" || pwd2 === "") {
+                document.getElementById('checkPwd').innerHTML = "";
+                signupButton()
+            } else {
+                document.getElementById('checkPwd').innerHTML = `일치`;
+                document.getElementById('checkPwd').style.color = 'black';
+                signupButton()
+            }
         } else {
             document.getElementById('checkPwd').innerHTML = `불일치`;
             document.getElementById('checkPwd').style.color = 'red';
+            signupButton()
         }        
     }
 })
@@ -64,21 +70,29 @@ document.getElementById('pwd2').addEventListener('keyup', (e)=>{
     pwd = document.getElementById('pwd').value
     pwd2 = e.target.value;
     if( pwd == pwd2 ) {
-        document.getElementById('checkPwd').innerHTML = `일치`;
-        document.getElementById('checkPwd').style.color = 'black';
-        signupButton()
+        if( pwd === "" || pwd2 === "") {
+            document.getElementById('checkPwd').innerHTML = "";
+            signupButton()
+        } else {
+            document.getElementById('checkPwd').innerHTML = `일치`;
+            document.getElementById('checkPwd').style.color = 'black';
+            signupButton()
+        }
     } else {
         document.getElementById('checkPwd').innerHTML = `불일치`;
         document.getElementById('checkPwd').style.color = 'red';
-    }
+        signupButton()
+    } 
 });
 
 document.getElementById('nameValue').addEventListener('keyup', (e)=>{
     const value = e.target.value
     if(value != 0) {
         document.getElementById('checkName').innerHTML = "확인";
+        signupButton()
     } else {
         document.getElementById('checkName').innerHTML = "";
+        signupButton()
     }
 })
 
@@ -91,14 +105,16 @@ document.getElementById('birth').addEventListener('keyup', (e) => {
     } else {
         document.getElementById('checkBirth').innerHTML = "확인 필요";
         document.getElementById('checkBirth').style.color = "red";
+        signupButton()
     }
 })
 
-document.getElementById('gender').addEventListener('focusout', ()=>{
+document.getElementById('gender').addEventListener('change', ()=>{
     let target = document.getElementById('gender').value;
     if( target == 0) {
         document.getElementById('checkGender').innerHTML = '확인 필요'
         document.getElementById('checkGender').style.color = 'red';
+        signupButton()
     } else {
         document.getElementById('checkGender').innerHTML = '확인'
         document.getElementById('checkGender').style.color = 'black';
@@ -116,6 +132,7 @@ document.getElementById('emailValue').addEventListener('keyup', (e)=>{
     } else { 
         document.getElementById('checkEmail').innerHTML = "확인 필요"
         document.getElementById('checkEmail').style.color = "red";
+        signupButton()
     }
 });
 
@@ -127,10 +144,12 @@ const signupButton = () => {
     const checkBirth = document.getElementById('checkBirth').innerText
     const checkEmail = document.getElementById('checkEmail').innerText
 
-
     if(checkID == "확인" && checkPwd == "일치" && checkName == "확인" && checkGender == "확인" && checkBirth == "확인" && checkEmail == "확인") {
         const button = document.getElementById('signupButton')
         button.removeAttribute('disabled');
+    } else {
+        const button = document.getElementById('signupButton')
+        button.disabled = true;
     }
 }
 

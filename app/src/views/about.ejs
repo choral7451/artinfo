@@ -37,11 +37,17 @@
             </nav>
             <div id="login" class="login">
                 <% if( login != null ) { %>
-                    <div class="name"><%= login %></div>
-                    <div class="bar">&nbsp&nbsp&nbsp | &nbsp&nbsp</div>
-                    <a href="/logout">logout</a>
+                    <% if( login === "admin" ) { %>
+                        <div class="name"><%= login %>&nbsp</div>
+                        <a href="/"><i class="fa-solid fa-house-user"></i></i></a>
+                        <a class="logout" href="/logout">logout</a>
+                    <% } else { %>
+                        <div class="name"><%= login %></div>
+                        <div class="bar">&nbsp&nbsp&nbsp | &nbsp&nbsp</div>
+                        <a class="logout" href="/logout">logout</a>
+                    <% } %>    
                 <% } else { %>
-                    <a href="/login">로그인</a>
+                    <a class="loginText" href="/login">로그인</a>
                 <% } %>
             </div>
         </div>    

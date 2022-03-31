@@ -76,6 +76,11 @@ header .desktopHeader .login a {
   cursor: pointer;
 }
 
+header .desktopHeader .login .loginText:hover {
+  border-bottom: 3px solid black;
+  transition: 0.1s linear;
+}
+
 header .desktopHeader .login .logout:hover {
   border-bottom: 3px solid black;
   transition: 0.1s linear;
