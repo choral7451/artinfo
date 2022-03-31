@@ -73,9 +73,10 @@ header .desktopHeader .login a {
   font-size: 1.5rem;
   padding: 0 0.5rem;
   color: black;
+  cursor: pointer;
 }
 
-header .desktopHeader .login a:hover {
+header .desktopHeader .login .logout:hover {
   border-bottom: 3px solid black;
   transition: 0.1s linear;
 }
