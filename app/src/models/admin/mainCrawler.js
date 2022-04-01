@@ -11,6 +11,10 @@ const { Suwon } = require('./crawling/suwon')
 const { Seongnam } = require('./crawling/seongnam')
 const { Ansan } = require('./crawling/ansan')
 const { Anyang } = require('./crawling/anyang')
+const { Symphonysong } = require('./crawling/symphonysong')
+const { Koreansymphony } = require('./crawling/koreansymphony')
+const { KBS } = require('./crawling/kbs')
+const { Goyang } = require('./crawling/goyang')
 
 module.exports = {
     Crawler : async () => {
@@ -27,6 +31,10 @@ module.exports = {
         const seongnam = await Seongnam();
         const ansan = await Ansan();
         const anyang = await Anyang();
+        const symphonysong = await Symphonysong();
+        const koreansymphony = await Koreansymphony();
+        const kbs = await KBS();
+        const goyang = await Goyang();
         
         if(nck_artist[0] != undefined) {
             logger.info(`국립합창단(단원) 데이터 ${nck_artist.length} 건 받아옴`);
@@ -110,6 +118,34 @@ module.exports = {
             data.push(anyang)
         } else {
             logger.info(`안양시립합창단 데이터 0 건 받아옴`);
+        }
+
+        if(symphonysong[0] != undefined) {
+            logger.info(`심포니송 데이터 ${symphonysong.length} 건 받아옴`);
+            data.push(symphonysong)
+        } else {
+            logger.info(`심포니송 데이터 0 건 받아옴`);
+        }
+
+        if(koreansymphony[0] != undefined) {
+            logger.info(`국립심포니 데이터 ${koreansymphony.length} 건 받아옴`);
+            data.push(koreansymphony)
+        } else {
+            logger.info(`국립심포니 데이터 0 건 받아옴`);
+        }
+
+        if(kbs[0] != undefined) {
+            logger.info(`kbs교향악단 데이터 ${kbs.length} 건 받아옴`);
+            data.push(kbs)
+        } else {
+            logger.info(`kbs교향악단 데이터 0 건 받아옴`);
+        }
+
+        if(goyang[0] != undefined) {
+            logger.info(`고양시립예술단 데이터 ${goyang.length} 건 받아옴`);
+            data.push(goyang)
+        } else {
+            logger.info(`고양시립예술단 데이터 0 건 받아옴`);
         }
         
         return data;     
