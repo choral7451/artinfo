@@ -21,7 +21,7 @@ module.exports = {
           const getDate = getData.find('div:nth-child(4)').text().replace(/\./g,'-');
           const getTitle = getData.find('div:nth-child(2)').find('a').text();
           const getUrl = getData.find('div:nth-child(2)').find('a').attr('href');
-          console.log(getDate)
+
           if(currentDate == getDate) {  
             data.push(["전주시립예술단", getTitle, getDate, getUrl]);
           }

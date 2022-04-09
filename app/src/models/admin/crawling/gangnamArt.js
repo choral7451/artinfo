@@ -21,7 +21,7 @@ module.exports = {
           const getDate = getData.find('td:nth-child(5)').text()
           const getTitle = getData.find('td:nth-child(2)').find('a').text();
           const getUrl = "https://www.gangnam.go.kr/" + getData.find('td:nth-child(2)').find('a').attr('href');
-          console.log(getDate)
+
           if(currentDate == getDate) {  
             data.push(["강남예술단", getTitle, getDate, getUrl]);
           }
