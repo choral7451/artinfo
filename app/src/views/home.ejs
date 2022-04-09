@@ -71,23 +71,53 @@
     </header>
 
     <section class="section" id="section">
-        <article class="article" id="article">
-            <div class="line1" id="line1">
-                <div class="line2" id="line2">
-                    <i class="fa-solid fa-angle-left" onclick="clickLeft()"></i>
-                    <div id="posterBack" class="posterBack">
-                        <ul id="posterUl">
-                            <li><a href=""><img src="/img/poster/p1.gif" alt=""></a></li>
-                            <li><a href=""><img src="/img/poster/p2.gif" alt=""></a></li>
-                            <li><a href=""><img src="/img/poster/p3.gif" alt=""></a></li>
-                            <li><a href=""><img src="/img/poster/p4.gif" alt=""></a></li>
-                            <li><a href=""><img src="/img/poster/p5.gif" alt=""></a></li>
-                            <li><a href=""><img src="/img/poster/p6.gif" alt=""></a></li>
-                            <li><a href=""><img src="/img/poster/p7.gif" alt=""></a></li>
-                        </ul>
-                    </div>
-                    <i class="fa-solid fa-angle-right" onclick="clickRight()"></i>
-                </div>
+        <div class="banner">
+            <div class="banner_text1">예술의 중심</div>
+            <div class="banner_text2">
+                <p>A</p><p>R</p><p>T</p><p>I</p><p>N</p><p>F</p><p>O</p>
+            </div>
+        </div>
+        <article class="articlePoster" id="article">            
+            <div class="left" id="left"></div>
+            <div class="center" id="center"></div>
+            <div class="right" id="right"></div>
+        </article>
+        <article class="articleBoard" id="article">
+            <div class="boardLeft">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>&nbsp&nbsp채용정보(예술단체)</td>
+                            <td><a href="/recruit_art/all">더보기<i class="fa-solid fa-caret-right"></i>&nbsp&nbsp</a></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(let list of arrayData.leftData) {%>
+                            <tr>                            
+                                <td ><a href=<%= list.URL %>>&nbsp&nbsp<%= list.TITLE %></a></td>
+                                <td ><%= list.DATE %>&nbsp&nbsp</td>
+                            </tr>  
+                        <% } %>                       
+                    </tbody>
+                </table>
+            </div>
+            <div class="boardRight">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>&nbsp&nbsp채용정보(종교)</td>
+                            <td><a href="/recruit_religion/all">더보기<i class="fa-solid fa-caret-right"></i>&nbsp&nbsp</a></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(let list of arrayData.rightData) {%>
+                            <tr>                            
+                                <td ><a href=/recruit_religion/content?id=<%= list.ID%>>&nbsp&nbsp<%= list.TITLE %></a></td>
+                                <td ><%= list.DATE %>&nbsp&nbsp</td>
+                            </tr>  
+                        <% } %>                       
+                    </tbody>
+                </table>
             </div>
         </article>
     </section>
@@ -110,7 +140,6 @@
 
     <!-- JS import -->
     <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/home.js"></script>
 </body>
 </html>

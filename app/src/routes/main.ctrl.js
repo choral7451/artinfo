@@ -7,21 +7,27 @@ const Admin = require("../models/admin/Admin");
 const Login = require("../models/login/Login");
 const Signup = require("../models/login/signup/Signup");
 const GuestCount = require("../models/guestCount/GuestCount");
+const Home = require("../models/home/Home");
 
 const { Crawler } = require('../models/admin/mainCrawler');
 
 const output = {
-    home : (req, res) => {
+    home : async (req, res) => {
         const guestCount = new GuestCount;
         guestCount.setCount(requestIp.getClientIp(req));
+        
+        const home = new Home();
+        const leftData = await home.leftList();
+        const rightData = await home.rightList();
+        const arrayData = {leftData, rightData}
 
         const auth = req.session.passport
         if(auth != undefined) {
             logger.info("GET /home 304 홈 화면으로 이동");
-            res.render('home',{login: auth.user.id});
+            res.render('home',{login: auth.user.id, arrayData});
         } else {
             logger.info("GET /home 304 홈 화면으로 이동");
-            res.render('home', {login: null});    
+            res.render('home', {login: null, arrayData});    
         }          
     },
 
