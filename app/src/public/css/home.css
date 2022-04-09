@@ -19,7 +19,7 @@ section
 .banner_text1 {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
   "Lucida Sans", Arial, sans-serif;
-  margin-top: 160px;
+  margin-top: 0 px;
   margin-bottom: 20px;
   font-size: 30px;
   animation: text1 4s 1 forwards;
@@ -67,6 +67,7 @@ p {
 section 
 .articlePoster {
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 20px 0;
   width: 100%;
@@ -334,4 +335,90 @@ td:nth-child(2) {
   width: 200px;
   text-align: right;
   border-bottom: 1px solid rgb(170, 169, 169);
+}
+
+@media screen and (max-width: 1201px) {
+  section
+  .banner {
+    justify-content: flex-start;
+    height: 400px;
+  }
+
+  section
+  .banner
+  .banner_text1 {
+    font-size: 30px;
+  }
+
+  @keyframes text1 {
+    from {
+      margin-top: 70px;
+      opacity: 0;
+    }
+    to {
+      margin-top: 90px;
+      opacity: 1;
+    }
+  }
+
+  section
+  .banner
+  .banner_text2 {  
+    font-size: 60px;
+  }
+
+  section 
+  .articlePoster
+  .left {
+    display: none;
+    width: 0%;
+  }
+
+  section 
+  .articlePoster {
+    padding: 10px 0;
+  }
+
+  section 
+  .articlePoster
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+  }
+
+  section 
+  .articlePoster
+  .center 
+  img {
+    height: 70%;
+    width: 100%;
+  }
+
+  section 
+  .articlePoster
+  .right {
+    display: none;
+    width: 0%;
+  }
+
+  section 
+  .articleBoard {
+    flex-direction: column;
+  }
+
+  section 
+  .articleBoard
+  .boardLeft {
+    width: 90%;
+  }
+
+  section 
+  .articleBoard
+  .boardRight {
+    margin: 100px 0;
+    width: 90%;
+  }
+  
 }
