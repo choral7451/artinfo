@@ -699,7 +699,7 @@ const process = {
 
         const board = new Board
         await board.religionUpdateSave(reqBody, id, content);
-        res.redirect('/recruit_religion/all')
+        res.redirect(`/recruit_religion/content?id=${reqBody.id}`)
     },
 
     recruit_religion_delete : (req, res) => {
