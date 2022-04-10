@@ -115,7 +115,7 @@ class BoardStorage {
         })
     }
 
-    static religionUpdate(id) {
+    static religionUpdateList(id) {
         return new Promise((resolve, reject) => {
             const query = `SELECT * FROM BOARD_RELIGION WHERE ID = ${id};`;
             db.query(query, (err, data) => {
@@ -159,6 +159,51 @@ class BoardStorage {
                     "${currentDate}"
                 )
             `;
+            db.query(query, (err, data) => {
+                if(err) reject(`${err}`)
+                else resolve(data)
+            });
+        })
+    }
+
+    static religionUpdateSave(data, id, content) {
+        console.log(data)
+        console.log(id)
+        console.log(content)
+        const today = new Date();  
+        const year = today.getFullYear();
+        const month = ('0' + (today.getMonth() + 1)).slice(-2);
+        const date = ('0' + today.getDate()).slice(-2);
+        const currentDate = (year + '-' + month + '-' + date);
+
+        let salary;
+        if(data.salaryType == '협의 후 결정' ) {
+            salary = '협의 후 결정';
+        } else if(data.salaryType == 'won'){
+            if(data.direct == 0) {
+                salary = '협의 후 결정';                
+            } else {
+                salary = data.direct + ' 원';
+            }
+        }
+        
+        return new Promise((resolve, reject) => {
+            const query = 
+                `   
+                    UPDATE BOARD_RELIGION SET 
+                    WRITER = "${data.writer}", 
+                    TITLE = "${data.title}", 
+                    EXPERTTYPE = "${data.experttype}", 
+                    TYPE = "${data.type}", 
+                    SALARY ="${salary}", 
+                    NAME ="${data.name}",
+                    PNUMBER = "${data.phonenumber}",
+                    ADDRESS = "${data.address}",
+                    EMAIL = "${data.email}",
+                    CONTENT = "${content}",
+                    DATE = "${currentDate}"
+                    WHERE ID = ${id};
+                `
             db.query(query, (err, data) => {
                 if(err) reject(`${err}`)
                 else resolve(data)

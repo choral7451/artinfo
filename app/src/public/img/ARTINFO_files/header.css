@@ -1,0 +1,164 @@
+header {
+  width: 100vw;
+  height: 120px;
+}
+  
+header .mobileHeader {
+  display: none;
+}
+
+header .mobileMenu {
+  display: none;
+}
+
+header .desktopHeader {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+}
+
+header .desktopHeader .logo {
+  height: 100%;
+  width: 16vw;
+}
+
+header .desktopHeader .logo a {
+  font-family: 'Fredoka One', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 40px;
+  height: 100%;
+  width: 100%;
+}
+
+header .desktopHeader nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 68vw;
+}
+header .desktopHeader nav li {
+  padding: 0 0.5rem;
+  margin: 0 5rem;
+}
+
+header .desktopHeader nav li:hover {
+  border-bottom: 3px solid black;
+  transition: 0.1s linear;
+}
+
+header .desktopHeader nav li a {
+  font-size: 1.5rem;
+  color: black;
+}
+
+header .desktopHeader .login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 16vw;
+}
+
+header .desktopHeader .login .name {
+  color: rgb(170, 169, 169);
+  font-size: 1.5rem;
+}
+
+header .desktopHeader .login a {
+  font-size: 1.5rem;
+  padding: 0 0.5rem;
+  color: black;
+  cursor: pointer;
+}
+
+header .desktopHeader .login .loginText:hover {
+  border-bottom: 3px solid black;
+  transition: 0.1s linear;
+}
+
+header .desktopHeader .login .logout:hover {
+  border-bottom: 3px solid black;
+  transition: 0.1s linear;
+}
+
+@media screen and (max-width: 1181px) {
+  header .desktopHeader {
+    display: none;
+  }
+
+  header .mobileHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+    height: 10vh;
+  }
+  
+  header .mobileHeader nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+  }
+
+  header .mobileHeader nav i {
+    font-size: 1.6rem;
+  }
+
+  header .mobileHeader .logo {
+    width: 60%;
+  }
+
+  header .mobileHeader .logo a {
+    font-family: 'Fredoka One', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 2rem;
+  }
+
+  header .mobileHeader .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+  }
+
+  header .mobileHeader .login a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    width: 100%;
+  }
+
+  header .mobileHeader .login a i {
+    font-size: 1.6rem;
+  }
+  
+  /* Nav Down */
+  header .mobileMenu {
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: black;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    z-index: 1;
+    height: 240px;
+  }
+  header .mobileMenu a {
+    font-size: 20px;
+    margin: 16px 0;
+    color: black;
+  }
+}

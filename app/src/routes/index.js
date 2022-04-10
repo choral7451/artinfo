@@ -35,5 +35,6 @@ router.post('/admin/crawling', ctrl.process.admin_crawling);
 router.post('/admin_write', ctrl.process.admin_write);
 router.post('/recruit_religion/write', ctrl.process.recruit_religion_write);
 router.post('/recruit_religion/delete', ctrl.process.recruit_religion_delete);
+router.post('/recruit_religion/update', ctrl.process.recruit_religion_update);
 
 module.exports = router;

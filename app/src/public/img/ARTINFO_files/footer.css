@@ -1,0 +1,29 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+  height: 120px;
+}
+
+footer 
+.footerText {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 1182px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer 
+  .footerText {
+    font-size: 20px;
+    margin: 30px 0;
+    font-family: sans-serif;
+    font-weight: 700;
+  }
+}  

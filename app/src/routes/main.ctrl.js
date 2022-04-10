@@ -581,7 +581,7 @@ const output = {
 
         const id = req.query.id;     
         const board = new Board
-        const data = await board.religionUpdate(id);
+        const data = await board.religionUpdateList(id);
         const auth = req.session.passport
         
         if(auth != undefined) {
@@ -686,6 +686,18 @@ const process = {
 
         const board = new Board
         await board.religionWrite(reqBody, id, content);
+        res.redirect('/recruit_religion/all')
+    },
+
+    recruit_religion_update : async (req, res) => {
+        const reqBody = req.body;        
+        console.log(reqBody)
+
+        let content = reqBody.contentMain;
+        content = content.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+
+        const board = new Board
+        await board.religionUpdateSave(reqBody, id, content);
         res.redirect('/recruit_religion/all')
     },
 

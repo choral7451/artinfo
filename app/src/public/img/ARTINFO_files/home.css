@@ -79,6 +79,7 @@ p {
   
 section 
 .articlePoster {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,6 +148,7 @@ img {
 
 section 
 .articleBoard {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;

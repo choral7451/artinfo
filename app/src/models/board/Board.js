@@ -68,9 +68,18 @@ class Board {
         }
     }
 
-    async religionUpdate(id) {
+    async religionUpdateList(id) {
         try {
-            const list = await BoardStorage.religionUpdate(id);
+            const list = await BoardStorage.religionUpdateList(id);
+            return list;
+        } catch (err) {
+            return { success: false, err };
+        }
+    }
+
+    async religionUpdateSave(data, id, content) {
+        try {
+            const list = await BoardStorage.religionUpdateSave(data, id, content);
             return list;
         } catch (err) {
             return { success: false, err };
