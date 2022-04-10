@@ -583,11 +583,12 @@ const output = {
         const board = new Board
         const data = await board.religionUpdateList(id);
         const auth = req.session.passport
+        const content = data[0].CONTENT.replace(/<br\/\>/g, '\r\n');
         
         if(auth != undefined) {
             if(auth.user.id == data[0].WRITER) {
                 logger.info("GET /recruit_religion/update 304 모집공고(종교) 화면으로 이동");
-                res.render('recruit_religion_update', {login: auth.user.id, data});
+                res.render('recruit_religion_update', {login: auth.user.id, data, content});
             } else {
                 res.redirect('/recruit_religion/all')
             }
@@ -691,7 +692,7 @@ const process = {
 
     recruit_religion_update : async (req, res) => {
         const reqBody = req.body;        
-        console.log(reqBody)
+        const id = req.session.passport.user.id
 
         let content = reqBody.contentMain;
         content = content.replace(/(?:\r\n|\r|\n)/g, '<br/>');

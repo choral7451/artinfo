@@ -167,9 +167,6 @@ class BoardStorage {
     }
 
     static religionUpdateSave(data, id, content) {
-        console.log(data)
-        console.log(id)
-        console.log(content)
         const today = new Date();  
         const year = today.getFullYear();
         const month = ('0' + (today.getMonth() + 1)).slice(-2);
@@ -191,7 +188,7 @@ class BoardStorage {
             const query = 
                 `   
                     UPDATE BOARD_RELIGION SET 
-                    WRITER = "${data.writer}", 
+                    WRITER = "${id}", 
                     TITLE = "${data.title}", 
                     EXPERTTYPE = "${data.experttype}", 
                     TYPE = "${data.type}", 
@@ -202,7 +199,7 @@ class BoardStorage {
                     EMAIL = "${data.email}",
                     CONTENT = "${content}",
                     DATE = "${currentDate}"
-                    WHERE ID = ${id};
+                    WHERE ID = ${data.id};
                 `
             db.query(query, (err, data) => {
                 if(err) reject(`${err}`)

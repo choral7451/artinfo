@@ -71,7 +71,8 @@
     <section class="section" id="section">
         <div class="title">글쓰기</div>
         <article class="article">
-            <form action="/r""ecruit_religion/update" class="contentBack" method="post" onSubmit="return confirm('게시글 수정을 완료하시겠습니까?')">
+            <form action="/recruit_religion/update" class="contentBack" method="post" onSubmit="return confirm('게시글 수정을 완료하시겠습니까?')">
+                <input type="hidden" name="id" value=<%= data[0].ID %>>
                 <div class="titleBack">
                     <p>제 목</p>
                     <input type="text" name="title" value=<%= data[0].TITLE %>/>
@@ -138,7 +139,7 @@
                 </div>                
                 <div class="contentMain">
                     <p>내 용</p>
-                    <textarea spellcheck="false"  id="textarea" name="contentMain" ><%= data[0].CONTENT %></textarea>
+                    <textarea spellcheck="false"  id="textarea" name="contentMain" ><%= content %></textarea>
                 </div>
                 <div class="saveBack">
                     <button >저 장</button>
