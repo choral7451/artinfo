@@ -53,14 +53,24 @@
             </div>
         </div>    
     
-        <div class="mobileHeader">        
-            <nav>
-                <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
-            </nav>
-            <div class="logo">
-                <a href="/">ARTINFO</a>
-            </div>
-            <div class="login"><a href="/login"><i class="fa-regular fa-user"></i></a></div>
+        <div class="mobileHeader">     
+            <% if( login != null ) { %>  
+                <nav>
+                    <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
+                </nav>
+                <div class="logo">
+                    <a href="/">ARTINFO</a>
+                </div>
+                <div class="login"><a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></div>
+            <% } else { %> 
+                <nav>
+                    <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
+                </nav>
+                <div class="logo">
+                    <a href="/">ARTINFO</a>
+                </div>
+                <div class="login"><a href="/login"><i class="fa-regular fa-user"></i></a></div>
+            <% } %>            
         </div>
         <div id="mobileMenu" class="mobileMenu"> 
             <a href="/">Home</a>

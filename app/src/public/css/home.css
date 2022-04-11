@@ -392,7 +392,7 @@ td:nth-child(2) {
   a
   img {
     height: 90%;
-    width: 90%;
+    width: 70%;
   }
 
   section 
@@ -439,6 +439,15 @@ td:nth-child(2) {
   .banner_text_back
   .banner_text2 {  
     font-size: 50px;
+  }
+
+  section 
+  .articlePoster
+  .center 
+  a
+  img {
+    height: 90%;
+    width: 90%;
   }
 
   section 
