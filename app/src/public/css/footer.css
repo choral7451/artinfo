@@ -27,3 +27,13 @@ footer
     font-weight: 700;
   }
 }  
+
+@media screen and (max-width: 1181px) {
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+    height: 400px;
+  }
+}

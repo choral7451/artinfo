@@ -1,7 +1,3 @@
-section {
-  width: 100vw;
-}
-
 section
 .banner {
   display: flex;
@@ -80,6 +76,7 @@ p {
   
 section 
 .articlePoster {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,7 +112,7 @@ section
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 40%
+  width: 40%;
 }
 
 section 
@@ -351,115 +348,102 @@ td:nth-child(2) {
   border-bottom: 1px solid rgb(170, 169, 169);
 }
 
-@media screen and (max-width: 1201px) {
-  section
-  .banner {
-    justify-content: flex-start;
-    height: 400px;
-  }
 
+@media screen and (max-width: 1181px) {
   section
   .banner
-  .banner_text1 {
-    font-size: 30px;
-  }
-
-  @keyframes text1 {
-    from {
-      margin-top: 70px;
-      opacity: 0;
-    }
-    to {
-      margin-top: 90px;
-      opacity: 1;
-    }
-  }
-
-  section
-  .banner
+  .banner_text_back
   .banner_text2 {  
-    font-size: 60px;
+    font-size: 80px;
+  }
+
+  section 
+  .articlePoster {
+    height: 800px;
   }
 
   section 
   .articlePoster
   .left {
     display: none;
-    width: 0%;
-  }
-
-  section 
-  .articlePoster {
-    padding: 10px 0;
   }
 
   section 
   .articlePoster
   .center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
+    height: 100%;
+    width: 100%;
   }
 
   section 
   .articlePoster
   .center 
-  img {
-    height: 70%;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     width: 100%;
+  }
+
+  section 
+  .articlePoster
+  .center 
+  a
+  img {
+    height: 90%;
+    width: 90%;
   }
 
   section 
   .articlePoster
   .right {
     display: none;
-    width: 0%;
   }
 
   section 
   .articleBoard {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 1200px
   }
 
   section 
   .articleBoard
   .boardLeft {
+    margin-top: 50px;
     width: 90%;
+    height: 50%;
   }
 
   section 
   .articleBoard
   .boardRight {
-    margin: 100px 0;
     width: 90%;
-  }
-  
-}
-
-@media screen and (max-width: 1181px) {
-  @keyframes text1 {
-    from {
-      margin-top: -80px;
-      opacity: 0;
-    }
-    to {
-      margin-top: -60px;
-      opacity: 1;
-    }
-  }
-
-  section 
-  .articlePoster {
-    height: 500px;
+    height: 50%;
   }
 }
+
 
 @media screen and (max-width: 500px) {
+  section
+  .banner {
+    height: 400px;
+  }
+
   section
   .banner
   .banner_text_back
   .banner_text2 {  
     font-size: 50px;
   }
+
+  section 
+  .articlePoster {
+    height: 500px;
+  }
+  
 }
