@@ -597,6 +597,20 @@ const output = {
             res.redirect('/recruit_religion/all')  
         }
     },
+
+    error : async (req, res) => {
+        const guestCount = new GuestCount;
+        guestCount.setCount(requestIp.getClientIp(req));
+
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /error 404 화면으로 이동");
+            res.render('error',{login: auth.user.id});
+        } else {
+            logger.info("GET /error 404 화면으로 이동");
+            res.render('error', {login: null});    
+        }  
+    }
 }
 
 const process = { 
