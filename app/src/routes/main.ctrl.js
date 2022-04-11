@@ -15,7 +15,7 @@ const output = {
     home : async (req, res) => {
         const guestCount = new GuestCount;
         guestCount.setCount(requestIp.getClientIp(req));
-        
+        console.log(requestIp.getClientIp(req))
         const home = new Home();
         const leftData = await home.leftList();
         const rightData = await home.rightList();

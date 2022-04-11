@@ -6,6 +6,7 @@ class GuestCount {
     }
 
     async setCount(ip) {
+
         try {
             const list = await guestCountStorage.setCount(ip);
             return list;
