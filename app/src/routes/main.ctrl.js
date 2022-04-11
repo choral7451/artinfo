@@ -1,12 +1,10 @@
 const bcrypt = require('bcrypt');
-const requestIp = require('request-ip');
 
 const logger = require("../config/logger");
 const Board = require("../models/board/Board");
 const Admin = require("../models/admin/Admin");
 const Login = require("../models/login/Login");
 const Signup = require("../models/login/signup/Signup");
-const GuestCount = require("../models/guestCount/GuestCount");
 const Home = require("../models/home/Home");
 
 const { Crawler } = require('../models/admin/mainCrawler');
@@ -29,9 +27,6 @@ const output = {
     },
 
     about : (req, res) => {
-        const guestCount = new GuestCount;
-        guestCount.setCount(requestIp.getClientIp(req));
-
         const auth = req.session.passport
         if(auth != undefined) {
             logger.info("GET /about 304 소개 화면으로 이동");
@@ -43,9 +38,6 @@ const output = {
     },
 
     login : (req, res) => {
-        const guestCount = new GuestCount;
-        guestCount.setCount(requestIp.getClientIp(req));
-
         const auth = req.session.passport
         if(auth != undefined) {
             logger.info("GET /login 304 로그인 화면으로 이동");
@@ -69,9 +61,6 @@ const output = {
     },
 
     signup : (req, res) => {
-        const guestCount = new GuestCount;
-        guestCount.setCount(requestIp.getClientIp(req));
-
         const auth = req.session.passport
         if(auth != undefined) {
             res.render('/');
@@ -82,16 +71,13 @@ const output = {
     },
 
     admin : async function (req, res) { 
-        const guestCount = new GuestCount;
-        const countReq = await guestCount.getCount();
-        const countResult = countReq[0].CNT;
         const auth = req.session.passport
         if(auth) {
             if(auth.user.id == "admin") {
                 const admin = new Admin();
                 const data = await admin.list(); 
                 logger.info("GET /admin 304 관리자 화면으로 이동");
-                res.render('admin', {login: auth.user.id, data, countResult});
+                res.render('admin', {login: auth.user.id, data});
             } else {
                 res.redirect('/');
             }           
@@ -131,9 +117,6 @@ const output = {
     },
 
     recruit_art_all : async (req, res) => {
-        const guestCount = new GuestCount;
-        guestCount.setCount(requestIp.getClientIp(req));
-
         const id = req.query.id;
         const path = "All";
         const board = new Board();
@@ -169,9 +152,6 @@ const output = {
     },
 
     recruit_art_orchestra : async (req, res) => {
-        const guestCount = new GuestCount;
-        guestCount.setCount(requestIp.getClientIp(req));
-
         const id = req.query.id;
         const path = "ORCHESTRA";
         const board = new Board();
@@ -212,9 +192,6 @@ const output = {
     },
 
     recruit_art_choir : async (req, res) => {
-        const guestCount = new GuestCount;
-        guestCount.setCount(requestIp.getClientIp(req));
-
         const id = req.query.id;
         const path = "CHOIR";
         const board = new Board();
@@ -255,9 +232,6 @@ const output = {
     },
 
     recruit_art_administration : async (req, res) => {
-        const guestCount = new GuestCount;
-        guestCount.setCount(requestIp.getClientIp(req));
-
         const id = req.query.id;
         const path = "ADMINISTRATION";
         const board = new Board();
@@ -298,9 +272,6 @@ const output = {
     },
 
     recruit_art_etc : async (req, res) => {
-        const guestCount = new GuestCount;
-        guestCount.setCount(requestIp.getClientIp(req));
-
         const id = req.query.id;
         const path = "ETC";
         const board = new Board();
@@ -341,9 +312,6 @@ const output = {
     },
 
     recruit_art_search : async (req, res) => {
-        const guestCount = new GuestCount;
-        guestCount.setCount(requestIp.getClientIp(req));
-
         const id = req.query.id;
         const path = "All";
         const board = new Board();
@@ -378,9 +346,6 @@ const output = {
     },
 
     recruit_religion_content : async (req, res) => {
-        const guestCount = new GuestCount;
-        guestCount.setCount(requestIp.getClientIp(req));
-
         const query = req.query.id;
         const board = new Board;
         const data = await board.religionListContent(query);
@@ -399,9 +364,6 @@ const output = {
     },
  
     recruit_religion_all : async (req, res) => {
-        const guestCount = new GuestCount;
-        guestCount.setCount(requestIp.getClientIp(req));
-
         const id = req.query.id;
         const path = "All";
         const board = new Board();
@@ -437,9 +399,6 @@ const output = {
     },
 
     recruit_religion_conductor : async (req, res) => {
-        const guestCount = new GuestCount;
-        guestCount.setCount(requestIp.getClientIp(req));
-
         const id = req.query.id;
         const path = "지휘자";
         const board = new Board();
@@ -482,9 +441,6 @@ const output = {
     },
 
     recruit_religion_solists : async (req, res) => {
-        const guestCount = new GuestCount;
-        guestCount.setCount(requestIp.getClientIp(req));
-
         const id = req.query.id;
         const path = "솔리스트";
         const board = new Board();
@@ -520,9 +476,6 @@ const output = {
     },
 
     recruit_religion_accompanist : async (req, res) => {
-        const guestCount = new GuestCount;
-        guestCount.setCount(requestIp.getClientIp(req));
-
         const id = req.query.id;
         const path = "반주자";
         const board = new Board();
@@ -559,9 +512,6 @@ const output = {
 
 
     recruit_religion_write : async (req, res) => {
-        const guestCount = new GuestCount;
-        guestCount.setCount(requestIp.getClientIp(req));
-
         const auth = req.session.passport
         if(auth) {
             logger.info("GET /recruit_religion/write 304 모집공고(종교)/글쓰기 화면으로 이동");
@@ -573,9 +523,6 @@ const output = {
     },
 
     recruit_religion_update : async (req, res) => {
-        const guestCount = new GuestCount;
-        guestCount.setCount(requestIp.getClientIp(req));
-
         const id = req.query.id;     
         const board = new Board
         const data = await board.religionUpdateList(id);
@@ -596,9 +543,6 @@ const output = {
     },
 
     error : async (req, res) => {
-        const guestCount = new GuestCount;
-        guestCount.setCount(requestIp.getClientIp(req));
-
         const auth = req.session.passport
         if(auth != undefined) {
             logger.info("GET /error 404 화면으로 이동");
