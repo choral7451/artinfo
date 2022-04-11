@@ -5,6 +5,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url(../img/main.webp);
+    background-size: 100% 100%;
+    background-repeat: no-repeat; 
     height: 100vh;
 }
 
@@ -51,4 +54,59 @@ section
     width: 70%;
     font-size: 20px;
     margin: 20px 0;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+    height: 10vh;
+}
+
+footer 
+.footerText {
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 1181px) { 
+    header
+    .logo
+    a {
+        font-size: 30px
+    }
+    
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+        width: 80%;
+        border-top: 2px solid rgb(170, 169, 169);
+        border-bottom: 2px solid rgb(170, 169, 169);
+    }
+
+    section
+    .mainHigh {
+        width: 100%;
+        margin: 20px 0;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    section
+    .mainCenter {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 500px) { 
+    section
+    .mainCenter {
+        font-size: 15px;
+    }
 }
