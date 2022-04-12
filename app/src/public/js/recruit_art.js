@@ -12,7 +12,7 @@ const pageButton = () => {
             getQueryString = URLSearch.get('id')-1;
         }
 
-        document.getElementById('left').setAttribute('href', `http://localhost:3000${path}?id=${getQueryString}`);
+        document.getElementById('left').setAttribute('href', `${path}?id=${getQueryString}`);
     });        
 
     document.getElementById('right').addEventListener('click', ()=> {
@@ -27,7 +27,7 @@ const pageButton = () => {
         } else {
             getQueryString = Number(URLSearch.get('id'))+1;
         }
-        document.getElementById('right').setAttribute('href', `http://localhost:3000${path}?id=${getQueryString}`);
+        document.getElementById('right').setAttribute('href', `${path}?id=${getQueryString}`);
     })
 
     if(URLSearch.get('id') == null) {
