@@ -96,6 +96,7 @@ form input {
   height: 50px;
   text-align: center;
   border: none;
+  border-radius: 0;
   border-bottom: 2px solid black;
   font-size: 20px;
   margin: 30px;
