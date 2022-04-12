@@ -76,6 +76,7 @@
 .article form .content select {
   text-align: center;
   box-sizing: border-box;
+  border-radius: 0;
   margin: 3px 0;
   height: 30px;
   width: 100%;    
