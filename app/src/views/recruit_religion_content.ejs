@@ -89,10 +89,40 @@
         </div> 
     </header>
     <section class="section" id="section">
-        <div class="title">종교</div>
+        <div class="title"><a href="/recruit_religion/all">종교</a></div>
         <article class="article">
             <div class="subtitle">
                 <h2><%= data[0].TITLE %></h2>
+            </div>
+            <div class="mobileType">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>단체명</td>
+                            <td colspan="3"><%= data[0].NAME %></td>
+                            <td>글쓴이</td>
+                            <td><%= data[0].WRITER %></td>
+                        </tr>
+                        <tr>
+                            <td>분류</td>
+                            <td><%= data[0].TYPE %></td>
+                            <td>분야</td>
+                            <td><%= data[0].EXPERTTYPE %></td>
+                            <td>급여</td>
+                            <td><%= data[0].SALARY %></td>
+                        </tr>
+                        <tr>
+                            <td>이메일</td>
+                            <td colspan="3"><%= data[0].EMAIL %></td>
+                            <td>연락처</td>
+                            <td><%= data[0].PNUMBER %></td>
+                        </tr>
+                        <tr>
+                            <td>주소</td>
+                            <td colspan="5"><%= data[0].ADDRESS %></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="type">
                 <table>
@@ -140,11 +170,24 @@
         </article>
     </section>
     
-    <footer id="footer">
-        <div>문의 : chorales@naver.com</div>
+    <footer id="footer">   
+        <div class="ad_fit1">
+            <ins class="kakao_ad_area" style="display:none;" 
+            data-ad-unit    = "DAN-PgHV76O2ZNxrnKWW" 
+            data-ad-width   = "320" 
+            data-ad-height  = "50"></ins> 
+        </div>     
+        <div class="footerText">문의 : chorales@naver.com</div>       
+        <div class="ad_fit2">
+            <ins class="kakao_ad_area" style="display:none;" 
+            data-ad-unit    = "DAN-27ykCGeamZlU7nSD" 
+            data-ad-width   = "320" 
+            data-ad-height  = "50"></ins> 
+        </div>
     </footer>
 
     <!-- JS import -->
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     <script type="text/javascript" src="/js/recruit_religion_content.js"></script>
 </body>
 </html>

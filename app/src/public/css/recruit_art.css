@@ -53,6 +53,7 @@
   align-items: end;
   height: 100px;
   width: 60%;
+  margin-top: 30px;
 }
 
 .section .article .top ul {
@@ -260,6 +261,7 @@
     flex-direction: column-reverse;
     height: 20%;
     width: 90%;
+    margin-top: 30px;
   }
 
   .section .article .top ul {

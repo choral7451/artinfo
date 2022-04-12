@@ -26,6 +26,19 @@
 }
 
 .section 
+.title 
+a {
+    color: black;
+}
+
+.section 
+.title 
+a:hover {
+    border-bottom: 3px solid black;
+    font-weight: bold;
+}
+
+.section 
 .article {
     display: flex;
     justify-content: center;
@@ -42,6 +55,39 @@
     align-items: center;
     justify-content: center;
     width: 50%;
+}
+
+.section 
+.article
+.mobileType {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.section 
+.article
+.mobileType
+table {    
+    border-collapse:collapse;
+}
+
+.section 
+.article
+.mobileType
+table
+tbody
+tr
+td {
+    text-align: center; 
+    height: 40px;
+    border: 2px solid black;    
+    color: black;
 }
 
 .section 
@@ -74,6 +120,7 @@ td {
     text-align: center; 
     height: 40px;
     border: 2px solid black;    
+    color: black;
 }
 
 .section
@@ -179,10 +226,12 @@ button {
     margin: 20px 10px;
     border: none;
     cursor: pointer;
+    color: black;
     border-radius: 10px;
     height: 30px;
     width: 200px;
 }
+
 .section
 .article
 .ctrlButton
@@ -190,4 +239,24 @@ button:hover {
     font-weight: bold;
     border: 2px solid black;
     background-color: white;
+}
+
+@media screen and (max-width: 1182px) {
+    .section 
+    .article
+    .type {
+        display: none;
+    }
+
+    .section 
+    .article
+    .mobileType {
+        display: flex;
+    }
+
+    .section
+    .article
+    .ctrlButton{
+        flex-direction: column;
+    }
 }
