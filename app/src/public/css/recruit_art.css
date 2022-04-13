@@ -245,7 +245,7 @@
   }
 
   .section .article .board table thead {
-    height: 3rem;
+    height: 4rem;
   }
 
   .section .article .board table tbody {
@@ -253,7 +253,7 @@
   }
 
   .section .article .board table tbody tr {
-    height: 2rem;
+    height: 3rem;
   }
 }
 
