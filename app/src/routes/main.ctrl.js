@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const path = require('path');
 
 const logger = require("../config/logger");
 const Board = require("../models/board/Board");
@@ -540,6 +541,13 @@ const output = {
             logger.info("GET /recruit_religion/update 304 모집공고(종교) 화면으로 이동");
             res.redirect('/recruit_religion/all')  
         }
+    },
+
+    robots : (req, res) => {
+        res.type("text/plain");
+        res.send(
+            "User-agent: *\nDisallow: /admin/\n\sitemap: https://artinfokorea.com/sitemap.xml\n"
+        );
     },
 
     error : async (req, res) => {

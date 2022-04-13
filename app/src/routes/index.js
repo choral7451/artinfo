@@ -25,6 +25,7 @@ router.get('/recruit_religion/solists', ctrl.output.recruit_religion_solists);
 router.get('/recruit_religion/accompanist', ctrl.output.recruit_religion_accompanist);
 router.get('/recruit_religion/write', ctrl.output.recruit_religion_write);
 router.get('/recruit_religion/update', ctrl.output.recruit_religion_update);
+router.get('/robots.txt', ctrl.output.robots);
 router.get('*', ctrl.output.error)
 
 router.post('/login_check', ctrl.process.login_check);
