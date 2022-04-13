@@ -242,6 +242,13 @@ button:hover {
 }
 
 @media screen and (max-width: 1182px) {
+
+    .section 
+    .article
+    .subtitle {
+        font-size: 10px;
+    }
+
     .section 
     .article
     .type {
@@ -252,6 +259,18 @@ button:hover {
     .article
     .mobileType {
         display: flex;
+    }
+    .section 
+    .article
+    .content {
+        width: 100%;
+    }
+
+    .section 
+    .article
+    .content
+    textarea {
+        width: 90%;
     }
 
     .section
