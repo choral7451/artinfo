@@ -99,7 +99,6 @@ tr
 td:nth-child(1) {
     font-size: 12px;
     width: 30px;
-    writing-mode: tb-rl;
 }
 
 .section
@@ -120,7 +119,6 @@ tr
 td:nth-child(3) {
     width: 30px;
     font-size: 12px;
-    writing-mode: tb-rl;
 }
 
 .section
@@ -140,7 +138,6 @@ table
 tr
 td:nth-child(5) {
     font-size: 12px;
-    writing-mode: tb-rl;
 }
 
 .section
