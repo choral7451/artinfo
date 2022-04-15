@@ -63,6 +63,7 @@ a:hover {
     display: none;
     align-items: center;
     justify-content: center;
+    height: 260px;
     width: 90%;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -85,10 +86,74 @@ tbody
 tr
 td {
     text-align: center; 
-    height: 40px;
+    height: 60px;
     border: 2px solid black;    
     color: black;
 }
+
+.section
+.article
+.mobileType
+table
+tr
+td:nth-child(1) {
+    font-size: 12px;
+    width: 30px;
+    writing-mode: tb-rl;
+}
+
+.section
+.article
+.mobileType
+table
+tr
+td:nth-child(2) {
+    width: 50px;
+    font-size: 12px;
+}
+
+.section
+.article
+.mobileType
+table
+tr
+td:nth-child(3) {
+    width: 30px;
+    font-size: 12px;
+    writing-mode: tb-rl;
+}
+
+.section
+.article
+.mobileType
+table
+tr
+td:nth-child(4) {
+    width: 70px;
+    font-size: 12px;
+}
+
+.section
+.article
+.mobileType
+table
+tr
+td:nth-child(5) {
+    font-size: 12px;
+    writing-mode: tb-rl;
+}
+
+.section
+.article
+.mobileType
+table
+tr
+td:nth-child(6) {
+    width: 100px;
+    font-size: 12px;
+}
+
+
 
 .section 
 .article
@@ -246,6 +311,8 @@ button:hover {
     .section 
     .article
     .subtitle {
+        width: 90%;
+        margin-top: 20px;
         font-size: 10px;
     }
 
@@ -260,6 +327,7 @@ button:hover {
     .mobileType {
         display: flex;
     }
+
     .section 
     .article
     .content {
@@ -270,7 +338,8 @@ button:hover {
     .article
     .content
     textarea {
-        width: 90%;
+        font-size: 15px;
+        width: 80%;
     }
 
     .section

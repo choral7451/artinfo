@@ -293,7 +293,7 @@ td:nth-child(2) {
   font-size: 20px;
   text-align: end;
   height: 80px;
-  width: 200px;
+  width: 200px;  
   border-bottom: 2px solid black;
 }
 
@@ -344,7 +344,7 @@ td:nth-child(2) {
   "Lucida Sans", Arial, sans-serif;
   height: 50px;
   width: 200px;
-  text-align: right;
+  text-align: right;  
   border-bottom: 1px solid rgb(170, 169, 169);
 }
 
