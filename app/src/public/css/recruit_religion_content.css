@@ -150,6 +150,14 @@ td:nth-child(6) {
     font-size: 12px;
 }
 
+.section
+.article
+.mobileType
+table
+tr:nth-child(3)
+td:nth-child(4) {
+    color: black;
+}
 
 
 .section 
