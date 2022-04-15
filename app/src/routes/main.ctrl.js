@@ -656,6 +656,7 @@ const process = {
     recruit_religion_update : async (req, res) => {
         const reqBody = req.body;        
         const id = req.session.passport.user.id
+        console.log(reqBody)
 
         let content = reqBody.contentMain;
         content = content.replace(/(?:\r\n|\r|\n)/g, '<br/>');

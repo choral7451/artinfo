@@ -190,7 +190,7 @@ class BoardStorage {
                     UPDATE BOARD_RELIGION SET 
                     WRITER = "${id}", 
                     TITLE = "${data.title}", 
-                    EXPERTTYPE = "${data.experttype}", 
+                    EXPERTTYPE = "${data.expert}", 
                     TYPE = "${data.type}", 
                     SALARY ="${salary}", 
                     NAME ="${data.name}",
