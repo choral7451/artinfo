@@ -1,3 +1,7 @@
+if(document.getElementById('salaryType').value === "won") {
+    document.getElementById('inputSalary').style.display = "flex";
+}
+
 document.getElementById('salaryType').addEventListener('change', (e) => {
     const value = e.target.value
     if(value == 'won') {
@@ -5,7 +9,6 @@ document.getElementById('salaryType').addEventListener('change', (e) => {
     } else {
         document.getElementById('inputSalary').style.display = "none";
     }
-    
 })
 
 const maxLengthCheck = (object) => {

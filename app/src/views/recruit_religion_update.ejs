@@ -103,22 +103,62 @@
                             <p>분야</p>
                             <select class="expert" name="expert" >
                                 <option>분야</option>
-                                <option value="지휘자">지휘자</option>
-                                <option value="소프라노">소프라노</option>
-                                <option value="알토">알토</option>
-                                <option value="테너">테너</option>
-                                <option value="베이스">베이스</option>
-                                <option value="반주자">반주자</option>                                
+                                <% if(data[0].EXPERTTYPE == "지휘자") { %>
+                                    <option value="지휘자" selected>지휘자</option>
+                                <% } else {%>
+                                    <option value="지휘자">지휘자</option>
+                                <% } %>
+                                <% if(data[0].EXPERTTYPE == "소프라노") { %>
+                                    <option value="소프라노" selected>소프라노</option>
+                                <% } else {%>
+                                    <option value="소프라노">소프라노</option>
+                                <% } %>
+                                <% if(data[0].EXPERTTYPE == "알토") { %>
+                                    <option value="알토" selected>알토</option>
+                                <% } else {%>
+                                    <option value="알토">알토</option>
+                                <% } %>
+                                <% if(data[0].EXPERTTYPE == "테너") { %>
+                                    <option value="테너" selected>테너</option>
+                                <% } else {%>
+                                    <option value="테너">테너</option>
+                                <% } %>
+                                <% if(data[0].EXPERTTYPE == "베이스") { %>
+                                    <option value="베이스" selected>베이스</option>
+                                <% } else {%>
+                                    <option value="베이스">베이스</option>
+                                <% } %>
+                                <% if(data[0].EXPERTTYPE == "반주자") { %>
+                                    <option value="반주자" selected>반주자</option>                                
+                                <% } else {%>
+                                    <option value="반주자">반주자</option>                                
+                                <% } %>
                             </select>
                         </div>
                         <div class="typeBack">
                             <p>분류</p>
                             <select class="type" name="type" >
                                 <option>분류</option>
-                                <option value="기독교">기독교</option>
-                                <option value="천주교">천주교</option>
-                                <option value="불교">불교</option>
-                                <option value="기타">기타</option>
+                                <% if(data[0].TYPE == "기독교") { %>
+                                    <option value="기독교" selected>기독교</option>
+                                <% } else {%>
+                                    <option value="기독교" >기독교</option>
+                                <% } %>
+                                <% if(data[0].TYPE == "천주교") { %>
+                                    <option value="천주교" selected>천주교</option>
+                                <% } else {%>
+                                    <option value="천주교">천주교</option>
+                                <% } %>
+                                <% if(data[0].TYPE == "불교") { %>
+                                    <option value="불교" selected>불교</option>
+                                <% } else {%>
+                                    <option value="불교">불교</option>
+                                <% } %>
+                                <% if(data[0].TYPE == "기타") { %>
+                                    <option value="기타" selected>기타</option>
+                                <% } else {%>
+                                    <option value="기타">기타</option>
+                                <% } %>                                                                                    
                             </select>
                         </div>
                         <div class="salary">
@@ -126,12 +166,20 @@
                                 <p>급여</p>
                                 <select id="salaryType" name="salaryType" >
                                     <option>선택</option>
-                                    <option value="협의 후 결정">협의 후 결정</option>
-                                    <option id="direct" value="won">직접 입력</option>
+                                    <% if(data[0].SALARY === "협의 후 결정") { %>
+                                        <option value="협의 후 결정" selected>협의 후 결정</option>
+                                    <% } else {%>
+                                        <option value="협의 후 결정">협의 후 결정</option>
+                                    <% } %>   
+                                    <% if(data[0].SALARY !== "협의 후 결정") { %>
+                                        <option id="direct" value="won" selected>직접 입력</option>
+                                    <% } else {%>
+                                        <option id="direct" value="won">직접 입력</option>
+                                    <% } %>                                                                         
                                 </select>   
                             </div>
                             <div id="inputSalary" class="inputSalary">
-                                <input type="text" name="direct" onKeyup="inputNumberAutoComma(this);" value="" >  
+                                <input type="text" name="direct" onKeyup="inputNumberAutoComma(this);" value="<%= data[0].SALARY %>" >  
                                 <p>원</p>
                             </div>                                                                              
                         </div>

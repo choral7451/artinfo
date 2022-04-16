@@ -139,7 +139,7 @@ class BoardStorage {
             if(data.direct == 0) {
                 salary = '협의 후 결정';                
             } else {
-                salary = data.direct + ' 원';
+                salary = data.direct;
             }
         }
         
@@ -180,7 +180,7 @@ class BoardStorage {
             if(data.direct == 0) {
                 salary = '협의 후 결정';                
             } else {
-                salary = data.direct + ' 원';
+                salary = data.direct;
             }
         }
         
