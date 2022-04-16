@@ -67,10 +67,10 @@
 }
 
 .section .article .top ul li {
-  margin: 0 2%;
+  margin: 0 0.8%;
 }
 .section .article .top ul li form button {
-  width: 80px;
+  width: 100px;
   font-size: 18px;
   background-color: white;
   color: black;
