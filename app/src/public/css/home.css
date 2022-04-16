@@ -180,7 +180,7 @@ tr
 td:nth-child(1) {
   font-size: 20px;
   height: 80px;
-  width: 420px;
+  width: 520px;
   border-bottom: 2px solid black;
 }
 
@@ -194,7 +194,7 @@ td:nth-child(2) {
   font-size: 20px;
   text-align: end;
   height: 80px;
-  width: 200px;
+  width: 100px;
   border-bottom: 2px solid black;  
 }
 
@@ -219,7 +219,6 @@ td:nth-child(1) {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
   "Lucida Sans", Arial, sans-serif;
   height: 50px;
-  width: 420px;
   border-bottom: 1px solid rgb(170, 169, 169);
 }
 
@@ -244,7 +243,6 @@ td:nth-child(2) {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
   "Lucida Sans", Arial, sans-serif;
   height: 50px;
-  width: 200px;
   text-align: right;
   border-bottom: 1px solid rgb(170, 169, 169);
 }
