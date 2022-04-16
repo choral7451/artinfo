@@ -180,7 +180,7 @@ tr
 td:nth-child(1) {
   font-size: 20px;
   height: 80px;
-  width: 520px;
+  width: 470px;
   border-bottom: 2px solid black;
 }
 
@@ -194,7 +194,7 @@ td:nth-child(2) {
   font-size: 20px;
   text-align: end;
   height: 80px;
-  width: 100px;
+  width: 150px;
   border-bottom: 2px solid black;  
 }
 
@@ -275,7 +275,7 @@ tr
 td:nth-child(1) {
   font-size: 20px;
   height: 80px;
-  width: 520px;
+  width: 470px;
   border-bottom: 2px solid black;
 }
 
@@ -289,7 +289,7 @@ td:nth-child(2) {
   font-size: 20px;
   text-align: end;
   height: 80px;
-  width: 100px;  
+  width: 150px;  
   border-bottom: 2px solid black;
 }
 
