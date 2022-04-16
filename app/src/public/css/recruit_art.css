@@ -241,6 +241,7 @@
   
   .section .article .top ul li form button {
     width: 60px;
+    height: 30px;
     font-size: 10px;
     background-color: white;
     border: none;

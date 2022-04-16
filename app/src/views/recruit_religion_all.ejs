@@ -120,17 +120,6 @@
                             <button id="typeAccompanist" class="type">반주자</button>
                         </form>
                     </li>
-                    <li>
-                        <% if( login != null ) { %>
-                            <form action="/recruit_religion/write" class="mobileWrite" method="get">
-                                <button class="mobileWriteButton">글쓰기</button>
-                            </form>
-                        <% } else { %>
-                            <form action="/login" class="mobileWrite" method="get">
-                                <button class="mobileWriteButton">글쓰기</button>
-                            </form>
-                        <% } %>    
-                    </li>
                 </ul>
                 <% if( login != null ) { %>
                     <form action="/recruit_religion/write" class="write" method="get">
