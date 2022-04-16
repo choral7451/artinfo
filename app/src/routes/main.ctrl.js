@@ -529,7 +529,7 @@ const output = {
         const data = await board.religionUpdateList(id);
         const auth = req.session.passport
         const content = data[0].CONTENT.replace(/<br\/\>/g, '\r\n');
-        
+         
         if(auth != undefined) {
             if(auth.user.id == data[0].WRITER) {
                 logger.info("GET /recruit_religion/update 304 모집공고(종교) 화면으로 이동");

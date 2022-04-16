@@ -95,7 +95,7 @@
                 <input type="hidden" name="id" value=<%= data[0].ID %>>
                 <div class="titleBack">
                     <p>제 목</p>
-                    <input type="text" name="title" value=<%= data[0].TITLE %>/>
+                    <input type="text" name="title" value="<%= data[0].TITLE %>"">
                 </div>
                 <div class="contentDetail">
                     <div class="contentDetailLeft">
@@ -144,7 +144,7 @@
                             </div>
                             <div class="phonenumber">
                                 <p>연락처</p>
-                                <input type="number" value=<%= data[0].PNUMBER %> oninput="maxLengthCheck(this)" id="phonenumber" onfocus="this.placeholder = ''" onblur="this.placeholder = '숫자만 입력해주세요.'" name="phonenumber" onkeydown="javascript: return event.keyCode == 69 ? false : true" placeholder="숫자만 입력해주세요."/>
+                                <input type="number" value=<%= data[0].PNUMBER %> oninput="maxLengthCheck(this)" id="phonenumber" onfocus="this.placeholder = ''" onblur="this.placeholder = '숫자만 입력해주세요.'" name="phonenumber" onkeydown="javascript: return event.keyCode == 69 ? false : true" placeholder="숫자만 입력해주세요.">
                             </div>
                         </div>
                         <div class="contentDetailRightMiddle">
