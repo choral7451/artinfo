@@ -39,8 +39,6 @@
 
 .section .article .top {
   display: flex;
-  align-items: end;
-  height: 100px;
   width: 60%;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -49,10 +47,9 @@
 .section .article .top ul {
   display: flex;
   align-items: center;
-  justify-content: start;
-  padding: 0;
-  margin-bottom: 20px;
+  height: 100%;
   width: 70%;
+  margin: 0;
 }
 
 .section .article .top ul li {
@@ -76,7 +73,6 @@
   display: flex;
   align-items: center;
   justify-content: end;
-  margin-bottom: 20px;
   width: 30%;
 }
 
