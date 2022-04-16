@@ -50,7 +50,8 @@
 
 .section .article .top {
   display: flex;
-  align-items: end;
+  align-items: center;
+  justify-content: center;
   height: 100px;
   width: 60%;
   margin-top: 30px;
@@ -60,7 +61,7 @@
 .section .article .top ul {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   padding: 0;
   margin-bottom: 20px;
   width: 70%;
@@ -79,39 +80,6 @@
 
 .section .article .top ul li form button:hover {
   font-weight: bold;
-  cursor: pointer;
-}
-
-.section .article .top .search {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  width: 30%;
-}
-
-.section .article .top .search .bottom_line {
-  border-bottom: 2px solid black;
-}
-
-.section .article .top .search input {
-  height: 2rem;
-  text-align: center;
-  border: none;
-}
-.section .article .top .search input:focus {
-  outline: none;
-}
-
-.section .article .top .search input:focus::placeholder {
-  color:transparent;
-}
-
-.section .article .top .search button {
-  background-color: white;
-  border: none;
-  font-size: 1.7rem;
-  padding-bottom: 0.4rem;
   cursor: pointer;
 }
 
