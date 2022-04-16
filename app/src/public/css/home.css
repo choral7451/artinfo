@@ -179,7 +179,6 @@ thead
 tr
 td:nth-child(1) {
   font-size: 20px;
-  margin-left: 100px;
   height: 80px;
   width: 420px;
   border-bottom: 2px solid black;
@@ -196,7 +195,7 @@ td:nth-child(2) {
   text-align: end;
   height: 80px;
   width: 200px;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid black;  
 }
 
 section 
@@ -277,9 +276,8 @@ thead
 tr
 td:nth-child(1) {
   font-size: 20px;
-  margin-left: 100px;
   height: 80px;
-  width: 420px;
+  width: 520px;
   border-bottom: 2px solid black;
 }
 
@@ -293,7 +291,7 @@ td:nth-child(2) {
   font-size: 20px;
   text-align: end;
   height: 80px;
-  width: 200px;  
+  width: 100px;  
   border-bottom: 2px solid black;
 }
 
@@ -318,7 +316,6 @@ td:nth-child(1) {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
   "Lucida Sans", Arial, sans-serif;
   height: 50px;
-  width: 420px;
   border-bottom: 1px solid rgb(170, 169, 169);
 }
 
@@ -333,6 +330,7 @@ a {
   color: black;
 }
 
+
 section 
 .articleBoard
 .boardRight
@@ -343,11 +341,9 @@ td:nth-child(2) {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
   "Lucida Sans", Arial, sans-serif;
   height: 50px;
-  width: 200px;
-  text-align: right;  
+  text-align: right;
   border-bottom: 1px solid rgb(170, 169, 169);
 }
-
 
 @media screen and (max-width: 1181px) {
   section
@@ -425,6 +421,96 @@ td:nth-child(2) {
     width: 90%;
     height: 50%;
   }
+
+  section 
+  .articleBoard
+  .boardLeft {
+    margin-right: 0;    
+  }
+
+  section 
+  .articleBoard
+  .boardRight {
+    margin-left: 0;
+  } 
+
+  section 
+  .articleBoard
+  .boardLeft
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  section 
+  .articleBoard
+  .boardLeft
+  table
+  thead
+  tr
+  td:nth-child(1) {
+    width: 60%;
+  }
+
+  section 
+  .articleBoard
+  .boardLeft
+  table
+  thead
+  tr
+  td:nth-child(2) {
+    width: 40%;
+  }
+
+  section 
+  .articleBoard
+  .boardLeft
+  table
+  tbody
+  tr
+  td:nth-child(1) {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  section 
+  .articleBoard
+  .boardRight
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  section 
+  .articleBoard
+  .boardRight
+  table
+  thead
+  tr
+  td:nth-child(1) {
+    width: 60%;
+  }
+
+  section 
+  .articleBoard
+  .boardRight
+  table
+  thead
+  tr
+  td:nth-child(2) {
+    width: 40%;
+  }
+
+  section 
+  .articleBoard
+  .boardRight
+  table
+  tbody
+  tr
+  td:nth-child(1) {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 
 
@@ -454,5 +540,4 @@ td:nth-child(2) {
   .articlePoster {
     height: 500px;
   }
-  
 }
