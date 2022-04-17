@@ -2,17 +2,33 @@
     width: 100%;
 }
 
-.section 
-.title {
+.section .title {
     height: 8vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 25px;
     border-top: 3px solid black;
     border-bottom: 3px solid black;
     animation: title 2s 1 forwards;
-}
+  }
+  
+  .section .title .religion {
+    font-weight: bold;
+  }
+  
+  .section .title a {
+    margin: 0 30px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .section .title a:hover {
+    border-bottom: 3px solid black;
+    font-weight: bold;
+  }
 
 @keyframes title {
     from {
@@ -23,19 +39,6 @@
         margin-left: 0;
         opacity: 1;
     }
-}
-
-.section 
-.title 
-a {
-    color: black;
-}
-
-.section 
-.title 
-a:hover {
-    border-bottom: 3px solid black;
-    font-weight: bold;
 }
 
 .section 

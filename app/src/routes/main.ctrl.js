@@ -530,7 +530,6 @@ const output = {
         const auth = req.session.passport
         const content = data[0].CONTENT.replace(/<br\/\>/g, '\r\n');
         
-        console.log(data)
         if(auth != undefined) {
             if(auth.user.id == data[0].WRITER) {
                 logger.info("GET /recruit_religion/update 304 모집공고(종교) 화면으로 이동");
@@ -648,7 +647,6 @@ const process = {
 
         let content = reqBody.contentMain;
         content = content.replace(/(?:\r\n|\r|\n)/g, '<br/>');
-        console.log(reqBody)
         const board = new Board
         await board.religionWrite(reqBody, id, content);
         res.redirect('/recruit_religion/all')

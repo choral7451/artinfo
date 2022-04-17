@@ -55,21 +55,21 @@ class BoardStorage {
   
             if(path == "All") {
                 if(id) {
-                    query = `SELECT * FROM BOARD_RELIGION ORDER BY DATE DESC LIMIT ${count}, 10;`;
+                    query = `SELECT * FROM BOARD_RELIGION ORDER BY ID DESC LIMIT ${count}, 10;`;
                 } else {
-                    query = `SELECT * FROM BOARD_RELIGION ORDER BY DATE DESC LIMIT 10;`;
+                    query = `SELECT * FROM BOARD_RELIGION ORDER BY ID DESC LIMIT 10;`;
                 }
             } else if (path == "SEARCH") {
                 if(name) {
-                    query = `SELECT * FROM BOARD_RELIGION WHERE TYPE = "${path}" ORDER BY DATE DESC LIMIT ${count}, 10;`;
+                    query = `SELECT * FROM BOARD_RELIGION WHERE TYPE = "${path}" ORDER BY ID DESC LIMIT ${count}, 10;`;
                 } else {
-                    query = `SELECT * FROM BOARD_RELIGION WHERE TYPE = "${path}" ORDER BY DATE DESC LIMIT 10;`;
+                    query = `SELECT * FROM BOARD_RELIGION WHERE TYPE = "${path}" ORDER BY ID DESC LIMIT 10;`;
                 }    
             } else {                
                 if(id) {
-                    query = `SELECT * FROM BOARD_RELIGION WHERE EXPERTTYPE = "${path}" ORDER BY DATE DESC LIMIT ${count}, 10;`;
+                    query = `SELECT * FROM BOARD_RELIGION WHERE EXPERTTYPE = "${path}" ORDER BY ID DESC LIMIT ${count}, 10;`;
                 } else {
-                    query = `SELECT * FROM BOARD_RELIGION WHERE EXPERTTYPE = "${path}" ORDER BY DATE DESC LIMIT 10;`;
+                    query = `SELECT * FROM BOARD_RELIGION WHERE EXPERTTYPE = "${path}" ORDER BY ID DESC LIMIT 10;`;
                 }
             } 
 
@@ -197,8 +197,7 @@ class BoardStorage {
                     PNUMBER = "${data.phonenumber}",
                     ADDRESS = "${data.address}",
                     EMAIL = "${data.email}",
-                    CONTENT = "${content}",
-                    DATE = "${currentDate}"
+                    CONTENT = "${content}"
                     WHERE ID = ${data.id};
                 `
             db.query(query, (err, data) => {
