@@ -124,6 +124,7 @@ p {
 .expert {
     height: 30px;
     width: 60%;
+    border-radius: 0;
 }
 
 .section 
@@ -160,6 +161,7 @@ p {
 .type {
     height: 30px;
     width: 60%;
+    border-radius: 0;
 }
 
 .section 
@@ -207,6 +209,7 @@ p {
 select {
     width: 60%;
     height: 30px;
+    border-radius: 0;
 }
 
 .section 
@@ -538,16 +541,6 @@ button:hover {
     .article 
     .contentBack 
     .contentDetail 
-    .contentDetailLeft
-    .expertBack
-    .expert {
-        border-radius: 0;
-    }
-
-    .section 
-    .article 
-    .contentBack 
-    .contentDetail 
     .contentDetailRight 
     .contentDetailRightUp
     .name {
@@ -615,16 +608,6 @@ button:hover {
     .article 
     .contentBack 
     .contentDetail 
-    .contentDetailLeft
-    .typeBack
-    .type {
-        border-radius: 0;
-    }
-
-    .section 
-    .article 
-    .contentBack 
-    .contentDetail 
     .contentDetailRight 
     .contentDetailRightMiddle {
         justify-content: space-around;
@@ -661,17 +644,6 @@ button:hover {
     p {
         font-size: 13px;
         width: 10%;
-    }
-
-    .section 
-    .article 
-    .contentBack 
-    .contentDetail 
-    .contentDetailLeft
-    .salary
-    .selectSalary
-    select {
-        border-radius: 0;
     }
 
     .section 
