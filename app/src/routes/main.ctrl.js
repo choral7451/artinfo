@@ -144,10 +144,10 @@ const output = {
 
         const auth = req.session.passport
         if(auth != undefined) {
-            logger.info("GET /recruit_art/orchestra 304 모집공고(예술단체) 화면으로 이동");
+            logger.info("GET /recruit_art/all 304 모집공고(예술단체) 화면으로 이동");
             res.render('recruit_art_all', {login: auth.user.id, arrayData});
         } else {
-            logger.info("GET /recruit_art/orchestra 304 모집공고(예술단체) 화면으로 이동");
+            logger.info("GET /recruit_art/all 304 모집공고(예술단체) 화면으로 이동");
             res.render('recruit_art_all', {login: null, arrayData});   
         }
     },
@@ -436,7 +436,7 @@ const output = {
             logger.info("GET /recruit_religion/conductor 304 모집공고(종교) 화면으로 이동");
             res.render('recruit_religion_conductor', {login: auth.user.id, arrayData});
         } else {
-            logger.info("GET /recruit_religion/all 304 모집공고(종교) 화면으로 이동");
+            logger.info("GET /recruit_religion/conductor 304 모집공고(종교) 화면으로 이동");
             res.render('recruit_religion_conductor', {login: null, arrayData});   
         }
     },
