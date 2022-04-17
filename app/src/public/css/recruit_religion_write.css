@@ -502,3 +502,193 @@ button:hover {
     border: 2px solid black;
     background-color: white;
 }
+
+@media screen and (max-width: 1182px) {
+    .section 
+    .article 
+    .contentBack {
+        width: 90%;
+        height: 820px;
+    }
+
+    .section 
+    .article 
+    .contentBack 
+    .contentDetail 
+    .contentDetailLeft
+    .expertBack {    
+        justify-content: space-around;
+    }
+
+    .section 
+    .article 
+    .contentBack 
+    .contentDetail 
+    .contentDetailLeft
+    .expertBack
+    p {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        font-size: 13px;
+        width: 10%;
+    }
+
+    .section 
+    .article 
+    .contentBack 
+    .contentDetail 
+    .contentDetailLeft
+    .expertBack
+    .expert {
+        border-radius: 0;
+    }
+
+    .section 
+    .article 
+    .contentBack 
+    .contentDetail 
+    .contentDetailRight 
+    .contentDetailRightUp
+    .name {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 50%;
+    }
+
+    .section 
+    .article 
+    .contentBack 
+    .contentDetail 
+    .contentDetailRight 
+    .contentDetailRightUp
+    .name
+    p {
+        width: 10%;
+        font-size: 13px;
+    }
+
+    .section 
+    .article 
+    .contentBack 
+    .contentDetail 
+    .contentDetailRight 
+    .contentDetailRightUp
+    .phonenumber {
+        justify-content: space-around;
+    }
+
+    .section 
+    .article 
+    .contentBack 
+    .contentDetail 
+    .contentDetailRight 
+    .contentDetailRightUp
+    .phonenumber
+    p {
+        width: 10%;
+        font-size: 13px;
+    }
+
+    .section 
+    .article 
+    .contentBack 
+    .contentDetail 
+    .contentDetailLeft
+    .typeBack {
+        justify-content: space-around;   
+    }
+
+    .section 
+    .article 
+    .contentBack 
+    .contentDetail 
+    .contentDetailLeft
+    .typeBack
+    p {
+        font-size: 13px;
+        width: 10%;
+    }
+
+    .section 
+    .article 
+    .contentBack 
+    .contentDetail 
+    .contentDetailLeft
+    .typeBack
+    .type {
+        border-radius: 0;
+    }
+
+    .section 
+    .article 
+    .contentBack 
+    .contentDetail 
+    .contentDetailRight 
+    .contentDetailRightMiddle {
+        justify-content: space-around;
+    }
+
+    .section 
+    .article 
+    .contentBack 
+    .contentDetail 
+    .contentDetailRight 
+    .contentDetailRightMiddle
+    p {
+        font-size: 13px;
+        width: 10%;
+    }
+
+    .section 
+    .article 
+    .contentBack 
+    .contentDetail 
+    .contentDetailLeft
+    .salary
+    .selectSalary {
+        justify-content: space-around;
+    }
+
+    .section 
+    .article 
+    .contentBack 
+    .contentDetail 
+    .contentDetailLeft
+    .salary
+    .selectSalary
+    p {
+        font-size: 13px;
+        width: 10%;
+    }
+
+    .section 
+    .article 
+    .contentBack 
+    .contentDetail 
+    .contentDetailLeft
+    .salary
+    .selectSalary
+    select {
+        border-radius: 0;
+    }
+
+    .section 
+    .article 
+    .contentBack 
+    .contentDetail 
+    .contentDetailRightBottom {
+        justify-content: space-around;
+    } 
+
+    .section 
+    .article 
+    .contentBack 
+    .contentDetail 
+    .contentDetailRightBottom
+    p {
+        font-size: 13px;
+        width: 10%;
+    }
+}
