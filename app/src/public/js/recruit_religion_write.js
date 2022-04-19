@@ -1,14 +1,69 @@
-document.getElementById('mainTitle').addEventListener('keyup', (e) => {
-    const value = e.target.value
+let mainTitle = "";
+let companyName = "";
+let type = "분류";
+let expert = "분야";
+let address = "";
+let email = "";
+let phonenumber = "";
+let salaryType = "선택";
+let salaryDirect = "";
+let textarea = "";
 
-    const button = document.getElementById('save')
-    if(value != 0) {
-        button.removeAttribute('disabled');
-    }
+const button = document.getElementById('save')
+
+document.getElementById('mainTitle').addEventListener('keyup', () => {
+    mainTitle = document.getElementById('mainTitle').value
+    save()
+})
+
+document.getElementById('companyName').addEventListener('keyup', () => {
+    companyName = document.getElementById('companyName').value
+    save()
 })
 
 
-        
+document.getElementById('expert').addEventListener('change', () => {
+    expert = document.getElementById('expert').value
+    save()
+})
+
+document.getElementById('type').addEventListener('change', () => {
+    type = document.getElementById('type').value
+    save()
+})
+
+document.getElementById('address').addEventListener('keyup', () => {
+    address = document.getElementById('address').value
+    save()
+})
+
+document.getElementById('email').addEventListener('keyup', () => {
+    email = document.getElementById('email').value
+    save()
+})
+
+document.getElementById('phonenumber').addEventListener('keyup', () => {
+    phonenumber = document.getElementById('phonenumber').value
+    save()
+
+    const checked = inputNumberisFinit(phonenumber);
+
+    if(checked == "N") {
+        alert("문자는 입력하실 수 없습니다.");
+        document.getElementById('phonenumber').value = "";
+        return false;
+    }
+})
+
+document.getElementById('textarea').addEventListener('keyup', () => {
+    textarea = document.getElementById('textarea').value
+    save()
+})
+
+document.getElementById('direct').addEventListener('keyup', () => {
+    salaryDirect = document.getElementById('direct').value
+    save()
+})
 
 document.getElementById('salaryType').addEventListener('change', (e) => {
     const value = e.target.value
@@ -17,7 +72,9 @@ document.getElementById('salaryType').addEventListener('change', (e) => {
     } else {
         document.getElementById('inputSalary').style.display = "none";
     }
-    
+
+    salaryType = document.getElementById('salaryType').value;
+    save()
 })
 
 const maxLengthCheck = (object) => {
@@ -114,4 +171,26 @@ const clickMenu = () => {
     } else {
         document.getElementById('mobileMenu').style.display="flex";
     }    
+}
+
+const save = () => {
+    if( 
+        mainTitle !== "" 
+        && companyName !== "" 
+        && type !== "분류" 
+        && expert !== "분야" 
+        && address !== "" 
+        && email !== ""        
+        && phonenumber !== ""
+        && salaryType !== "선택"
+        && textarea !== ""
+    ) {
+        if ( salaryType === "won" && salaryDirect === "") {
+            button.disabled = true;
+        } else {
+            button.removeAttribute('disabled');
+        }        
+    } else {
+        button.disabled = true;
+    }
 }

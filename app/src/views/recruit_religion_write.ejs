@@ -100,7 +100,7 @@
                     <div class="contentDetailLeft">
                         <div class="expertBack">
                             <p>분야</p>
-                            <select class="expert" name="expert">
+                            <select class="expert" id="expert" name="expert">
                                 <option>분야</option>
                                 <option value="지휘자">지휘자</option>
                                 <option value="솔리스트">소프라노</option>
@@ -112,7 +112,7 @@
                         </div>
                         <div class="typeBack">
                             <p>분류</p>
-                            <select class="type" name="type">
+                            <select class="type" id="type" name="type">
                                 <option>분류</option>
                                 <option value="기독교">기독교</option>
                                 <option value="천주교">천주교</option>
@@ -126,11 +126,11 @@
                                 <select id="salaryType" name="salaryType">
                                     <option>선택</option>
                                     <option value="협의 후 결정">협의 후 결정</option>
-                                    <option id="direct" value="won">직접 입력</option>
+                                    <option value="won">직접 입력</option>
                                 </select>   
                             </div>
                             <div id="inputSalary" class="inputSalary">
-                                <input type="text" name="direct" onKeyup="inputNumberAutoComma(this);" value="" >  
+                                <input type="text" id="direct" name="direct" onKeyup="inputNumberAutoComma(this);" value="" >  
                                 <p>원</p>
                             </div>                                                                              
                         </div>
@@ -139,7 +139,7 @@
                         <div class="contentDetailRightUp">
                             <div class="name">
                                 <p>단체명</p>
-                                <input type="text" name="name"/>
+                                <input id="companyName" type="text" name="name"/>
                             </div>
                             <div class="phonenumber">
                                 <p>연락처</p>
@@ -148,11 +148,11 @@
                         </div>
                         <div class="contentDetailRightMiddle">
                             <p>주소</p>
-                            <input type="text" name="address"/>
+                            <input id="address" type="text" name="address"/>
                         </div>
                         <div class="contentDetailRightBottom">
                             <p>이메일</p>
-                            <input type="text" name="email"/>
+                            <input id="email" type="text" name="email"/>
                         </div>                     
                     </div>                    
                 </div>                
