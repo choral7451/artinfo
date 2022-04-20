@@ -44,15 +44,13 @@ document.getElementById('email').addEventListener('keyup', () => {
 
 document.getElementById('phonenumber').addEventListener('keyup', () => {
     phonenumber = document.getElementById('phonenumber').value
-    save()
 
-    const checked = inputNumberisFinit(phonenumber);
-
-    if(checked == "N") {
+    if(!isFinite(phonenumber)) {
         alert("문자는 입력하실 수 없습니다.");
         document.getElementById('phonenumber').value = "";
-        return false;
-    }
+    } else {
+        save()
+    }    
 })
 
 document.getElementById('textarea').addEventListener('keyup', () => {
