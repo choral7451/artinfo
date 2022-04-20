@@ -13,6 +13,15 @@ class Login {
             return { success: false, err };
         }
     }
+
+    async findId(data) {
+        try {
+            const list = await LoginStorage.findId(data);
+            return list;
+        } catch (err) {
+            return { success: false, err };
+        }
+    }
 }
 
 module.exports = Login;

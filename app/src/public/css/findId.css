@@ -1,0 +1,181 @@
+.section {
+  width: 100%;
+}
+  
+.section 
+.title {
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  animation: title 2s 1 forwards;
+}
+
+@keyframes title {
+  from {
+    margin-left: -100px;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0;
+    opacity: 1;
+  }
+}
+
+.section 
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;   
+}
+
+.section 
+article
+.result {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  width: 400px;
+}
+
+.section 
+article
+.result
+.resultTitle {
+  font-size: 30px;
+  margin: 10px 0;
+  padding: 20px 0;
+}
+
+.section 
+article
+.result
+.resultIdBack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  border-top: 2px solid rgb(170, 169, 169);
+  border-bottom: 2px solid rgb(170, 169, 169);  
+  width: 100%;
+}
+
+.section 
+article
+.result
+.resultIdBack
+.resultId {
+  font-size: 30px;
+  margin: 5px 0;
+}
+
+.section 
+article
+.background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  margin: 50px 0;
+}
+
+.section 
+article
+.background
+.inputBack {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 50px 0; 
+}
+
+.section 
+article
+.background
+.inputBack
+label {
+  display: flex;
+  align-items: flex-start;
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.section 
+article
+.background
+.inputBack
+input {
+  height: 30px;
+  width: 300px;
+  margin: 20px 0;
+  text-align: center;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid black;
+  font-size: 20px;
+}
+
+.section 
+article
+.background
+.inputBack
+input:focus {
+  outline: none;
+}
+
+.section 
+article
+.background
+#findIdButton {
+  margin-top: 30px;
+}
+
+.section 
+article
+.background
+button {
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  width: 300px;
+  background-color: rgb(170, 169, 169);
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.section 
+article
+.background
+button
+a {
+  color: black;
+}
+.section 
+article
+.background
+button:hover {
+  cursor: pointer;
+  border: 2px solid black;
+  background-color: white;
+}
+
+.section 
+article
+.background
+div
+button {
+  width: 150px;
+}
+

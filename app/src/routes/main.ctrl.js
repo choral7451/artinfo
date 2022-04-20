@@ -1,5 +1,4 @@
 const bcrypt = require('bcrypt');
-const path = require('path');
 
 const logger = require("../config/logger");
 const Board = require("../models/board/Board");
@@ -59,6 +58,28 @@ const output = {
         } else {
             res.redirect('/login');
         }          
+    },
+
+    findId : (req, res) => {   
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /findId 304 아이디찾기 화면으로 이동");
+            res.redirect('/');
+        } else {
+            logger.info("GET /findId 304 아이디찾기 화면으로 이동");
+            res.render('findId', {login: null});    
+        }        
+    },
+
+    findPw : (req, res) => {   
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /findId 304 비밀번호 찾기 화면으로 이동");
+            res.redirect('/');
+        } else {
+            logger.info("GET /findPw 304 비밀번호 찾기 화면으로 이동");
+            res.render('findPw', {login: null});    
+        }        
     },
 
     signup : (req, res) => {
@@ -639,6 +660,14 @@ const process = {
         } else {
             res.send('checkId')
         }
+    },
+
+    findId : async (req, res) => {
+        const reqBody = req.body;  
+
+        const login = new Login();
+        const data = await login.findId(reqBody)
+        res.send(data)
     },
 
     recruit_religion_write : async (req, res) => {

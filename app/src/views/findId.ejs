@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9J2RH0SRC"></script>
@@ -10,15 +10,12 @@
 
     gtag('config', 'G-T9J2RH0SRC');
     </script>
-    
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"
     
-    <!-- 이모티콘  CDN -->
-    <script src="https://kit.fontawesome.com/6dca3e9c71.js" crossorigin="anonymous"></script>
-     
     <!-- CSS import -->
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/findId.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/footer.css">
@@ -31,11 +28,10 @@
 
     <!-- favicon -->
     <link rel="shortcut icon" href="/img/favicon.png">
-
-    <title>아트인포 | 로그인</title>
+    
+    <title>아트인포 | 아이디 찾기</title>
 </head>
 <body>
-    
     <header id="header">
         <div class="desktopHeader">
             <div class="logo">
@@ -63,27 +59,32 @@
             <a href="/">Home</a>
             <a href="/about">소개</a>
             <a href="/recruit_art/all">채용정보</a>
-        </div> 
+        </div>
     </header>
     
     <section class="section" id="section">
-        <div class="title">로그인</div>
-        <article class="article" id="article">
-            <form onsubmit="return false;">
-                <div class="inputBack">
-                    <label>아이디</label>
-                    <input autoFocus type="text" id="idInput" name="id" placeholder="ID">
-                    <label>비밀번호</label>
-                    <input type="password" id="pwdInput" name="pwd" placeholder="Password">
+        <div class="title">아이디 찾기</div>
+
+        <article>
+            <div id="result" class="result">
+                <div class="resultTitle">사용자 아이디</div>
+                <div id="resultIdBack" class="resultIdBack"></div>                              
+            </div>
+            <div class="background">
+                <div id="inputBack" class="inputBack">
+                    <label>이름</label>
+                    <input autoFocus type="text" id="nameInput" name="name">
+                    <label>이메일</label>
+                    <input type="text" id="emailInput" name="email">                    
                 </div>
-                <div class="buttonBack">
-                    <button id="loginBtn" class="loginBtn">로그인</button>
-                    <a href="/signup">회원가입</a>
-                    <a href="/findId">아이디 찾기</a>
-                    <a href="findPw">비밀번호 찾기</a>
+                <button id="findIdButton">아이디 찾기</button>
+                <button><a href="/findPw">비빌번호 찾기</a></button>
+                <div>
+                    <button><a href="/login">로그인</a></button>
+                    <button><a href="/signup">회원가입</a></button>
                 </div>
-            </form>
-        </article>   
+            </div>
+        </article>
     </section>
     
     <footer id="footer">   
@@ -104,6 +105,6 @@
 
     <!-- JS import -->
     <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-    <script type="text/javascript" src="/js/login.js"></script>
+    <script type="text/javascript" src="/js/findId.js"></script>
 </body>
 </html>
