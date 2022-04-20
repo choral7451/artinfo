@@ -214,8 +214,15 @@ button {
   .section 
   article
   .background
-  button {
+  #findIdButton {
     width: 80%;
+  }
+
+  .section 
+  article
+  .background
+  a {
+    width: 80%
   }
   
   .section 
