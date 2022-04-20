@@ -184,16 +184,53 @@ button {
   .section 
   article
   .background
-  div {
-    width: 300px;
+  .inputBack {
+    align-items: center;
+    width: 100%;
   }
 
   .section 
   article
   .background
-  div 
+  .inputBack
+  label {
+    width: 80%;
+  }
+
+  .section 
+  article
+  .background
+  .inputBack
+  input {
+    width: 80%;
+  }
+
+  .section 
+  article
+  .background {
+    width: 100%;
+  }
+
+  .section 
+  article
+  .background
+  button {
+    width: 80%;
+  }
+  
+  .section 
+  article
+  .background
+  div {
+    width: 80%;
+  }
+
+  .section 
+  article
+  .background
+  div
   .loginBtn {
-    margin-right: 15px;
+    margin-right: 8%;
   }
 
   .section 
@@ -201,6 +238,6 @@ button {
   .background
   div
   button {
-    width: 140px;
+    width: 45%;
   }
 }  
