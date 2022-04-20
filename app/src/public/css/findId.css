@@ -146,6 +146,7 @@ article
 .background
 button {
   border: none;
+  color: black;
   border-radius: 10px;
   height: 40px;
   width: 300px;
@@ -179,3 +180,27 @@ button {
   width: 150px;
 }
 
+@media screen and (max-width: 1182px) {
+  .section 
+  article
+  .background
+  div {
+    width: 300px;
+  }
+
+  .section 
+  article
+  .background
+  div 
+  .loginBtn {
+    margin-right: 15px;
+  }
+
+  .section 
+  article
+  .background
+  div
+  button {
+    width: 140px;
+  }
+}  
