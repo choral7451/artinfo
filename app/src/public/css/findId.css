@@ -221,38 +221,58 @@ button {
   .section 
   article
   .background
-  .findPwBtn {
+  .findPwBtnA {
     width: 80%
   }
 
   .section 
   article
   .background
-  .findPwBtn 
-  button {
+  .findPwBtnA 
+  .findPwBtn {
     width: 100%;
   }
   
   .section 
   article
   .background
-  div {
+  .loginBack {
+    display: flex;
+    justify-content: space-between;
     width: 80%;
   }
-
+  
   .section 
   article
   .background
-  div
-  .loginBtn {
-    margin-right: 8%;
+  .loginBack
+  .loginBtnA {
+    width: 47%;
   }
 
   .section 
   article
   .background
-  div
-  button {
-    width: 45%;
+  .loginBack
+  .loginBtnA 
+  .loginBtn {
+    width: 100%;
+  }
+
+  .section 
+  article
+  .background
+  .loginBack
+  .signupBtnA {
+    width: 47%;
+  }
+
+  .section 
+  article
+  .background
+  .loginBack
+  .signupBtnA
+  .signupBtn {
+    width: 100%;
   }
 }  
