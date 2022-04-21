@@ -13,9 +13,12 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+    <!-- 이모티콘  CDN -->
+    <script src="https://kit.fontawesome.com/6dca3e9c71.js" crossorigin="anonymous"></script>
     
     <!-- CSS import -->
-    <link rel="stylesheet" href="/css/findId.css">
+    <link rel="stylesheet" href="/css/findPw.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/footer.css">
@@ -64,6 +67,35 @@
     
     <section class="section" id="section">
         <div class="title">비밀번호 찾기</div>
+
+        <article>
+            <div id="result" class="result">
+                <div class="resultTitle">사용자 아이디</div>
+                <div id="resultIdBack" class="resultIdBack"></div>                              
+            </div>
+            <div class="background">
+                <div id="inputBack" class="inputBack">
+                    <label>아이디</label>
+                    <input autoFocus type="text" id="idInput" name="id">
+                    <label>이름</label>
+                    <input type="text" id="nameInput" name="name">
+                    <label>이메일</label>
+                    <input type="text" id="emailInput" name="email">                    
+                </div>
+                <button id="findPwButton">비밀번호 찾기</button>
+                <a class="findIdBtnA" href="/findId">
+                    <button class="findIdBtn">아이디 찾기</button>
+                </a>
+                <div class="loginBack">
+                    <a class="loginBtnA" href="/login">
+                        <button class="loginBtn">로그인</button>
+                    </a>
+                    <a class="signupBtnA" href="/signup">
+                        <button class="signupBtn">회원가입</button>
+                    </a>
+                </div>
+            </div>
+        </article>
     </section>
     
     <footer id="footer">   

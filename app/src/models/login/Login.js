@@ -22,6 +22,24 @@ class Login {
             return { success: false, err };
         }
     }
+
+    async findUser(data) {
+        try {
+            const list = await LoginStorage.findUser(data);
+            return list;
+        } catch (err) {
+            return { success: false, err };
+        }
+    }
+
+    async temporaryUpdate(pw, data) {
+        try {
+            const list = await LoginStorage.temporaryUpdate(pw, data);
+            return list;
+        } catch (err) {
+            return { success: false, err };
+        }
+    }
 }
 
 module.exports = Login;

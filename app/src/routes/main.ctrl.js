@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const nodemailer = require('nodemailer');
 
 const logger = require("../config/logger");
 const Board = require("../models/board/Board");
@@ -667,6 +668,63 @@ const process = {
 
         const login = new Login();
         const data = await login.findId(reqBody)
+        res.send(data)
+    },
+
+    findPw : async (req, res) => {
+        const reqBody = req.body;  
+
+        let temporaryPw = Math.random().toString(36).slice(2);
+
+        const login = new Login();
+        const data = await login.findUser(reqBody)
+        console.log(temporaryPw)
+        if(data[0] !== undefined) {
+            await bcrypt.hash(temporaryPw, 10, (err, hash) => {
+                temporaryPw = hash
+                login.temporaryUpdate(temporaryPw, reqBody);
+            })
+
+            // 본인 Gmail 계정
+            const EMAIL = "choral7451@gmail.com";
+            const EMAIL_PW = "ufeoetbvvwdpzstg";
+
+            // 이메일 수신자
+            let receiverEmail = reqBody[2];
+
+            // transport 생성
+            let transport = nodemailer.createTransport({
+                service: "gmail",
+                auth: {
+                    user: EMAIL,
+                    pass: EMAIL_PW,
+                },
+            });
+
+            // 전송할 email 내용 작성
+            let mailOptions = {
+                from: EMAIL,
+                to: receiverEmail,
+                subject: "ARTINFO 임시 비밀번호",
+                html: `
+                    <a href="https://artinfokorea.com/login"><img src="cid:logoImg" /></a>
+                    <h1>임시 비밀번호 : ${temporaryPw}</h1>
+                    `,
+                attachments: [{
+                    filename: 'logo.png',
+                    path: `src/public/img/logo.png`,
+                    cid: 'logoImg'
+                }]
+            };
+
+            // email 전송
+            transport.sendMail(mailOptions, (error, info) => {
+                if (error) {
+                    console.log(error);
+                    return;
+                }
+            });
+        }        
         res.send(data)
     },
 
