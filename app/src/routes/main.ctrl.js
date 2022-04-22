@@ -678,7 +678,6 @@ const process = {
 
         const login = new Login();
         const data = await login.findUser(reqBody)
-        console.log(temporaryPw)
         if(data[0] !== undefined) {
             await bcrypt.hash(temporaryPw, 10, (err, hash) => {
                 temporaryPw = hash

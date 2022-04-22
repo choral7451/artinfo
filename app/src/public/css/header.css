@@ -66,8 +66,15 @@ header .desktopHeader .login {
 
 header .desktopHeader .login .name {
   color: rgb(170, 169, 169);
+  font-size: 1rem;
+}
+
+header .desktopHeader .login .fa-solid {
+  color: black;
+  margin-left: 10px;
   font-size: 1.5rem;
 }
+
 
 header .desktopHeader .login a {
   font-size: 1.5rem;
