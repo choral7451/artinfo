@@ -10,7 +10,7 @@
   font-size: 25px;
   border-top: 3px solid black;
   border-bottom: 3px solid black;
-  animation: title 2s 1 forwards;
+  animation: title 2s 1 forwards;  
 }
 
 .section .title .religion {

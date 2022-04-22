@@ -706,8 +706,22 @@ const process = {
                 to: receiverEmail,
                 subject: "ARTINFO 임시 비밀번호",
                 html: `
-                    <a href="https://artinfokorea.com/login"><img src="cid:logoImg" /></a>
-                    <h1>임시 비밀번호 : ${temporaryPw}</h1>
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <a href="https://artinfokorea.com/login"><img src="cid:logoImg" /></a>
+                        <div style="margin:20px 0" >* 로그인을 계속하시려면 위 로고를 클릭하세요.</div>
+                        <div 
+                            style="
+                            height: 60px; 
+                            width: 500px; 
+                            border-top: 1px solid rgb(170, 169, 169); 
+                            border-bottom: 1px solid rgb(170, 169, 169); 
+                            display: flex; 
+                            justify-content: center; 
+                            align-items: center;
+                        ">
+                            <h1>임시 비밀번호 : ${temporaryPw}</h1>
+                        </div>
+                    </div>                    
                     `,
                 attachments: [{
                     filename: 'logo.png',
