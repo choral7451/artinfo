@@ -7,6 +7,7 @@ router.get('/' , ctrl.output.home);
 router.get('/about', ctrl.output.about);
 router.get('/login', ctrl.output.login);
 router.get('/logout', ctrl.output.logout);
+router.get('/clientInfo', ctrl.output.clientInfo);
 router.get('/findId', ctrl.output.findId);
 router.get('/findPw', ctrl.output.findPw);
 router.get('/signup', ctrl.output.signup);

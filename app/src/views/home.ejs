@@ -14,6 +14,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Adsense 태그 -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8515708471646582"
+     crossorigin="anonymous"></script>
+    
     <!-- 네이버 웹마스터 태그-->    
     <meta name="naver-site-verification" content="f40177a0b22957c1976295abef657fd8c8dce9e6" />
     <meta property="og:title" content="아트인포">
@@ -63,6 +67,7 @@
                         <a class="logout" href="/logout">logout</a>
                     <% } else { %>
                         <div class="name"><%= login %></div>
+                        <a href="/clientInfo"><i class="fa-solid fa-gear"></i></a>
                         <a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                     <% } %>    
                 <% } else { %>

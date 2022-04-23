@@ -61,6 +61,17 @@ const output = {
         }          
     },
 
+    clientInfo : (req, res) => {   
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /about 304 소개 화면으로 이동");
+            res.render('clientInfo',{login: auth.user.id});
+        } else {
+            logger.info("GET /about 304 소개 화면으로 이동");
+            res.render('clientInfo', {login: null});    
+        }           
+    },
+
     findId : (req, res) => {   
         const auth = req.session.passport
         if(auth != undefined) {
