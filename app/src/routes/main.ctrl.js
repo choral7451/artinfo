@@ -61,14 +61,17 @@ const output = {
         }          
     },
 
-    clientInfo : (req, res) => {   
+    clientInfo : async (req, res) => { 
         const auth = req.session.passport
+
         if(auth != undefined) {
+            const login = new Login();
+            const data = await login.getMember(auth.user.id)
+
             logger.info("GET /about 304 소개 화면으로 이동");
-            res.render('clientInfo',{login: auth.user.id});
+            res.render('clientInfo',{login: auth.user.id, data});
         } else {
-            logger.info("GET /about 304 소개 화면으로 이동");
-            res.render('clientInfo', {login: null});    
+            res.redirect('/');    
         }           
     },
 
@@ -97,19 +100,21 @@ const output = {
     signup : (req, res) => {
         const auth = req.session.passport
         if(auth != undefined) {
-            res.render('/');
+            res.redirect('/');
         } else {
             logger.info("GET /signup 304 회원가입 화면으로 이동");
             res.render('signup');   
         }
     },
 
-    admin : async function (req, res) { 
+    admin : async (req, res) => { 
         const auth = req.session.passport
+ 
         if(auth) {
             if(auth.user.id == "admin") {
                 const admin = new Admin();
                 const data = await admin.list(); 
+
                 logger.info("GET /admin 304 관리자 화면으로 이동");
                 res.render('admin', {login: auth.user.id, data});
             } else {

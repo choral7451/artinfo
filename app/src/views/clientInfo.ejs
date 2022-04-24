@@ -95,41 +95,56 @@
             <div  id="content">
                 <table>
                     <tbody>
+                        <tr></tr>
                         <tr>
                             <td>성명</td>
-                            <td>임성준</td>
+                            <td><%= data[0].NAME %></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>아이디</td>
-                            <td>choral</td>
-                        </tr>
-                        <tr>
-                            <td>비밀번호</td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>비밀번호 재확인</td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>이메일</td>
-                            <td><input type="text"></td>
+                            <td><%= data[0].ID %></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>성별</td>
-                            <td>남자</td>
+                            <% if(data[0].GENDER === "man") { %>
+                                <td>남자</td>
+                            <% } else if(data[0].GENDER === "woman") { %> 
+                                <td>여자</td>
+                            <% } else { %> 
+                                <td>선택 안함</td>       
+                            <% } %>
+                            <td></td>
                         </tr>
+                        <tr>
+                            <td>비밀번호</td>
+                            <td ><input id="pwd" type="password"></td>
+                            <td id="checkPassword"></td>
+                        </tr>
+                        <tr>
+                            <td>비밀번호 재확인</td>
+                            <td><input id="pwd2" type="password"></td>
+                            <td id="checkPwd"></td>
+                        </tr>                                             
                         <tr>
                             <td>생년월일</td>
-                            <td><input type="text"></td>
+                            <td><input type="text" id="birth" value=<%= data[0].BIRTH %>></td>
+                            <td id="checkBirth"></td>
                         </tr>
                         <tr>
-                            <td>휴대폰</td>
-                            <td><input type="text"></td>
-                        </tr>
+                            <td>이메일</td>
+                            <td><input type="text" id="email" value=<%= data[0].EMAIL %>></td>
+                            <td id="checkEmail"></td>
+                        </tr>  
+                        <tr></tr>
                     </tbody>
                 </table>
-            </div>                
+            </div> 
+            <div class="buttonBack">
+                <button disabled id="update">수정</button>
+                <a href="/"><button id="cancel">취소</button></a>
+            </div>               
         </article>   
     </section>
     
@@ -151,7 +166,6 @@
 
     <!-- JS import -->
     <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-    <script src="//code.jquery.com/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/signup.js"></script>
+    <script type="text/javascript" src="/js/clientInfo.js"></script>
 </body>
 </html>

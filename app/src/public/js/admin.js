@@ -77,11 +77,8 @@ const crawlingButton = () => {
     })
 }
 
-const outputScreen = () => {
-    saveButton();
-    crawlingButton();
-};
-
+saveButton();
+crawlingButton();
 
 const clickMenu = () => {
     if(document.getElementById('mobileMenu').style.display == "flex") {

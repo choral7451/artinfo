@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9J2RH0SRC"></script>
@@ -32,14 +32,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Palette+Mosaic&display=swap" rel="stylesheet">
     
     <!-- favicon -->
-    <link rel="shortcut icon" href="/img/favicon.png">
-
-    <!-- JS import -->
-    <script type="text/javascript" src="/js/admin.js"></script>
+    <link rel="shortcut icon" href="/img/favicon.png">    
 
     <title>아트인포 | 관리자</title>
 </head>
-<body onload="outputScreen()">
+<body>
     <header id="header">
         <div class="desktopHeader">
             <div class="logo">
@@ -50,113 +47,97 @@
                 <li><a href="/recruit_art/all">채용정보</a></li>
             </nav>
             <div id="login" class="login">
-                <% if( login != null ) { %>
-                    <% if( login === "admin" ) { %>
-                        <div class="name"><%= login %>&nbsp</div>
-                        <a href="/"><i class="fa-solid fa-house-user"></i></i></a>
-                        <a class="logout" href="/logout">logout</a>
-                    <% } else { %>
-                        <div class="name"><%= login %></div>
-                        <a href="/clientInfo"><i class="fa-solid fa-gear"></i></a>
-                        <a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
-                <% } else { %>
-                    <a class="loginText" href="/login">로그인</a>
-                <% } %>
+                <div class="name"><%= login %>&nbsp</div>
+                <a href="/"><i class="fa-solid fa-house-user"></i></i></a>
+                <a class="logout" href="/logout">logout</a>
             </div>
         </div>    
     
         <div class="mobileHeader">     
-            <% if( login != null ) { %>  
-                <nav>
-                    <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
-                </nav>
-                <div class="logo">
-                    <a href="/">ARTINFO</a>
-                </div>
-                <div class="login"><a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></div>
-            <% } else { %> 
-                <nav>
-                    <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
-                </nav>
-                <div class="logo">
-                    <a href="/">ARTINFO</a>
-                </div>
-                <div class="login"><a href="/login"><i class="fa-regular fa-user"></i></a></div>
-            <% } %>            
+            <nav>
+                <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
+            </nav>
+            <div class="logo">
+                <a href="/">ARTINFO</a>
+            </div>
+            <div class="login"><a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></div>
         </div>
         <div id="mobileMenu" class="mobileMenu"> 
             <a href="/">Home</a>
             <a href="/about">소개</a>
             <a href="/recruit_art/all">채용정보</a>
         </div> 
-    </header>
-    <section class="section" id="section">
-        <div class="title">관리자</div> 
-        <article class="article">
-            <div class="board">
-                <table>
-                    <thead>
-                        <tr>
-                            <td>번호</td>
-                            <td>분류</td>
-                            <td>단체명</td>
-                            <td>제목</td>
-                            <td>게시일</td>
-                            <td></td>
-                        </tr>
 
-                    </thead>
-                    <tbody id="tbody" class="tbody">
-                        <% for(const list of data) {%>
+        <section class="section" id="section">
+            <div class="title">관리자</div> 
+            <article class="article">
+                <div class="board">
+                    <table>
+                        <thead>
                             <tr>
-                                <td><%= list.ID %></td>
-                                <td><%= list.TYPE %></td>
-                                <td><%= list.CNAME %></td>
-                                <td>
-                                    <a href=<%= list.URL %> class=titleURL<%= list.ID %>" id="titleURL<%= list.ID %>" target="_blank"><%= list.TITLE %></a>
-                                </td>
-                                <td><%= list.DATE %></td>
-                                <td>
-                                    <form action="/admin/update">
-                                        <input type="hidden" name="id" value=<%= list.ID %> />
-                                        <button>수정</button>
-                                    </form>
-                                    <form action="/admin/delete" id="deleteForm" onSubmit="return confirm('데이터를 삭제하시겠습니까?')">
-                                        <input type="hidden" name="id" value=<%= list.ID %> />
-                                        <button id="delete<%= list.ID %>" class="delete">삭제</button>
-                                    </form> 
-                                </td>
+                                <td>번호</td>
+                                <td>분류</td>
+                                <td>단체명</td>
+                                <td>제목</td>
+                                <td>게시일</td>
+                                <td></td>
                             </tr>
-                        <% } %>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="ctrl">
-                <button id="crawling" class="crawling">크롤링 실행</button>
-                <button><a href="/admin/write">데이터 수동 추가</a></button>
-                <button id="save" class="save">저장</button>
-            </div>
-        </article>
-    </section>
     
-    <footer id="footer">   
-        <div class="ad_fit1">
-            <ins class="kakao_ad_area" style="display:none;" 
-            data-ad-unit    = "DAN-PgHV76O2ZNxrnKWW" 
-            data-ad-width   = "320" 
-            data-ad-height  = "50"></ins> 
-        </div>     
-        <div class="footerText">문의 : chorales@naver.com</div>       
-        <div class="ad_fit2">
-            <ins class="kakao_ad_area" style="display:none;" 
-            data-ad-unit    = "DAN-27ykCGeamZlU7nSD" 
-            data-ad-width   = "320" 
-            data-ad-height  = "50"></ins> 
-        </div>
-    </footer>
+                        </thead>
+                        <tbody id="tbody" class="tbody">
+                            <% for(const list of data) {%>
+                                <tr>
+                                    <td><%= list.ID %></td>
+                                    <td><%= list.TYPE %></td>
+                                    <td><%= list.CNAME %></td>
+                                    <td>
+                                        <a href=<%= list.URL %> class=titleURL<%= list.ID %>" id="titleURL<%= list.ID %>" target="_blank"><%= list.TITLE %></a>
+                                    </td>
+                                    <td><%= list.DATE %></td>
+                                    <td>
+                                        <form action="/admin/update">
+                                            <input type="hidden" name="id" value=<%= list.ID %> />
+                                            <button>수정</button>
+                                        </form>
+                                        <form action="/admin/delete" id="deleteForm" onSubmit="return confirm('데이터를 삭제하시겠습니까?')">
+                                            <input type="hidden" name="id" value=<%= list.ID %> />
+                                            <button id="delete<%= list.ID %>" class="delete">삭제</button>
+                                        </form> 
+                                    </td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+    
+                <div class="ctrl">
+                    <button id="crawling" class="crawling">크롤링 실행</button>
+                    <button><a href="/admin/write">데이터 수동 추가</a></button>
+                    <button id="save" class="save">저장</button>
+                </div>
+            </article>
+        </section>
 
-    <!-- JS import -->
-    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>  
+        <footer id="footer">   
+            <div class="ad_fit1">
+                <ins class="kakao_ad_area" style="display:none;" 
+                data-ad-unit    = "DAN-PgHV76O2ZNxrnKWW" 
+                data-ad-width   = "320" 
+                data-ad-height  = "50"></ins> 
+            </div>     
+            <div class="footerText">문의 : chorales@naver.com</div>       
+            <div class="ad_fit2">
+                <ins class="kakao_ad_area" style="display:none;" 
+                data-ad-unit    = "DAN-27ykCGeamZlU7nSD" 
+                data-ad-width   = "320" 
+                data-ad-height  = "50"></ins> 
+            </div>
+        </footer>
+    
+        <!-- JS import -->
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script> 
+        <script type="text/javascript" src="/js/admin.js"></script>
+        
+    </header>
 </body>
 </html>
