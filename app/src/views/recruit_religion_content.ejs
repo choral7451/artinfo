@@ -149,7 +149,11 @@
                         </tr>
                         <tr>
                             <td>급여</td>
-                            <td><%= data[0].SALARY %> 원</td>
+                            <% if(data[0].SALARY !== "협의 후 결정") { %>
+                                <td><%= data[0].SALARY %> 원</td>
+                            <% } else { %>    
+                                <td><%= data[0].SALARY %> </td>
+                            <% } %>
                             <td>주소</td>
                             <td colspan='3'><%= data[0].ADDRESS %></td>
                         </tr>
