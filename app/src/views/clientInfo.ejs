@@ -99,12 +99,12 @@
                         <tr>
                             <td>성명</td>
                             <td><%= data[0].NAME %></td>
-                            <td></td>
+                            <td><i class="fa-solid fa-check"></i></td>
                         </tr>
                         <tr>
                             <td>아이디</td>
-                            <td><%= data[0].ID %></td>
-                            <td></td>
+                            <td id="idValue"><%= data[0].ID %></td>
+                            <td><i class="fa-solid fa-check"></i></td>
                         </tr>
                         <tr>
                             <td>성별</td>
@@ -115,7 +115,7 @@
                             <% } else { %> 
                                 <td>선택 안함</td>       
                             <% } %>
-                            <td></td>
+                            <td><i class="fa-solid fa-check"></i></td>
                         </tr>
                         <tr>
                             <td>비밀번호</td>
@@ -130,12 +130,12 @@
                         <tr>
                             <td>생년월일</td>
                             <td><input type="text" id="birth" value=<%= data[0].BIRTH %>></td>
-                            <td id="checkBirth"></td>
+                            <td id="checkBirth"><i class="fa-solid fa-check"></i></td>
                         </tr>
                         <tr>
                             <td>이메일</td>
                             <td><input type="text" id="email" value=<%= data[0].EMAIL %>></td>
-                            <td id="checkEmail"></td>
+                            <td id="checkEmail"><i class="fa-solid fa-check"></i></td>
                         </tr>  
                         <tr></tr>
                     </tbody>

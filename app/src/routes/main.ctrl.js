@@ -5,6 +5,7 @@ const logger = require("../config/logger");
 const Board = require("../models/board/Board");
 const Admin = require("../models/admin/Admin");
 const Login = require("../models/login/Login");
+const Member = require("../models/login/member/Member");
 const Signup = require("../models/login/signup/Signup");
 const Home = require("../models/home/Home");
 
@@ -677,6 +678,18 @@ const process = {
         } else {
             res.send('checkId')
         }
+    },
+
+    clientInfoUpdate : async (req, res) => {
+        const reqBody = req.body; 
+
+        const member = new Member();
+
+        await bcrypt.hash(reqBody[0], 10, (err, hash) => {
+            reqBody[0] = hash
+            member.clientInfoUpdate(reqBody);
+        })
+        res.send()
     },
 
     findId : async (req, res) => {
