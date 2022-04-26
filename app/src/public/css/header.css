@@ -7,7 +7,8 @@ header .mobileHeader {
   display: none;
 }
 
-header .mobileMenu {
+header 
+.mobileMenu {
   display: none;
 }
 
@@ -151,7 +152,8 @@ header .desktopHeader .login .logout:hover {
   }
   
   /* Nav Down */
-  header .mobileMenu {
+  header 
+  .mobileMenu {
     background-color: white;
     flex-direction: column;
     justify-content: center;
@@ -161,11 +163,24 @@ header .desktopHeader .login .logout:hover {
     border-top: 4px solid black;
     border-bottom: 4px solid black;
     z-index: 1;
-    height: 240px;
+    height: 320px;
   }
   header .mobileMenu a {
     font-size: 20px;
     margin: 16px 0;
     color: black;
   }
+
+  header 
+  .mobileMenu 
+  .logout {
+    width: 60%;
+    height: 80px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid rgb(170, 169, 169);
+  }
+  
 }

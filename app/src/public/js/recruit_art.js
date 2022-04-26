@@ -1,7 +1,10 @@
 const pageButton = () => {
     const URLSearch = new URLSearchParams(location.search);
     const path = location.pathname;
-    const pageNum = document.getElementById('pageNum').firstElementChild.getAttribute('id');
+    let pageNum;
+    if(document.getElementById('pageNum').firstElementChild !== null) {
+        pageNum = document.getElementById('pageNum').firstElementChild.getAttribute('id');
+    }
     const count = document.getElementById('pageNum').childElementCount;
     let getQueryString
 
@@ -31,7 +34,9 @@ const pageButton = () => {
     })
 
     if(URLSearch.get('id') == null) {
-        document.getElementById("pageButton1").style.border = '2px solid black';
+        if(document.getElementById("pageButton1") !== null) {
+            document.getElementById("pageButton1").style.border = '2px solid black';
+        }        
     } else {
         const query = "pageButton"+URLSearch.get('id')
         document.getElementById(query).style.border = '2px solid black';

@@ -92,7 +92,9 @@
                     <div class="logo">
                         <a href="/">ARTINFO</a>
                     </div>
-                    <div class="login"><a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></div>
+                    <div class="login">
+                        <a href="/clientInfo"><i class="fa-solid fa-gear"></i></a>
+                    </div>
                 <% } %>                  
             <% } else { %> 
                 <nav>
@@ -108,6 +110,15 @@
             <a href="/">Home</a>
             <a href="/about">소개</a>
             <a href="/recruit_art/all">채용정보</a>
+            <% if( login != null ) { %>
+                <div class="logout">
+                    <a href="/logout">로그아웃</a>
+                </div>
+            <% } else { %>
+                <div class="logout">
+                    <a href="/login">로그인</a>
+                </div>
+            <% } %>
         </div> 
     </header>
 
