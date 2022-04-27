@@ -70,6 +70,18 @@ tr {
   height: 60px;
 }
 
+
+section
+.article
+#content 
+table
+tbody 
+tr 
+td
+.br {
+  display: none;
+}
+
 section
 .article
 #content 
@@ -263,4 +275,55 @@ section
   cursor: pointer;
   border: 2px solid black;
   background-color: white;
+}
+
+@media screen and (max-width: 1182px) {
+  section
+  .article
+  #content {
+    width: 90%;
+  }
+
+  section
+  .article
+  #content 
+  table
+  tbody 
+  tr 
+  td
+  .br {
+    display: flex;
+  }
+
+  section
+  .article
+  #content 
+  table
+  tbody 
+  td:nth-child(1) {
+    font-size: 10px;
+  }
+
+  section
+  .article
+  #content 
+  table
+  tbody 
+  td:nth-child(3) {
+    font-size: 10px;
+  }
+
+  section
+  .article
+  .buttonBack {
+    flex-direction: column;
+  }
+
+  section
+  .article
+  .buttonBack
+  #update {
+    margin: 0 0;
+    margin-bottom: 20px;
+  }
 }
