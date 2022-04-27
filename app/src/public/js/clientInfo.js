@@ -119,6 +119,7 @@ const updateButton = () => {
 
     if(checkEmail !== "확인 필요" && checkBirth !== "확인 필요" && checkPwd !== "불일치" && checkPwdValue !== null) {
         const button = document.getElementById('update')
+        document.getElementById('update').style.color = "black";
         button.removeAttribute('disabled');
     } else {
         const button = document.getElementById('update')
