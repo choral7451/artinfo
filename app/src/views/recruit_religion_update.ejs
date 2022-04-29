@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
     
     <!-- CSS import -->
-    <link rel="stylesheet" href="/css/recruit_religion_update.css">
+    <link rel="stylesheet" href="/css/recruit_religion_write.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/footer.css">
@@ -102,95 +102,91 @@
     <section class="section" id="section">
         <div class="title">글쓰기</div>
         <article class="article">
-            <form action="/recruit_religion/update" class="contentBack" method="post" onSubmit="return confirm('게시글 수정을 완료하시겠습니까?')">
-                <input type="hidden" name="id" value=<%= data[0].ID %>>
+            <form action="/recruit_religion/write" class="contentBack" method="post" onSubmit="return confirm('공고를 등록하시겠습니까?')">
                 <div class="titleBack">
                     <p>제 목</p>
-                    <input type="text" name="title" value="<%= data[0].TITLE %>"">
+                    <input id="mainTitle" type="text" name="title" value=<%= data[0].TITLE %>>
                 </div>
                 <div class="contentDetail">
                     <div class="contentDetailLeft">
                         <div class="expertBack">
                             <p>분야</p>
-                            <select class="expert" name="expert" >
-                                <option>분야</option>
-                                <% if(data[0].EXPERTTYPE == "지휘자") { %>
-                                    <option value="지휘자" selected>지휘자</option>
-                                <% } else {%>
-                                    <option value="지휘자">지휘자</option>
-                                <% } %>
-                                <% if(data[0].EXPERTTYPE == "소프라노") { %>
-                                    <option value="소프라노" selected>소프라노</option>
-                                <% } else {%>
-                                    <option value="소프라노">소프라노</option>
-                                <% } %>
-                                <% if(data[0].EXPERTTYPE == "알토") { %>
-                                    <option value="알토" selected>알토</option>
-                                <% } else {%>
-                                    <option value="알토">알토</option>
-                                <% } %>
-                                <% if(data[0].EXPERTTYPE == "테너") { %>
-                                    <option value="테너" selected>테너</option>
-                                <% } else {%>
-                                    <option value="테너">테너</option>
-                                <% } %>
-                                <% if(data[0].EXPERTTYPE == "베이스") { %>
-                                    <option value="베이스" selected>베이스</option>
-                                <% } else {%>
-                                    <option value="베이스">베이스</option>
-                                <% } %>
-                                <% if(data[0].EXPERTTYPE == "반주자") { %>
-                                    <option value="반주자" selected>반주자</option>                                
-                                <% } else {%>
-                                    <option value="반주자">반주자</option>                                
-                                <% } %>
+                            <select class="expert" id="expert" name="expert">                                
+                                <option>분야</option>      
+                                    <% if (data[0].EXPERTTYPE === "지휘자" ) { %>
+                                        <option value="지휘자" selected>지휘자</option>
+                                    <% } else { %>
+                                        <option value="지휘자" >지휘자</option>
+                                    <% } %>       
+                                    <% if (data[0].EXPERTTYPE === "소프라노" ) { %>
+                                        <option value="소프라노" selected>소프라노</option>
+                                    <% } else { %>
+                                        <option value="소프라노" >소프라노</option>
+                                    <% } %>     
+                                    <% if (data[0].EXPERTTYPE === "알토" ) { %>
+                                        <option value="알토" selected>알토</option>
+                                    <% } else { %>
+                                        <option value="알토" >알토</option>
+                                    <% } %>  
+                                    <% if (data[0].EXPERTTYPE === "테너" ) { %>
+                                        <option value="테너" selected>테너</option>
+                                    <% } else { %>
+                                        <option value="테너" >테너</option>
+                                    <% } %>  
+                                    <% if (data[0].EXPERTTYPE === "베이스" ) { %>
+                                        <option value="베이스" selected>베이스</option>
+                                    <% } else { %>
+                                        <option value="베이스" >베이스</option>
+                                    <% } %>                    
+                                    <% if (data[0].EXPERTTYPE === "반주자" ) { %>
+                                        <option value="반주자" selected>반주자</option>
+                                    <% } else { %>
+                                        <option value="반주자" >반주자</option>
+                                    <% } %>                         
                             </select>
                         </div>
                         <div class="typeBack">
                             <p>분류</p>
-                            <select class="type" name="type" >
+                            <select class="type" id="type" name="type">
                                 <option>분류</option>
-                                <% if(data[0].TYPE == "기독교") { %>
+                                <% if (data[0].TYPE === "기독교" ) { %>
                                     <option value="기독교" selected>기독교</option>
-                                <% } else {%>
+                                <% } else { %>
                                     <option value="기독교" >기독교</option>
-                                <% } %>
-                                <% if(data[0].TYPE == "천주교") { %>
+                                <% } %> 
+                                <% if (data[0].TYPE === "천주교" ) { %>
                                     <option value="천주교" selected>천주교</option>
-                                <% } else {%>
-                                    <option value="천주교">천주교</option>
-                                <% } %>
-                                <% if(data[0].TYPE == "불교") { %>
+                                <% } else { %>
+                                    <option value="천주교" >천주교</option>
+                                <% } %> 
+                                <% if (data[0].TYPE === "불교" ) { %>
                                     <option value="불교" selected>불교</option>
-                                <% } else {%>
-                                    <option value="불교">불교</option>
-                                <% } %>
-                                <% if(data[0].TYPE == "기타") { %>
+                                <% } else { %>
+                                    <option value="불교" >불교</option>
+                                <% } %> 
+                                <% if (data[0].TYPE === "기타" ) { %>
                                     <option value="기타" selected>기타</option>
-                                <% } else {%>
-                                    <option value="기타">기타</option>
-                                <% } %>                                                                                    
+                                <% } else { %>
+                                    <option value="기타" >기타</option>
+                                <% } %>  
                             </select>
                         </div>
                         <div class="salary">
                             <div class="selectSalary">
                                 <p>급여</p>
-                                <select id="salaryType" name="salaryType" >
+                                <select id="salaryType" name="salaryType">
                                     <option>선택</option>
-                                    <% if(data[0].SALARY === "협의 후 결정") { %>
+                                    <% if (data[0].SALARY === "협의 후 결정" ) { %>
                                         <option value="협의 후 결정" selected>협의 후 결정</option>
-                                    <% } else {%>
-                                        <option value="협의 후 결정">협의 후 결정</option>
-                                    <% } %>   
-                                    <% if(data[0].SALARY !== "협의 후 결정") { %>
-                                        <option id="direct" value="won" selected>직접 입력</option>
-                                    <% } else {%>
-                                        <option id="direct" value="won">직접 입력</option>
-                                    <% } %>                                                                         
+                                        <option value="won" >직접 입력</option>
+                                    <% } else { %>
+                                        <option value="협의 후 결정" >협의 후 결정</option>
+                                        <option value="won" selected>직접 입력</option>
+                                    <% } %> 
                                 </select>   
                             </div>
                             <div id="inputSalary" class="inputSalary">
-                                <input type="text" name="direct" onKeyup="inputNumberAutoComma(this);" value="<%= data[0].SALARY %>" >  
+                                <input type="text" id="direct" name="direct" onKeyup="inputNumberAutoComma(this);" value=<%= data[0].SALARY %>>  
                                 <p>원</p>
                             </div>                                                                              
                         </div>
@@ -199,29 +195,29 @@
                         <div class="contentDetailRightUp">
                             <div class="name">
                                 <p>단체명</p>
-                                <input type="text" name="name" value="<%= data[0].NAME %>" />
+                                <input id="companyName" type="text" name="name" value=<%= data[0].NAME %>>
                             </div>
                             <div class="phonenumber">
                                 <p>연락처</p>
-                                <input type="number" value=<%= data[0].PNUMBER %> oninput="maxLengthCheck(this)" id="phonenumber" onfocus="this.placeholder = ''" onblur="this.placeholder = '숫자만 입력해주세요.'" name="phonenumber" onkeydown="javascript: return event.keyCode == 69 ? false : true" placeholder="숫자만 입력해주세요.">
+                                <input type="text" value=<%= data[0].PNUMBER %> maxlength="11" oninput="maxLengthCheck(this)" id="phonenumber" onfocus="this.placeholder = ''" onblur="this.placeholder = '숫자만 입력해주세요.'" name="phonenumber" onkeydown="javascript: return event.keyCode == 69 ? false : true" placeholder="숫자만 입력해주세요.">
                             </div>
                         </div>
                         <div class="contentDetailRightMiddle">
                             <p>주소</p>
-                            <input type="text" name="address" value=<%= data[0].ADDRESS %> >
+                            <input id="address" type="text" name="address" value=<%= data[0].ADDRESS %>>
                         </div>
                         <div class="contentDetailRightBottom">
                             <p>이메일</p>
-                            <input type="text" name="email" value=<%= data[0].EMAIL %> >
+                            <input id="email" type="text" name="email" value=<%= data[0].EMAIL %>>
                         </div>                     
                     </div>                    
                 </div>                
                 <div class="contentMain">
                     <p>내 용</p>
-                    <textarea spellcheck="false"  id="textarea" name="contentMain" ><%= content %></textarea>
+                    <textarea spellcheck="false"  id="textarea" name="contentMain"><%= content %></textarea>
                 </div>
                 <div class="saveBack">
-                    <button >저 장</button>
+                    <button id="save" disabled>저 장</button>
                 </div>
             </form>
             <form action="/recruit_religion/all" class="cancelBack">

@@ -52,20 +52,20 @@ class BoardStorage {
         return new Promise((resolve, reject) => {
             const count = id*10-10
             let query;
-  
+            console.log(path)
             if(path == "All") {
                 if(id) {
                     query = `SELECT * FROM BOARD_RELIGION ORDER BY ID DESC LIMIT ${count}, 10;`;
                 } else {
                     query = `SELECT * FROM BOARD_RELIGION ORDER BY ID DESC LIMIT 10;`;
                 }
-            } else if (path == "SEARCH") {
-                if(name) {
-                    query = `SELECT * FROM BOARD_RELIGION WHERE TYPE = "${path}" ORDER BY ID DESC LIMIT ${count}, 10;`;
+            } else if (path === "솔리스트") {
+                if(id) {
+                    query = `SELECT * FROM BOARD_RELIGION WHERE EXPERTTYPE IN ("소프라노", "알토", "테너", "베이스") ORDER BY ID DESC LIMIT ${count}, 10;`;
                 } else {
-                    query = `SELECT * FROM BOARD_RELIGION WHERE TYPE = "${path}" ORDER BY ID DESC LIMIT 10;`;
+                    query = `SELECT * FROM BOARD_RELIGION WHERE EXPERTTYPE IN ("소프라노", "알토", "테너", "베이스") ORDER BY ID DESC LIMIT 10;`;
                 }    
-            } else {                
+            } else {               
                 if(id) {
                     query = `SELECT * FROM BOARD_RELIGION WHERE EXPERTTYPE = "${path}" ORDER BY ID DESC LIMIT ${count}, 10;`;
                 } else {
