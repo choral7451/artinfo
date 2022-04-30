@@ -10,15 +10,19 @@
 
     gtag('config', 'G-T9J2RH0SRC');
     </script>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+     
     <!-- 이모티콘  CDN -->
     <script src="https://kit.fontawesome.com/6dca3e9c71.js" crossorigin="anonymous"></script>
-     
+
+   
+    <!-- 폰트 설정 CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
+    
     <!-- CSS import -->
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/signup.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/footer.css">
@@ -27,12 +31,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Palette+Mosaic&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
-
+    
     <!-- favicon -->
     <link rel="shortcut icon" href="/img/favicon.png">
-
-    <title>아트인포 | 로그인</title>
+    
+    <title>아트인포 | 회원가입</title>
 </head>
 <body>
     
@@ -66,26 +69,13 @@
             <div class="logout">
                 <a href="/login">로그인</a>
             </div>
-        </div> 
+        </div>
     </header>
     
     <section class="section" id="section">
-        <div class="title">로그인</div>
+        <div class="title">회원가입</div>
         <article class="article" id="article">
-            <form onsubmit="return false;">
-                <div class="inputBack">
-                    <label>아이디</label>
-                    <input autoFocus type="text" id="idInput" name="id" placeholder="ID">
-                    <label>비밀번호</label>
-                    <input type="password" id="pwdInput" name="pwd" placeholder="Password">
-                </div>
-                <div class="buttonBack">
-                    <button id="loginBtn" class="loginBtn">로그인</button>
-                    <a href="/signupCheck">회원가입</a>
-                    <a href="/findId">아이디 찾기</a>
-                    <a href="findPw">비밀번호 찾기</a>
-                </div>
-            </form>
+    
         </article>   
     </section>
     
@@ -107,6 +97,7 @@
 
     <!-- JS import -->
     <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-    <script type="text/javascript" src="/js/login.js"></script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/signup.js"></script>
 </body>
 </html>
