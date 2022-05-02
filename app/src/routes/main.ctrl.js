@@ -652,6 +652,11 @@ const process = {
         }
     },
 
+    signupGet : (req, res) => {
+        const reqBody = req.body;
+        console.log(reqBody);
+    },
+
     signup_do : async (req, res) => {
         const reqBody = req.body;
         const signup = new Signup();

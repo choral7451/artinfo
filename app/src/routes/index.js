@@ -36,6 +36,7 @@ router.post('/login_check', ctrl.process.login_check);
 router.post('/findId', ctrl.process.findId);
 router.post('/findPw', ctrl.process.findPw);
 router.post('/clientInfoUpdate', ctrl.process.clientInfoUpdate);
+router.post('/signupGet', ctrl.process.signupGet);
 router.post('/signup_do', ctrl.process.signup_do);
 router.post('/signup_checkId', ctrl.process.signup_checkId);
 router.post('/admin/update_save', ctrl.process.admin_update_save);
