@@ -1,13 +1,14 @@
-let mainTitle = "";
-let companyName = "";
-let type = "분류";
-let expert = "분야";
-let address = "";
-let email = "";
-let phonenumber = "";
-let salaryType = "선택";
-let salaryDirect = "";
-let textarea = "";
+let mainTitle = document.getElementById('mainTitle').value;
+let companyName = document.getElementById('companyName').value;
+let type = document.getElementById('type').value;
+let expert = document.getElementById('expert').value;
+let address = document.getElementById('address').value;
+let email = document.getElementById('email').value;
+let phonenumber = document.getElementById('phonenumber').value;
+let salaryType = document.getElementById('salaryType').value;
+let salaryDirect = document.getElementById('direct').value;
+
+let textarea = document.getElementById('textarea').value;
 
 const button = document.getElementById('save')
 
@@ -164,9 +165,9 @@ const inputNumberisFinit = (str) => {
     }
 }
 
-document.getElementById('phonenumber').addEventListener('focusout', (e) => {
-    const value= e.target.value;
-})
+// document.getElementById('phonenumber').addEventListener('focusout', (e) => {
+//     const value= e.target.value;
+// })
 
 
 const clickMenu = () => {
@@ -198,3 +199,5 @@ const save = () => {
         button.disabled = true;
     }
 }
+
+save();
