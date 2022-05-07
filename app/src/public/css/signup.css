@@ -1,3 +1,131 @@
+.section {
+  display: none;
+}
+
+.signupCheckArticle {
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signupCheckArticle
+.signupCheckTitle {  
+  border-bottom: 2px solid rgb(170, 169, 169);
+  width: 100%;
+  margin: 20px 0;
+  font-size: 25px;
+  padding: 20px 10px;
+}
+
+.signupCheckArticle
+.checkBack1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.signupCheckArticle
+.checkBack2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  width: 50%;
+}
+
+.signupCheckArticle
+.checkBack1
+.checkboxBack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 80%;
+}
+
+.signupCheckArticle
+.checkBack1
+.checkboxBack 
+input {
+  margin-right: 10px;
+}
+
+.signupCheckArticle
+.checkBack1
+textarea {
+  height: 200px;
+  width: 100%;
+  resize: none;
+}
+
+.signupCheckArticle
+.checkBack2
+.checkboxBack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 80%;
+}
+
+.signupCheckArticle
+.checkBack2
+.checkboxBack 
+input {
+  margin-right: 10px;
+}
+
+.signupCheckArticle
+.checkBack2
+textarea {
+  height: 200px;
+  width: 100%;
+  resize: none;
+}
+
+.signupCheckArticle
+.buttonBack {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.signupCheckArticle
+.buttonBack 
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  width: 100%;
+}
+
+.signupCheckArticle
+.buttonBack 
+button {
+  border: none;
+    cursor: pointer;
+    margin: 20px 20px;
+    border-radius: 10px;
+    height: 30px;
+    width: 200px;
+    background-color: rgb(170, 169, 169);
+}
+
+.signupCheckArticle
+.buttonBack 
+button:hover {
+  border: 2px solid black;
+  background-color: white;
+}
+
 .title {
   height: 8vh;
   display: flex;
@@ -118,7 +246,7 @@
   width: 20%;
 }
 
-.section .article form .signupButton {
+.signupButton {
   background-color: rgb(170, 169, 169);
   font-weight: bold;    
   border: none;
@@ -129,16 +257,61 @@
   
 }
 
-.section .article form .signupButton:hover {
+.signupButton:hover {
   border: 2px solid black;
   background-color: white;
 }
 
 @media screen and (max-width: 1181px) {
-  .title {
-    display: none;
+  .signupCheckArticle
+  .checkBack1 {
+    width: 80%;
+  }
+
+  .signupCheckArticle
+  .checkBack2 {
+    width: 80%;
+  }
+
+  .signupCheckArticle
+  .checkBack1
+  .checkboxBack {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .signupCheckArticle
+  .checkBack2
+  .checkboxBack {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .signupCheckArticle
+  .signupCheckTitle {  
+    border-bottom: 2px solid rgb(170, 169, 169);
+    width: 100%;
+    margin: 20px 0;
+    font-size: 25px;
+    padding: 20px 10px;
   }
   
+  .signupCheckArticle
+  .buttonBack {  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .signupCheckArticle
+  .buttonBack 
+  button {
+    width: 80%;
+  }
+
   .article {
     height: 600px;
     display: flex;
@@ -156,10 +329,4 @@
     width: 30%;
   }
   
-}
-
-@media screen and (max-width: 300px) {
-  .title {
-    display: none;
-  }
 }

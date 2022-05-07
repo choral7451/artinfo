@@ -161,3 +161,20 @@ const clickMenu = () => {
         document.getElementById('mobileMenu').style.display="flex";
     }    
 }
+
+
+const checkInput = () => {
+    const signupCheck = document.getElementById('signupCheck').checked;
+    const personalInfoCheck = document.getElementById('personalInfoCheck').checked;
+
+    if(signupCheck === true && personalInfoCheck === true) {
+        document.getElementById('pass').disabled = false;   
+    } else {
+        document.getElementById('pass').disabled = true;   
+    }
+}
+
+const checkBtn = () => {
+    document.getElementById('signupCheckSection').style.display = "none";
+    document.getElementById('section').classList.remove('section');
+}

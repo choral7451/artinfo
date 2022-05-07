@@ -10,7 +10,6 @@ router.get('/logout', ctrl.output.logout);
 router.get('/clientInfo', ctrl.output.clientInfo);
 router.get('/findId', ctrl.output.findId);
 router.get('/findPw', ctrl.output.findPw);
-router.get('/signupCheck', ctrl.output.signupCheck);
 router.get('/signup', ctrl.output.signup);
 router.get('/admin', ctrl.output.admin);
 router.get('/admin/update', ctrl.output.admin_update);

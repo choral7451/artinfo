@@ -108,16 +108,6 @@ const output = {
         }
     },
 
-    signupCheck : (req, res) => {
-        const auth = req.session.passport
-        if(auth != undefined) {
-            res.redirect('/');
-        } else {
-            logger.info("GET /signup 304 회원가입 화면으로 이동");
-            res.render('signupCheck');   
-        }
-    },
-
     admin : async (req, res) => { 
         const auth = req.session.passport
  
