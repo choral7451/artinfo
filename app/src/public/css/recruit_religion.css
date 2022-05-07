@@ -120,7 +120,7 @@
   border-collapse: collapse;
 }
 
-.section .article .board table thead {
+.section .article .board table thead tr {
   height: 4rem;
 }
 

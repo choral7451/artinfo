@@ -100,11 +100,7 @@ textarea {
 .signupCheckArticle
 .buttonBack 
 a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: black;
-  width: 100%;
 }
 
 .signupCheckArticle
@@ -304,6 +300,15 @@ button:hover {
     align-items: center;
     width: 100%;
     margin-top: 30px;
+  }
+
+  .signupCheckArticle
+  .buttonBack 
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
   .signupCheckArticle
