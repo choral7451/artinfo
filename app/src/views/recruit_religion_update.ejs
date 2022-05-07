@@ -102,7 +102,8 @@
     <section class="section" id="section">
         <div class="title">글쓰기</div>
         <article class="article">
-            <form action="/recruit_religion/write" class="contentBack" method="post" onSubmit="return confirm('공고를 등록하시겠습니까?')">
+            <form action="/recruit_religion/update" class="contentBack" method="post" onSubmit="return confirm('공고를 수정하시겠습니까?')">
+                <input type="hidden" name="dbId" value=<%= data[0].ID %>>
                 <div class="titleBack">
                     <p>제 목</p>
                     <input id="mainTitle" type="text" name="title" value=<%= data[0].TITLE %>>

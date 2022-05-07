@@ -563,12 +563,12 @@ const output = {
     },
 
     recruit_religion_update : async (req, res) => {
-        const id = req.query.id;     
+        const id = req.query.id;  
         const board = new Board
         const data = await board.religionUpdateList(id);
         const auth = req.session.passport
         const content = data[0].CONTENT.replace(/<br\/\>/g, '\r\n');
-        
+
         if(auth != undefined) {
             if(auth.user.id == data[0].WRITER) {
                 logger.info("GET /recruit_religion/update 304 모집공고(종교) 화면으로 이동");
@@ -644,7 +644,6 @@ const process = {
 
     signupGet : (req, res) => {
         const reqBody = req.body;
-        console.log(reqBody);
     },
 
     signup_do : async (req, res) => {
@@ -787,15 +786,13 @@ const process = {
     },
 
     recruit_religion_update : async (req, res) => {
-        const reqBody = req.body;        
-        const id = req.session.passport.user.id
-
+        const reqBody = req.body;    
         let content = reqBody.contentMain;
         content = content.replace(/(?:\r\n|\r|\n)/g, '<br/>');
 
         const board = new Board
-        await board.religionUpdateSave(reqBody, id, content);
-        res.redirect(`/recruit_religion/content?id=${reqBody.id}`)
+        await board.religionUpdateSave(reqBody, content);
+        res.redirect(`/recruit_religion/content?id=${reqBody.dbId}`)
     },
 
     recruit_religion_delete : (req, res) => {

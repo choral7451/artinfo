@@ -77,9 +77,9 @@ class Board {
         }
     }
 
-    async religionUpdateSave(data, id, content) {
+    async religionUpdateSave(data, content) {
         try {
-            const list = await BoardStorage.religionUpdateSave(data, id, content);
+            const list = await BoardStorage.religionUpdateSave(data, content);
             return list;
         } catch (err) {
             return { success: false, err };

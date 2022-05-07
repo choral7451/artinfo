@@ -52,7 +52,6 @@ class BoardStorage {
         return new Promise((resolve, reject) => {
             const count = id*10-10
             let query;
-            console.log(path)
             if(path == "All") {
                 if(id) {
                     query = `SELECT * FROM BOARD_RELIGION ORDER BY ID DESC LIMIT ${count}, 10;`;
@@ -166,12 +165,8 @@ class BoardStorage {
         })
     }
 
-    static religionUpdateSave(data, id, content) {
-        const today = new Date();  
-        const year = today.getFullYear();
-        const month = ('0' + (today.getMonth() + 1)).slice(-2);
-        const date = ('0' + today.getDate()).slice(-2);
-        const currentDate = (year + '-' + month + '-' + date);
+    static religionUpdateSave(data, content) {  
+        const dbId = parseInt(data.dbId);
 
         let salary;
         if(data.salaryType == '협의 후 결정' ) {
@@ -185,10 +180,10 @@ class BoardStorage {
         }
         
         return new Promise((resolve, reject) => {
+            
             const query = 
                 `   
                     UPDATE BOARD_RELIGION SET 
-                    WRITER = "${id}", 
                     TITLE = "${data.title}", 
                     EXPERTTYPE = "${data.expert}", 
                     TYPE = "${data.type}", 
@@ -198,7 +193,7 @@ class BoardStorage {
                     ADDRESS = "${data.address}",
                     EMAIL = "${data.email}",
                     CONTENT = "${content}"
-                    WHERE ID = ${data.id};
+                    WHERE ID = ${dbId};
                 `
             db.query(query, (err, data) => {
                 if(err) reject(`${err}`)
