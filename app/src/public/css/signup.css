@@ -99,21 +99,21 @@ textarea {
 
 .signupCheckArticle
 .buttonBack 
-a {
-  color: black;
+button {
+  border: none;
+  cursor: pointer;
+  margin: 20px 20px;
+  border-radius: 10px;
+  height: 30px;
+  width: 200px;
+  background-color: rgb(170, 169, 169);
 }
 
 .signupCheckArticle
 .buttonBack 
+a
 button {
-  border: none;
-    cursor: pointer;
-    margin: 20px 20px;
-    border-radius: 10px;
-    height: 30px;
-    width: 200px;
-    color: black;
-    background-color: rgb(170, 169, 169);
+  color: black;
 }
 
 .signupCheckArticle

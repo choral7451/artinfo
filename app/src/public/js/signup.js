@@ -169,6 +169,7 @@ const checkInput = () => {
 
     if(signupCheck === true && personalInfoCheck === true) {
         document.getElementById('pass').disabled = false;   
+        document.getElementById('pass').style.color = "black";
     } else {
         document.getElementById('pass').disabled = true;   
     }
