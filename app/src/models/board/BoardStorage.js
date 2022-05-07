@@ -8,21 +8,21 @@ class BoardStorage {
   
             if(path == "All") {
                 if(id) {
-                    query = `SELECT * FROM BOARD ORDER BY DATE DESC LIMIT ${count}, 10;`;
+                    query = `SELECT * FROM BOARD ORDER BY DATE DESC, ID DESC LIMIT ${count}, 10;`;
                 } else {
-                    query = `SELECT * FROM BOARD ORDER BY DATE DESC LIMIT 10;`;
+                    query = `SELECT * FROM BOARD ORDER BY DATE DESC, ID DESC LIMIT 10;`;
                 }
             } else if (path == "SEARCH") {
                 if(name) {
-                    query = `SELECT * FROM BOARD WHERE TYPE = "${path}" ORDER BY DATE DESC LIMIT ${count}, 10;`;
+                    query = `SELECT * FROM BOARD WHERE TYPE = "${path}" ORDER BY DATE DESC, ID DESC LIMIT ${count}, 10;`;
                 } else {
-                    query = `SELECT * FROM BOARD WHERE TYPE = "${path}" ORDER BY DATE DESC LIMIT 10;`;
+                    query = `SELECT * FROM BOARD WHERE TYPE = "${path}" ORDER BY DATE DESC, ID DESC LIMIT 10;`;
                 }    
             } else {                
                 if(id) {
-                    query = `SELECT * FROM BOARD WHERE TYPE = "${path}" ORDER BY DATE DESC LIMIT ${count}, 10;`;
+                    query = `SELECT * FROM BOARD WHERE TYPE = "${path}" ORDER BY DATE DESC, ID DESC LIMIT ${count}, 10;`;
                 } else {
-                    query = `SELECT * FROM BOARD WHERE TYPE = "${path}" ORDER BY DATE DESC LIMIT 10;`;
+                    query = `SELECT * FROM BOARD WHERE TYPE = "${path}" ORDER BY DATE DESC, ID DESC LIMIT 10;`;
                 }
             } 
 
