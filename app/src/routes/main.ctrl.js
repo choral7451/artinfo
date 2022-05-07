@@ -789,7 +789,8 @@ const process = {
         const reqBody = req.body;    
         let content = reqBody.contentMain;
         content = content.replace(/(?:\r\n|\r|\n)/g, '<br/>');
-
+        
+        console.log(reqBody.dbId)
         const board = new Board
         await board.religionUpdateSave(reqBody, content);
         res.redirect(`/recruit_religion/content?id=${reqBody.dbId}`)
