@@ -112,6 +112,7 @@ button {
     border-radius: 10px;
     height: 30px;
     width: 200px;
+    color: black;
     background-color: rgb(170, 169, 169);
 }
 
