@@ -172,6 +172,7 @@ const checkInput = () => {
         document.getElementById('pass').style.color = "black";
     } else {
         document.getElementById('pass').disabled = true;   
+        document.getElementById('pass').style.color = "gray";
     }
 }
 
