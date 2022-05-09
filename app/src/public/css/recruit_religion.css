@@ -145,6 +145,11 @@
   padding: 5px 0;
 }
 
+.section .article .board table tbody .notice {
+  color: red;
+  font-weight: bold;
+}
+
 .section .article .board table tbody tr td a {
   color: black;
 }

@@ -269,6 +269,17 @@ table {
 section 
 .articleBoard
 .boardRight
+table 
+tbody
+.notice {
+  font-weight: bold;
+  color: red;
+  border-bottom: 2px solid black;
+}
+
+section 
+.articleBoard
+.boardRight
 table
 thead
 tr

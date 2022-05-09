@@ -13,7 +13,7 @@ class HomeStorage {
 
     static rightList(pth) {
         return new Promise((resolve, reject) => {
-            const query = `SELECT * FROM BOARD_RELIGION ORDER BY ID DESC LIMIT 7;`;
+            const query = `SELECT * FROM BOARD_RELIGION ORDER BY ID DESC LIMIT 6;`;
             db.query(query, (err, data) => {
                 if(err) reject(`${err}`)
                 else resolve(data)
