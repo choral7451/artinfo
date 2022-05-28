@@ -126,3 +126,12 @@ const updateButton = () => {
         button.disabled = true;
     }
 }
+
+document.getElementById('birth').addEventListener('keyup', () => {
+    const birth = document.getElementById('birth').value
+
+    if(!isFinite(birth)) {
+        alert("문자는 입력하실 수 없습니다.");
+        document.getElementById('birth').value = "";
+    } 
+})
