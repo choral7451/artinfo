@@ -163,7 +163,7 @@ header .desktopHeader .login .logout:hover {
     border-top: 4px solid black;
     border-bottom: 4px solid black;
     z-index: 1;
-    height: 320px;
+    height: 340px;
   }
   header .mobileMenu a {
     font-size: 20px;
