@@ -1,0 +1,351 @@
+.section {
+  width: 100%
+}
+
+.section .title {
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  animation: title 2s 1 forwards;
+}
+
+@keyframes title {
+  from {
+    margin-left: -100px;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0;
+    opacity: 1;
+  }
+}
+
+.section .title .preview {
+  font-weight: bold;
+}
+
+.section .title a {
+  margin: 0 30px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+  "Lucida Sans", Arial, sans-serif;
+  color: black;
+  cursor: pointer;
+}
+
+.section .title a:hover {
+  border-bottom: 3px solid black;
+  font-weight: bold;
+}
+
+.section
+article {
+  margin-top: 100px;
+  width: 100%;
+  height: 2400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+}
+
+.section
+article
+.board {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+  "Lucida Sans", Arial, sans-serif;
+  width: 60%;
+  height: 100%;
+}
+
+.section
+article
+.board 
+.top {
+  width: 100%;
+  height: initial;
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section
+article
+.board 
+.top 
+.top_content {
+  display: flex;
+  margin-top: 50px;
+  
+}
+
+.section
+article
+.board 
+.top 
+.top_content
+img {
+  height: 70%;
+  width: 140px;
+  
+}
+
+.section
+article
+.board 
+.top 
+.top_content
+.name {
+  text-align: start;
+  margin-left: 50px;
+  font-weight: bold;
+}
+
+.section
+article
+.board 
+.top 
+.top_content
+.top_text_subtitle {
+  margin-left: 50px;
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: start;
+}
+
+.section
+article
+.board 
+.top 
+.top_content
+.top_text {
+  font-size: 15px;
+  text-align: start;
+  line-height: 22px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.section
+article
+.board 
+.main1 {
+  font-size: 15px;
+  line-height: 22px; 
+}
+
+
+.section
+article
+.board 
+.main2 {
+  margin-top: 30px;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.section
+article
+.board 
+.main2 
+.main2_title {
+  margin-left: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.section
+article
+.board 
+.main3 {
+  margin-top: 30px;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.section
+article
+.board 
+.main3 
+.main3_title {
+  margin-left: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.section
+article
+.board 
+.bottom_img {
+  margin-top: 50px;
+  display: flex;
+}
+
+.section
+article
+.board 
+.bottom_img
+img {
+  width: 50%;
+}
+
+.section
+article
+.getList {
+  border: none;
+  cursor: pointer;
+  color: black;
+  border-radius: 10px;
+  height: 30px;
+  width: 200px;
+  text-align: center;
+  background-color: rgb(197, 197, 197);
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.section
+article
+.getList:hover {
+  border: 2px solid black;
+  background-color: white;
+}
+
+@media screen and (max-width: 1182px) {
+  
+  .section
+  article {
+    height: initial;
+  }
+
+  .section
+  article
+  .board {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+    width: 90%;
+    height: 100%;
+  }
+
+  .section
+  article
+  .board 
+  .top {
+    width: 100%;
+    height: initial;
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .section
+  article
+  .board 
+  .top
+  h2 {
+    font-size: 19px;
+  }
+
+  .section
+  article
+  .board 
+  .top 
+  .top_content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+  }
+
+  .section
+  article
+  .board 
+  .top 
+  .top_content
+  img {
+    height: 70%;
+    width: 140px;
+  }
+
+  .section
+  article
+  .board 
+  .top 
+  .top_content
+  .name {
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+  
+
+  .section
+  article
+  .board 
+  .top 
+  .top_content
+  .top_text_subtitle {
+    margin-left: 0px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .section
+  article
+  .board 
+  .top 
+  .top_content
+  .top_text {
+    font-size: 15px;
+    text-align: start;
+    line-height: 22px;
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+
+  .section
+  article
+  .board 
+  .main2 
+  .main2_title {
+    margin-left: 0px;
+    text-align: center;
+  }
+
+  .section
+  article
+  .board 
+  .main3 
+  .main3_title {
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  .section
+  article
+  .board 
+  .bottom_img {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section
+  article
+  .board 
+  .bottom_img
+  img {
+    width: 100%;
+  }
+
+  .section
+  article
+  .getList:hover {
+    border: 2px solid black;
+    background-color: white;
+  }
+}

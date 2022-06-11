@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9J2RH0SRC"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-T9J2RH0SRC');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/6dca3e9c71.js" crossorigin="anonymous"></script>
+    
+    <!-- 폰트 설정 CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
+    
+    <!-- CSS import -->
+    <link rel="stylesheet" href="/css/music_preview_writing.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Palette+Mosaic&display=swap" rel="stylesheet">
+   
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/img/favicon.png">
+    
+    <title>아트인포 | 소개</title>
+</head>
+<body>
+    <header id="header">
+        <div class="desktopHeader">
+            <div class="logo">
+                <a href="/">ARTINFO</a>
+            </div>
+            <nav>
+                <li><a href="/about">소개</a></li>
+                <li><a href="/music/preview">음악</a></li>
+                <li><a href="/recruit_art/all">채용정보</a></li>                
+            </nav>
+            <div id="login" class="login">
+                <% if( login != null ) { %>
+                    <% if( login === "admin" ) { %>
+                        <div class="name"><%= login %>&nbsp</div>
+                        <a href="/admin"><i class="fa-solid fa-gear"></i></a>
+                        <a class="logout" href="/logout">logout</a>
+                    <% } else { %>
+                        <div class="name"><%= login %></div>
+                        <a href="/clientInfo"><i class="fa-solid fa-gear"></i></a>
+                        <a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                    <% } %>    
+                <% } else { %>
+                    <a class="loginText" href="/login">로그인</a>
+                <% } %>
+            </div>
+        </div>    
+    
+        <div class="mobileHeader">     
+            <% if( login != null ) { %>  
+                <nav>
+                    <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
+                </nav>
+                <div class="logo">
+                    <a href="/">ARTINFO</a>
+                </div>
+                <div class="login">
+                    <a href="/clientInfo"><i class="fa-solid fa-gear"></i></a>
+                </div>
+            <% } else { %> 
+                <nav>
+                    <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
+                </nav>
+                <div class="logo">
+                    <a href="/">ARTINFO</a>
+                </div>
+                <div class="login"><a href="/login"><i class="fa-regular fa-user"></i></a></div>
+            <% } %>            
+        </div>
+        <div id="mobileMenu" class="mobileMenu"> 
+            <a href="/">Home</a>
+            <a href="/about">소개</a>
+            <a href="/recruit_art/all">채용정보</a>
+            <% if( login != null ) { %>
+                <div class="logout">
+                    <a href="/logout">로그아웃</a>
+                </div>
+            <% } else { %>
+                <div class="logout">
+                    <a href="/login">로그인</a>
+                </div>
+            <% } %>
+        </div> 
+    </header>
+    
+    <section class="section" id="section">
+        <div class="title">
+            <a href="/music/preview" class="preview" id="preview">미리보기</a>
+            <a href="">공연</a>
+        </div>
+        <article>
+            <div class="board">
+                <div class="top">
+                    <h2>강남심포니오케스트라 제92회 정기연주회 MASTERPIECE SERIES III</h2>                    
+                    <div class="top_content">
+                        <img src="/img/music/writing01/gangnam_profile.jpeg" class="writing01_poster" alt="">
+                        <div class="text">
+                            <div class="name"> 글. 이탐구 | 강남심포니오케스트라 부지휘자</div>
+                            <div class="top_text_subtitle">K.Atterberg (1887-1974) |
+                                Concert Overture in a minor Op.4 (한국 초연)</div>
+                            <div class="top_text">지난 2005년, 미국의 성공한 사업가이자 칼럼니스트인 동시에 <말러 교향곡 제 2번>만을 지휘하는 지휘자로 널리 알려진 길버트 카플란의 말러 내한 공연이 있어 화제가 되었습니다. 젊은 시절, 말러의 2번 교향곡을 듣고는 매우 크게 감명을 받았던 그는 이 음악을 직접 지휘하는 꿈을 꾸게 되었고, 사업을 경영하는 동시에 꾸준히 지휘 수업을 받으며 작품을 연구했습니다. 그 결과 그만의 독창적인 음악적 해석을 인정받게 되면서 현재 전 세계 곳곳에서 연주활동을 이어가고 있습니다.</div>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="main1">
+                    이제 여러분들께 소개해드리고자 하는 오늘의 작곡가, ‘쿠르트 아테르베리' 또한 방금 전 소개해드린 길버트 카플란과 마찬가지로 특이한 이력을 소유하고 있습니다. 1887년 스웨덴 예테보리(Göteborg)에서 태어난 그는 왕립 공과대학에서 공학석사를 받은 후, 그가 25세였던 1912년부터 1968년까지 무려 56년간 스웨덴 특허 등록국(Swedish Patent and Registration Office)에서 근무 했습니다. 그가 거의 평생 동안 몸담고 있었던 이 직장에서의 수입은 그가 어린 시절부터 꿈꿔왔던 음악을 안정적으로 공부할 수 있게 했습니다. 그는 스톡홀름 왕립음악원에 입학하여 당시 스웨덴의 유명한 작곡가이자 지휘자였던 안드레아스 할렌(Andreas Hallѐn, 1846~1925)에게 작곡과 오케스트레이션을 배우며 본격적인 작곡가의 길을 걸어가기 시작했습니다.       
+                    <br><br>오늘 첫 번째로 감상하실 작품, 바로 <Concert Overture in a minor, Op.4>는 그가 1910년 왕립음악원에 입학한 뒤, 첫 번째로 작곡한 작품입니다. 매우 적극적이고 자신감 넘치는 성격의 아테르베리는 당시 예테보리 관현악단의 음악감독이었던 스텐하머(Wilhelm Stenhammer, 1871-1927)에게 자신의 작품을 초연해달라는 편지를 보냈습니다. 그리고 그 공연의 지휘는 자신이 직접 하겠다는 요구도 덧붙였습니다. 그 결과 이 대담한 부탁은 받아들여져서 1912년 1월 10일, 작곡가 자신의 지휘로 초연되었고, 그의 작품은 현지 언론의 극찬을 받으며 큰 성공을 거두었습니다.
+                        <br><br>“이 작품은 쉽게 흐르는 멜로디를 두려워하는 현대표현예술의 한 결과이며, 협화와 불협화의 이상적인 조합을 보여줍니다. 이 작품의 구성은 인상적이며, 매우 거대한 감동을 생산합니다.”
+- January 11, 1912, Morgonposten -                
+                </div>
+                <div class="main2">
+                    <div class="main2_title">K.Atterberg (1887-1974) | Horn Concerto in a minor Op.28</div>
+                    작곡가 아테르베리의 음악은 20세기 초, 동시대 음악계의 주류를 이루었던 혁신적이고 진보적인 음악들과는 매우 다르게 들립니다. 실제 그는 스스로를 ‘고전주의적 민족주의 음악가’라 정의하며 그의 작품 안에 항상 고전적인 형식의 정경을 그려 넣었고, 여기에 스칸디나비아 음악 특유의 민속적 색채를 가미하여 곡을 만들었습니다. <br><br>
+
+이러한 특성을 아주 잘 보여주는 그의 유일한 호른협주곡은 1926년 작곡되어 이듬해 3월, 로열 스톡홀름 필하모닉 오케스트라에 의해 초연되었습니다. 전통적인 3악장 구성과 관악기 없이 현악오케스트라와 피아노 그리고 타악기만을 사용하는 다소 특이한 악기구성으로 이루어진 이 작품은 작곡가 아테르베리 특유의 색채감과 따스한 인간미가 담긴 매력적인 작품입니다. <br><br>
+
+
+“그의 호른 협주곡은 강한 민족주의적이며, 프렌치 호른의 한계에 경탄할 만큼 적합하다.”
+                                                 - Paul Cook <br><br>
+
+
+이 작품은 스톡홀름 필하모닉 오케스트라에서 40년 동안 호른 수석으로 연주했던 악셀 말름(Axel Malm)에게 헌정되었습니다. 광활하고 강렬한 호른의 사운드와 호흡 긴 부드러운 서정성을 동시에 보여주어야 하는 이 협주곡은 독주 호르니스트에게 매우 고도의 테크닉을 요구합니다. 오늘은 특별히 한국이 자랑하는 호르니스트, 현재 유럽 명문 교향악단, 노르웨이 오슬로 필하모닉 오케스트라의 수석연주자로 국내.외 곳곳에서 활발히 활동하고 있는 김홍박의 멋진호른 연주로 만나게 됩니다.  
+                    
+                </div>
+                <div class="main3">
+                    <div class="main3_title">J.Sibelius (1865-1957) |
+                        Symphony No.2 in D Major Op.43</div>
+                        “내게 음악은 말이 멈춘 곳에서 시작한다.”<br><br>
+                                                             
+                        때는 1900년, 새로운 20세기가 시작할 무렵 이탈리아의 아름다운 항구도시 제노바에 작곡가 시벨리우스가 그의 가족과 함께 도착했습니다. 평화로운 해안가에 길게 늘어서 있는 무성한 야자수와 선인장 그리고 활짝 피어 아름다운 향기를 뿜어내는 남국의 장미꽃과 동백꽃은 그들을 반갑게 맞이해 주었습니다. 당시 <교향시 핀란디아>, <카렐리아 모음곡>, <교향곡 1번> 등의 연이은 성공으로 핀란드 정부로부터 종신연금을 받게 된 36세의 젊은 작곡가 시벨리우스에게 따뜻하고 생동감 넘치는 이 남국의 작은 해변도시는 다양하고 새로운 음악적 환상을 흘러넘치게 하는 데 충분했고, 이로부터 멀리 떨어져 있지 않은 로마에 방문하는 동안 즐겨 들었던 팔레스트리나의 옛 미사음악 또한 그에게 많은 영감을 주었습니다. 그로부터 2년 뒤인, 1902년 3월 8일 헬싱키에서 작곡가 자신의 지휘로 초연된 그의 <교향곡 제 2번>은 엄청난 대성공을 거두었고, 이 작품은 자신의 이탈리아 여행을 후원하였던 친구 칼페란 남작에게 헌정되었습니다.<br><br>
+                        
+                        사실 그가 활동하고 있었던 19세기 말 그의 조국 핀란드는 러시아와의 관계에서 어려움을 겪으며 커다란 위기에 처해 있었습니다. 당시 러시아의 황제, 니콜라이 2세의 1898년 ‘2월 선언’이 발표되면서 핀란드 자치권이 박탈되었고, 동시에 핀란드의 러시아 화 정책이 펼쳐지며 언론과 예술에 대한 검열이 강화되기 시작했습니다. 이와 같은 시대적 사명을 안고 시벨리우스가 작곡한 교향시 <핀란디아>는 당시 핀란드 국민들의 애국심을 크게 고취시켰습니다.  <br><br>
+                        
+                        “오직 극소수만이 내가 교향곡의 세계에서 한 일과 하고 싶어 한 일을 이해한다.” <br><br>
+                        
+                        오늘 감상하실 그의 <교향곡 제 2번> 또한 절망하고 있었던 많은 핀란드 국민들에게 위로와 희망의 메시지를 전달했습니다. 특별한 표제 없이 작곡된 그의 교향곡이었지만 당시 헬싱키 관현악협회의 음악감독, 로베르트 카야누스(Robert Kajanus, 1856~1933)는 더블베이스의 무거운 피치카토 위에서 우울한 주제가 연주되는 2악장을 두고 ‘핀란드의 태양의 빛과 꽃의 향기를 앗아가겠다고 위협하는 모든 불의에 대한 압도적인 항의’라고 평가했습니다. 또한 4악장의 마지막 찬란한 엔딩에 대해서는 ‘절정에 도달한 승리의 빛과 핀란드의 밝은 미래를 향한 전망’이라고 이야기하기도 했습니다. <br><br>
+                        
+                        어려운 절망의 시기에 그들에게 위로와 희망을 주었던 시벨리우스의 교향곡 2번이 오늘 여러분들을 찾아갑니다. 이 교향곡을 감상하시면서 그가 여러분들에게 전달하고자 했던 숨겨진 메시지를 함께 찾아보시는 것은 어떨까요? 
+                </div>     
+                <div class="bottom_img">
+                    <img src="/img/music/writing01/gangnam220629-1.gif" alt="">
+                    <img src="/img/music/writing01/gangnam220629-2.gif" alt="">
+                </div>            
+            </div>
+            <a href="/music/preview" class="getList">목록</a>
+        </article>
+
+    </section>
+    
+    <footer id="footer">   
+        <div class="footerText">문의 : chorales@naver.com</div>       
+    </footer>
+    <div align="center">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8515708471646582"
+        crossorigin="anonymous"></script>
+        <!-- 구글 하단 광고 -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-8515708471646582"
+            data-ad-slot="1352329679"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div> 
+
+    <!-- JS import -->
+    <script type="text/javascript" src="/js/about.js"></script>
+</body>
+</html>

@@ -156,6 +156,28 @@ const output = {
         }
     },
 
+    music_preview : (req, res) => {
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /about 200 음악/미리보기 화면으로 이동");
+            res.render('music_preview',{login: auth.user.id});
+        } else {
+            logger.info("GET /about 200 음악/미리보기 화면으로 이동");
+            res.render('music_preview', {login: null});    
+        }
+    },
+
+    music_preview_writing : (req, res) => {
+        const auth = req.session.passport
+        if(auth != undefined) {
+            logger.info("GET /about 200 음악/미리보기/글_01 화면으로 이동");
+            res.render('music_preview_writing',{login: auth.user.id});
+        } else {
+            logger.info("GET /about 200 음악/미리보기/글_01 화면으로 이동");
+            res.render('music_preview_writing', {login: null});    
+        }
+    },
+
     recruit_art_all : async (req, res) => {
         const id = req.query.id;
         const path = "All";

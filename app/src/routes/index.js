@@ -15,6 +15,8 @@ router.get('/admin', ctrl.output.admin);
 router.get('/admin/update', ctrl.output.admin_update);
 router.get('/admin/write', ctrl.output.admin_write);
 router.get('/admin/delete', ctrl.output.admin_delete);
+router.get('/music/preview', ctrl.output.music_preview);
+router.get('/music/preview/writing', ctrl.output.music_preview_writing);
 router.get('/recruit_art/all', ctrl.output.recruit_art_all);
 router.get('/recruit_art/orchestra', ctrl.output.recruit_art_orchestra);
 router.get('/recruit_art/choir', ctrl.output.recruit_art_choir);

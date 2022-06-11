@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9J2RH0SRC"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-T9J2RH0SRC');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/6dca3e9c71.js" crossorigin="anonymous"></script>
+    
+    <!-- 폰트 설정 CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
+    
+    <!-- CSS import -->
+    <link rel="stylesheet" href="/css/music_preview.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Palette+Mosaic&display=swap" rel="stylesheet">
+   
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/img/favicon.png">
+    
+    <title>아트인포 | 소개</title>
+</head>
+<body>
+    <header id="header">
+        <div class="desktopHeader">
+            <div class="logo">
+                <a href="/">ARTINFO</a>
+            </div>
+            <nav>
+                <li><a href="/about">소개</a></li>
+                <li><a href="/music/preview">음악</a></li>
+                <li><a href="/recruit_art/all">채용정보</a></li>                
+            </nav>
+            <div id="login" class="login">
+                <% if( login != null ) { %>
+                    <% if( login === "admin" ) { %>
+                        <div class="name"><%= login %>&nbsp</div>
+                        <a href="/admin"><i class="fa-solid fa-gear"></i></a>
+                        <a class="logout" href="/logout">logout</a>
+                    <% } else { %>
+                        <div class="name"><%= login %></div>
+                        <a href="/clientInfo"><i class="fa-solid fa-gear"></i></a>
+                        <a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                    <% } %>    
+                <% } else { %>
+                    <a class="loginText" href="/login">로그인</a>
+                <% } %>
+            </div>
+        </div>    
+    
+        <div class="mobileHeader">     
+            <% if( login != null ) { %>  
+                <nav>
+                    <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
+                </nav>
+                <div class="logo">
+                    <a href="/">ARTINFO</a>
+                </div>
+                <div class="login">
+                    <a href="/clientInfo"><i class="fa-solid fa-gear"></i></a>
+                </div>
+            <% } else { %> 
+                <nav>
+                    <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
+                </nav>
+                <div class="logo">
+                    <a href="/">ARTINFO</a>
+                </div>
+                <div class="login"><a href="/login"><i class="fa-regular fa-user"></i></a></div>
+            <% } %>            
+        </div>
+        <div id="mobileMenu" class="mobileMenu"> 
+            <a href="/">Home</a>
+            <a href="/about">소개</a>
+            <a href="/recruit_art/all">채용정보</a>
+            <% if( login != null ) { %>
+                <div class="logout">
+                    <a href="/logout">로그아웃</a>
+                </div>
+            <% } else { %>
+                <div class="logout">
+                    <a href="/login">로그인</a>
+                </div>
+            <% } %>
+        </div> 
+    </header>
+    
+    <section class="section" id="section">
+        <div class="title">
+            <a href="/music/preview" class="preview" id="preview">미리보기</a>
+            <a href="">공연</a>
+        </div>
+        <article>
+            <div class="board">
+                <div class="writing">
+                    <a href="/music/preview/writing?id=1" class="poster_a"><img src="/img/music/writing01/gangnam220629-1.gif" class="writing01_poster" alt=""></a>
+                    <div class="text">
+                        <a href="/music/preview/writing?id=1" class="title_a"><h3>강남심포니오케스트라 제92회 정기연주회 MASTERPIECE SERIES III</h3></a>
+                        <a href="/music/preview/writing?id=1" class="description_a">
+                            <div>
+                                K. Atterberg _ Concert Overture in a minor Op.4<br><br>
+                                K. Atterberg _ Horn Concerto in a minor Op.28<br><br>
+                                J. Sibelius _ Symphony No.2 in D Major Op.43
+                            </div>
+                        </a>
+                    </div>                    
+                </div>
+            </div>
+        </article>
+
+    </section>
+    
+    <footer id="footer">   
+        <div class="footerText">문의 : chorales@naver.com</div>       
+    </footer>
+    <div align="center">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8515708471646582"
+        crossorigin="anonymous"></script>
+        <!-- 구글 하단 광고 -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-8515708471646582"
+            data-ad-slot="1352329679"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div> 
+
+    <!-- JS import -->
+    <script type="text/javascript" src="/js/about.js"></script>
+</body>
+</html>
