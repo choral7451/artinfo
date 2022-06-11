@@ -152,9 +152,9 @@ article
 .board 
 .main2 
 .main2_title {
-  margin-left: 30px;
   font-weight: bold;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .section
@@ -171,7 +171,7 @@ article
 .board 
 .main3 
 .main3_title {
-  margin-left: 30px;
+  text-align: center;
   font-weight: bold;
   margin-bottom: 30px;
 }
@@ -305,24 +305,6 @@ article
     line-height: 22px;
     margin-left: 0px;
     margin-top: 20px;
-  }
-
-  .section
-  article
-  .board 
-  .main2 
-  .main2_title {
-    margin-left: 0px;
-    text-align: center;
-  }
-
-  .section
-  article
-  .board 
-  .main3 
-  .main3_title {
-    text-align: center;
-    margin-left: 0px;
   }
 
   .section
