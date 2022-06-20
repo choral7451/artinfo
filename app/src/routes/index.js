@@ -31,6 +31,7 @@ router.get('/recruit_religion/accompanist', ctrl.output.recruit_religion_accompa
 router.get('/recruit_religion/write', ctrl.output.recruit_religion_write);
 router.get('/recruit_religion/update', ctrl.output.recruit_religion_update);
 router.get('/robots.txt', ctrl.output.robots);
+router.get('/abs.txt', ctrl.output.abs);
 router.get('*', ctrl.output.error)
 
 router.post('/login_check', ctrl.process.login_check);

@@ -611,6 +611,13 @@ const output = {
         );
     },
 
+    abs : (req, res) => {
+        res.type("text/plain");
+        res.send(
+            "google.com, pub-8515708471646582, DIRECT, f08c47fec0942fa0"
+        );
+    },
+
     error : async (req, res) => {
         const auth = req.session.passport
         if(auth != undefined) {
