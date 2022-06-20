@@ -611,7 +611,7 @@ const output = {
         );
     },
 
-    abs : (req, res) => {
+    ads : (req, res) => {
         res.type("text/plain");
         res.send(
             "google.com, pub-8515708471646582, DIRECT, f08c47fec0942fa0"
