@@ -819,7 +819,7 @@ const process = {
 
     recruit_religion_update : async (req, res) => {
         const reqBody = req.body;    
-        let content = reqBody.contentMain;
+        let content = reqBody.contentMain.trim();
         content = content.replace(/(?:\r\n|\r|\n)/g, '<br/>');
 
         const board = new Board
