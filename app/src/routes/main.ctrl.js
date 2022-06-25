@@ -810,7 +810,7 @@ const process = {
         const reqBody = req.body;        
         const id = req.session.passport.user.id
 
-        let content = reqBody.contentMain;
+        let content = reqBody.contentMain.trim();
         content = content.replace(/(?:\r\n|\r|\n)/g, '<br/>');
         const board = new Board
         await board.religionWrite(reqBody, id, content);
