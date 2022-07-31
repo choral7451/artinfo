@@ -6,7 +6,7 @@
 
 <div>각종 예술 정보와 수십개의 사이트에 산재되어있는 음악 연주가 채용 정보를 한 공간에서 보기위한 사이트이다. </div>
 <br>
-배포 주소: <a href="https://artinfo.com">https://artinfo.com</a>
+배포 주소: <a href="https://artinfokorea.com">https://artinfokorea.com</a>
 
 <div style="border-top:2px solid gray; margin: 30px 0;"></div>
 
