@@ -28,31 +28,37 @@ const { JeonjuArt } = require('./crawling/jeonjuArt');
 module.exports = {
     Crawler : async () => {
         let data = [];
-        const nck_artist = await Nck_artist();
-        const nck_administration = await Nck_administration();
-        const busan = await Busan();
-        const chuncheon = await Chuncheon();
-        const bucheon = await Bucheon();
-        const ulsan = await Ulsan();
-        const daegu = await Daegu();
-        const wonju = await Wonju();
-        const suwon = await Suwon();
-        const seongnam = await Seongnam();
-        const ansan = await Ansan();
-        const anyang = await Anyang();
-        const symphonysong = await Symphonysong();
-        const koreansymphony = await Koreansymphony();
-        const kbs = await KBS();
-        const goyang = await Goyang();
-        const daejeonChoir = await DaejeonChoir();
-        const daejeonOrch = await DaejeonOrch();
-        const seoulArt = await SeoulArt();
-        const seogwipoArt = await SeogwipoArt();
-        const jejuArt = await JejuArt();
-        const gangnamArt = await GangnamArt();
-        const cheongjuArt = await CheongjuArt();
-        const gwacheonArt = await GwacheonArt();
-           const jeonjuArt = await JeonjuArt();
+        let nck_artist, nck_administration, busan, chuncheon, bucheon, ulsan, daegu, wonju, suwon, seongnam
+        let ansan, anyang, symphonysong, koreansymphony, kbs, goyang, daejeonChoir, daejeonOrch, seoulArt, seogwipoArt
+        let jejuArt, gangnamArt, cheongjuArt, gwacheonArt, jeonjuArt
+
+        await Promise.all([
+            nck_artist =  Nck_artist(),
+            nck_administration =  Nck_administration(),
+            busan =  Busan(),
+            chuncheon =  Chuncheon(),
+            bucheon =  Bucheon(),
+            ulsan =  Ulsan(),
+            daegu =  Daegu(),
+            wonju =  Wonju(),
+            suwon =  Suwon(),
+            seongnam =  Seongnam(),
+            ansan =  Ansan(),
+            anyang =  Anyang(),
+            symphonysong =  Symphonysong(),
+            koreansymphony =  Koreansymphony(),
+            kbs =  KBS(),
+            goyang =  Goyang(),
+            daejeonChoir =  DaejeonChoir(),
+            daejeonOrch =  DaejeonOrch(),
+            seoulArt =  SeoulArt(),
+            seogwipoArt =  SeogwipoArt(),
+            jejuArt =  JejuArt(),
+            gangnamArt =  GangnamArt(),
+            cheongjuArt =  CheongjuArt(),
+            gwacheonArt =  GwacheonArt(),
+            jeonjuArt =  JeonjuArt(),
+        ]);    
         
         if(nck_artist[0] != undefined) {
             logger.info(`국립합창단(단원) 데이터 ${nck_artist.length} 건 받아옴`);

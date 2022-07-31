@@ -646,10 +646,7 @@ const process = {
     },
 
     admin_crawling : async (req, res) => {
-        let start = new Date();
         const data = await Crawler();
-        let end = new Date();
-        console.log(end - start)
         const admin = new Admin();
         admin.adminInit();
         admin.adminCrawling(data);
