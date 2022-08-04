@@ -1,6 +1,6 @@
 <h1 style="border-bottom:2px solid gray; margin: 30px 0;">ARTINFO</h1>
 
-<img src="https://storage.googleapis.com/shaki-readme-image/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-07-31%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.50.04.png">
+<img src="https://user-images.githubusercontent.com/80080990/182759553-f06fc95f-684d-443f-9292-48e760bb0213.png">
 
 <div style="border-top:2px solid gray; margin: 30px 0;"></div>
 
