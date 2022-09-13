@@ -1,5 +1,5 @@
 .section {
-  width: 100%
+  width: 100%;
 }
 
 .section .title {
@@ -31,7 +31,7 @@
 .section .title a {
   margin: 0 30px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-  "Lucida Sans", Arial, sans-serif;
+    "Lucida Sans", Arial, sans-serif;
   color: black;
   cursor: pointer;
 }
@@ -41,68 +41,43 @@
   font-weight: bold;
 }
 
-.section
-article {
+.section article {
   width: 100%;
-  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.section
-article
-.board {
+.section article .board {
   width: 60%;
   height: 100%;
 }
 
-.section
-article
-.board
-.writing {
+.section article .board .writing {
   width: 100%;
-  height: 200px;
   display: flex;
-  margin: 50px 0;
+  margin-top: 50px;
 }
 
-.section
-article
-.board
-.writing
-.poster_a {
+.section article .board .writing .poster_a {
   height: 100%;
   width: 160px;
 }
 
-.section
-article
-.board
-.writing
-.poster_a
-.writing01_poster {
+.section article .board .writing .poster_a .writing01_poster {
   height: 100%;
   width: 160px;
 }
 
-.section
-article
-.board
-.writing
-.text {
+.section article .board .writing .text {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
 }
 
-.section
-article
-.board
-.writing
-.title_a {
+.section article .board .writing .title_a {
   width: 100%;
   height: 60px;
   display: flex;
@@ -110,43 +85,24 @@ article
   color: black;
 }
 
-.section
-article
-.board
-.writing
-.title_a 
-h3 {
+.section article .board .writing .title_a h3 {
   width: initial;
   height: 50%;
 }
 
-.section
-article
-.board
-.writing
-.title_a 
-h3:hover {
+.section article .board .writing .title_a h3:hover {
   border-bottom: 2px solid black;
 }
-.section
-article
-.board
-.writing
-.description_a {
+.section article .board .writing .description_a {
   height: 140px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: black;
 }
-.section
-article
-.board
-.writing
-.description_a
-div {
+.section article .board .writing .description_a div {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-  "Lucida Sans", Arial, sans-serif;
+    "Lucida Sans", Arial, sans-serif;
   width: initial;
   font-size: 14px;
   font-weight: 500;
@@ -154,79 +110,43 @@ div {
   text-align: center;
 }
 
-.section
-article
-.board
-.writing
-.description_a
-div:hover {
+.section article .board .writing .description_a div:hover {
   font-weight: bold;
 }
 
 @media screen and (max-width: 1182px) {
-  .section
-  article {
-    height: 500px;
+  .section article {
+    background-color: yellow;
   }
 
-
-  .section
-  article
-  .board {
+  .section article .board {
     width: 80%;
   }
-  
-  .section
-  article
-  .board
-  .writing {
-    height: 600px;
+
+  .section article .board .writing {
     flex-direction: column;
     align-items: center;
   }
 
-  .section
-  article
-  .board
-  .writing
-  .poster_a {
+  .section article .board .writing .poster_a {
     height: 200px;
     width: 160px;
   }
 
-  .section
-  article
-  .board
-  .writing
-  .title_a {
-  margin-top: 20px;
+  .section article .board .writing .title_a {
+    margin-top: 20px;
   }
 
-  .section
-  article
-  .board
-  .writing
-  .title_a 
-  h3 {
-  font-size: 16px;
-  text-align: center;
+  .section article .board .writing .title_a h3 {
+    font-size: 16px;
+    text-align: center;
   }
 
-  .section
-  article
-  .board
-  .writing
-  .title_a 
-  h3:hover {
-    border-bottom: none
+  .section article .board .writing .title_a h3:hover {
+    border-bottom: none;
   }
 
-  .section
-  article
-  .board
-  .writing
-  .description_a
-  div {
+  .section article .board .writing .description_a div {
     font-size: 13px;
   }
 }

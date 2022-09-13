@@ -62,67 +62,18 @@
   height: initial;
   margin-top: 50px;
   text-align: center;
-  margin-bottom: 30px;
-}
-
-.section article .board .top .top_content {
-  display: flex;
-  margin-top: 50px;
-}
-
-.section article .board .top .top_content img {
-  height: 70%;
-  width: 300px;
-}
-
-.section article .board .top .top_content .name {
-  text-align: start;
-  margin-left: 50px;
-  font-weight: bold;
-}
-
-.section article .board .top .top_content .top_text_subtitle {
-  margin-left: 50px;
-  margin-top: 20px;
-  font-weight: bold;
-  text-align: start;
-}
-
-.section article .board .top .top_content .top_text {
-  font-size: 15px;
-  text-align: start;
-  line-height: 22px;
-  margin-left: 50px;
-  margin-top: 20px;
+  margin-bottom: 100px;
 }
 
 .section article .board .main1 {
   font-size: 15px;
   line-height: 22px;
+  width: 100%;
 }
 
-.section article .board .main2 {
-  margin-top: 30px;
-  font-size: 15px;
-  line-height: 22px;
-}
-
-.section article .board .main2 .main2_title {
-  font-weight: bold;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.section article .board .main3 {
-  margin-top: 30px;
-  font-size: 15px;
-  line-height: 22px;
-}
-
-.section article .board .main3 .main3_title {
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 30px;
+.section article .board .main1 img {
+  width: 100%;
+  border: 2px solid black;
 }
 
 .section article .board .bottom_img {
@@ -176,43 +127,20 @@
     font-size: 19px;
   }
 
-  .section article .board .top .top_content {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 100px;
-  }
-
-  .section article .board .top .top_content img {
-    height: 70%;
-    width: 200px;
-  }
-
-  .section article .board .top .top_content .name {
-    text-align: center;
-    margin-top: 20px;
-    margin-left: 0px;
-  }
-
-  .section article .board .top .top_content .top_text_subtitle {
-    margin-left: 0px;
-    margin-top: 20px;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  .section article .board .top .top_content .top_text {
-    font-size: 15px;
-    text-align: start;
-    line-height: 22px;
-    margin-left: 0px;
-    margin-top: 20px;
-  }
-
   .section article .board .bottom_img {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
+  }
+
+  .section article .board .main1 {
+    width: 100%;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .section article .board .main1 img {
+    border: 2px solid black;
   }
 
   .section article .board .bottom_img img {
