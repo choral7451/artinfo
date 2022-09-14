@@ -171,22 +171,13 @@ const output = {
     const id = req.query.id;
 
     const auth = req.session.passport;
-    if (id === "1") {
-      if (auth != undefined) {
-        logger.info("GET /about 200 음악/미리보기/글_01 화면으로 이동");
-        res.render("music_preview_writing", { login: auth.user.id });
-      } else {
-        logger.info("GET /about 200 음악/미리보기/글_01 화면으로 이동");
-        res.render("music_preview_writing", { login: null });
-      }
-    } else {
-    }
+
     if (auth != undefined) {
-      logger.info("GET /about 200 음악/미리보기/글_02 화면으로 이동");
-      res.render("music_preview_writin2g", { login: auth.user.id });
+      logger.info("GET /about 200 음악/미리보기/글_01 화면으로 이동");
+      res.render(`music_preview_writing${id}`, { login: auth.user.id });
     } else {
-      logger.info("GET /about 200 음악/미리보기/글_02 화면으로 이동");
-      res.render("music_preview_writing2", { login: null });
+      logger.info("GET /about 200 음악/미리보기/글_01 화면으로 이동");
+      res.render(`music_preview_writing${id}`, { login: null });
     }
   },
 
