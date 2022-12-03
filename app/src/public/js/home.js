@@ -17,17 +17,17 @@ const poster = () => {
     }
 
     document.getElementById('left').innerHTML = `
-        <a><img src="img/poster/p${arr[0]}.gif" alt=""></a>
-        <a><img src="img/poster/p${arr[1]}.gif" alt=""></a>
+        <a><img src="img/poster/p${arr[0]}.png" alt=""></a>
+        <a><img src="img/poster/p${arr[1]}.png" alt=""></a>
     `
 
     document.getElementById('center').innerHTML = `
-        <a><img src="img/poster/p${arr[2]}.gif" alt=""></a>
+        <a><img src="img/poster/p${arr[2]}.png" alt=""></a>
     `
 
     document.getElementById('right').innerHTML = `
-        <a><img src="img/poster/p${arr[3]}.gif" alt=""></a>
-        <a><img src="img/poster/p${arr[4]}.gif" alt=""></a>
+        <a><img src="img/poster/p${arr[3]}.png" alt=""></a>
+        <a><img src="img/poster/p${arr[4]}.png" alt=""></a>
     `
 }
 
